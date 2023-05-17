@@ -15,6 +15,7 @@ p {
   position: relative;
   perspective: 1000px;
   transition: 1s;
+  margin-bottom: 8em;
 }
 
 .book {
@@ -29,7 +30,9 @@ p {
 .face-back {
   width: 100%;
   height: 100%;
-  background: rgb(226, 181, 34);
+  background: url("../../public/images/OLD_PAPER_TEXTURE.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 15px;
   box-sizing: border-box;
   overflow: hidden;
@@ -49,7 +52,7 @@ p {
   border-bottom-right-radius: 3px;
 }
 .portada {
-  background: url("../../public/images/bookPortada.jpg");
+  background: url("https://www.dymocks.com.au/Pages/ImageHandler.ashx?q=9780261103252&w=&h=570");
 }
 .portada-back {
   background: url("../../public/images/portadaBack.jpg");

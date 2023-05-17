@@ -7,13 +7,17 @@ const BookContainer = () => {
   let customZindex = 1;
 
   const [indexes, setIndexes] = useState([2, 1, 0]);
-
+  const [translateBook, setTranslateBook] = useState(0);
+  const [pointerEvent, setPointerEvent] = useState("all");
   const [translate, setTranslate] = useState(0);
   const [translate1, setTranslate1] = useState(0);
   const [translate2, setTranslate2] = useState(0);
 
   return (
-    <div class="book-content">
+    <div
+      style={{ transform: `translateX( ${translateBook}px` }}
+      class="book-content "
+    >
       <div
         style={{ zIndex: indexes[0], transform: `rotateY( ${translate}deg` }}
         class="book"
@@ -21,22 +25,34 @@ const BookContainer = () => {
         <div
           onClick={(e) => {
             setIndexes([2, 1, 0]);
-
+            setTranslateBook(90);
+            setPointerEvent("none");
             setTimeout(() => {
               setTranslate(-180);
-            }, 500);
+            }, 200);
+
+            setTimeout(() => {
+              setPointerEvent("all");
+            }, 700);
           }}
           class="face-front portada"
+          style={{ pointerEvents: pointerEvent }}
         ></div>
         <div
           onClick={(e) => {
             setIndexes([2, 1, 0]);
+            setTranslateBook(0);
+            setPointerEvent("none");
 
             setTimeout(() => {
               setTranslate(0);
-            }, 500);
+            }, 200);
+            setTimeout(() => {
+              setPointerEvent("all");
+            }, 700);
           }}
           class="face-back"
+          style={{ pointerEvents: pointerEvent }}
           id="trsf"
         >
           <h1>Title 1</h1>
@@ -56,11 +72,17 @@ const BookContainer = () => {
           onClick={(e) => {
             setIndexes([1, 2, 0]);
 
+            setPointerEvent("none");
+
             setTimeout(() => {
               setTranslate1(-180);
-            }, 500);
+            }, 200);
+            setTimeout(() => {
+              setPointerEvent("all");
+            }, 700);
           }}
           class="face-front"
+          style={{ pointerEvents: pointerEvent }}
         >
           <h1>Title 2</h1>
           <p>
@@ -74,11 +96,17 @@ const BookContainer = () => {
           onClick={(e) => {
             setIndexes([1, 2, 0]);
 
+            setPointerEvent("none");
+
             setTimeout(() => {
               setTranslate1(0);
-            }, 500);
+            }, 200);
+            setTimeout(() => {
+              setPointerEvent("all");
+            }, 700);
           }}
           class="face-back"
+          style={{ pointerEvents: pointerEvent }}
         >
           <h1>Title 3</h1>
           <p>
@@ -96,12 +124,17 @@ const BookContainer = () => {
         <div
           onClick={(e) => {
             setIndexes([0, 1, 2]);
+            setPointerEvent("none");
 
             setTimeout(() => {
               setTranslate2(-180);
-            }, 500);
+            }, 200);
+            setTimeout(() => {
+              setPointerEvent("all");
+            }, 700);
           }}
           class="face-front"
+          style={{ pointerEvents: pointerEvent }}
         >
           <h1>Title 4</h1>
           <p>
@@ -114,12 +147,17 @@ const BookContainer = () => {
         <div
           onClick={(e) => {
             setIndexes([0, 1, 2]);
+            setPointerEvent("none");
 
             setTimeout(() => {
               setTranslate2(0);
-            }, 500);
+            }, 200);
+            setTimeout(() => {
+              setPointerEvent("all");
+            }, 700);
           }}
           class="face-back portada-back"
+          style={{ pointerEvents: pointerEvent }}
         ></div>
       </div>
     </div>
