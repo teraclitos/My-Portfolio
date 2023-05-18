@@ -3,163 +3,120 @@ import { useEffect, useState } from "react";
 import "../styles/all.css";
 
 const BookContainer = () => {
-  let contZindex = 2;
-  let customZindex = 1;
+  const dataBook = [
+    { title1: "", title2: "Title1", text1: "", text2: "hola" },
+    { title1: "Title2", title2: "Title3", text1: "hola", text2: "hola" },
+    { title1: "Title4", title2: "Title5", text1: "hola", text2: "hola" },
+    { title1: "Title6", title2: "Title7", text1: "hola", text2: "hola" },
+    { title1: "Title8", title2: "Title9", text1: "hola", text2: "hola" },
+    { title1: "Title10", title2: "Title11", text1: "hola", text2: "hola" },
 
-  const [indexes, setIndexes] = useState([2, 1, 0]);
+    { title1: "Title12", title2: "", text1: "hola", text2: "" },
+  ];
+
+  const indexInitial = dataBook.map((element, i) => i).reverse();
+  const translateInitial = dataBook.map((element) => 0);
+
+  const [indexes, setIndexes] = useState(indexInitial);
   const [translateBook, setTranslateBook] = useState(0);
   const [pointerEvent, setPointerEvent] = useState("all");
-  const [translate, setTranslate] = useState(0);
-  const [translate1, setTranslate1] = useState(0);
-  const [translate2, setTranslate2] = useState(0);
+  const [translate, setTranslate] = useState(translateInitial);
+  const functionTranslateFrontPage = (d) => {
+    const newTranslate = translate.map((element, i) =>
+      i === d ? (element = -180) : element
+    );
+
+    setTranslate(newTranslate);
+  };
+  const functionTranslateBackPage = (d) => {
+    const newTranslate = translate.map((element, i) =>
+      i === d ? (element = 0) : element
+    );
+
+    setTranslate(newTranslate);
+  };
+
+  const indexPage = (d) => {
+    const newindex = indexes.map((element, i) => {
+      if (i === d) {
+        return dataBook.length - 1;
+      } else {
+        if (i === d + 1) {
+          return dataBook.length - 2;
+        } else if (d === dataBook.length - 1 && i === d - 1) {
+          return dataBook.length - 2;
+        } else {
+          return dataBook.length - 3;
+        }
+      }
+    });
+
+    setIndexes(newindex);
+  };
+
+  useEffect(() => {
+    console.log(indexes);
+  }, [indexes]);
 
   return (
     <div
       style={{ transform: `translateX( ${translateBook}px` }}
-      class="book-content "
+      className="book-content "
     >
-      <div
-        style={{ zIndex: indexes[0], transform: `rotateY( ${translate}deg` }}
-        class="book"
-      >
+      {dataBook.map((element, i) => (
         <div
-          onClick={(e) => {
-            setIndexes([2, 1, 0]);
-            setTranslateBook(90);
-            setPointerEvent("none");
-            setTimeout(() => {
-              setTranslate(-180);
-            }, 200);
-
-            setTimeout(() => {
-              setPointerEvent("all");
-            }, 700);
+          style={{
+            zIndex: indexes[i],
+            transform: `rotateY( ${translate[i]}deg`,
           }}
-          class="face-front portada"
-          style={{ pointerEvents: pointerEvent }}
-        ></div>
-        <div
-          onClick={(e) => {
-            setIndexes([2, 1, 0]);
-            setTranslateBook(0);
-            setPointerEvent("none");
-
-            setTimeout(() => {
-              setTranslate(0);
-            }, 200);
-            setTimeout(() => {
-              setPointerEvent("all");
-            }, 700);
-          }}
-          class="face-back"
-          style={{ pointerEvents: pointerEvent }}
-          id="trsf"
+          className="book"
         >
-          <h1>Title 1</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
-            laborum voluptatibus eaque repudiandae ullam necessitatibus, dolor
-            ad expedita, eum praesentium vitae! Voluptate in itaque modi
-            consequatur. Aliquid odit quisquam quibusdam!
-          </p>
+          <div
+            onClick={() => {
+              indexPage(i);
+              if (i === 0) {
+                setTranslateBook(90);
+              }
+              setPointerEvent("none");
+              setTimeout(() => {
+                functionTranslateFrontPage(i);
+              }, 200);
+
+              setTimeout(() => {
+                setPointerEvent("all");
+              }, 700);
+            }}
+            className={i == 0 ? "face-front portada" : "face-front"}
+            style={{ pointerEvents: pointerEvent }}
+          >
+            <h1>{element.title1}</h1>
+            <p>{element.text1}</p>
+          </div>
+          <div
+            onClick={() => {
+              indexPage(i);
+
+              if (i === 0) {
+                setTranslateBook(0);
+              }
+              setPointerEvent("none");
+              setTimeout(() => {
+                functionTranslateBackPage(i);
+              }, 200);
+              setTimeout(() => {
+                setPointerEvent("all");
+              }, 700);
+            }}
+            className={
+              i === dataBook.length - 1 ? "face-back portada-back" : "face-back"
+            }
+            style={{ pointerEvents: pointerEvent }}
+          >
+            <h1>{element.title2}</h1>
+            <p>{element.text2}</p>
+          </div>
         </div>
-      </div>
-      <div
-        style={{ zIndex: indexes[1], transform: `rotateY( ${translate1}deg` }}
-        class="book"
-      >
-        <div
-          onClick={(e) => {
-            setIndexes([1, 2, 0]);
-
-            setPointerEvent("none");
-
-            setTimeout(() => {
-              setTranslate1(-180);
-            }, 200);
-            setTimeout(() => {
-              setPointerEvent("all");
-            }, 700);
-          }}
-          class="face-front"
-          style={{ pointerEvents: pointerEvent }}
-        >
-          <h1>Title 2</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
-            perferendis nemo blanditiis impedit aut soluta quia illum deserunt,
-            vero quod ducimus placeat voluptate quidem error sequi, earum eos
-            minima in!
-          </p>
-        </div>
-        <div
-          onClick={(e) => {
-            setIndexes([1, 2, 0]);
-
-            setPointerEvent("none");
-
-            setTimeout(() => {
-              setTranslate1(0);
-            }, 200);
-            setTimeout(() => {
-              setPointerEvent("all");
-            }, 700);
-          }}
-          class="face-back"
-          style={{ pointerEvents: pointerEvent }}
-        >
-          <h1>Title 3</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
-            laborum voluptatibus eaque repudiandae ullam necessitatibus, dolor
-            ad expedita, eum praesentium vitae! Voluptate in itaque modi
-            consequatur. Aliquid odit quisquam quibusdam!
-          </p>
-        </div>
-      </div>
-      <div
-        style={{ zIndex: indexes[2], transform: `rotateY( ${translate2}deg` }}
-        class="book"
-      >
-        <div
-          onClick={(e) => {
-            setIndexes([0, 1, 2]);
-            setPointerEvent("none");
-
-            setTimeout(() => {
-              setTranslate2(-180);
-            }, 200);
-            setTimeout(() => {
-              setPointerEvent("all");
-            }, 700);
-          }}
-          class="face-front"
-          style={{ pointerEvents: pointerEvent }}
-        >
-          <h1>Title 4</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
-            perferendis nemo blanditiis impedit aut soluta quia illum deserunt,
-            vero quod ducimus placeat voluptate quidem error sequi, earum eos
-            minima in!
-          </p>
-        </div>
-        <div
-          onClick={(e) => {
-            setIndexes([0, 1, 2]);
-            setPointerEvent("none");
-
-            setTimeout(() => {
-              setTranslate2(0);
-            }, 200);
-            setTimeout(() => {
-              setPointerEvent("all");
-            }, 700);
-          }}
-          class="face-back portada-back"
-          style={{ pointerEvents: pointerEvent }}
-        ></div>
-      </div>
+      ))}
     </div>
   );
 };
