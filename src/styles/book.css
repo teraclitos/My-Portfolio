@@ -25,6 +25,7 @@ p {
 
   transform-style: preserve-3d;
   transform-origin: left;
+  transition: 1s;
 }
 .face-front,
 .face-back {
