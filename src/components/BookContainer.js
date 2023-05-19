@@ -86,12 +86,12 @@ const BookContainer = () => {
 
         setTimeout(() => {
           setTranslate(newTranslate);
-        }, 150);
+        }, 200);
 
         if (i === arrayTranslation.length - 1) {
           setTimeout(() => {
             setPointerEvent("all");
-          }, 450);
+          }, 700);
         }
       }, (i + 1) * 500);
     });
@@ -127,14 +127,14 @@ const BookContainer = () => {
 
         setTimeout(() => {
           setTranslate(newTranslate);
-        }, 150);
+        }, 200);
 
         console.log(newTranslate);
 
         if (i === arrayTranslation.length - 1) {
           setTimeout(() => {
             setPointerEvent("all");
-          }, 450);
+          }, 700);
         }
       }, (i + 1) * 500);
     });
