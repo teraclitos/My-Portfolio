@@ -5,12 +5,15 @@ import "../styles/all.css";
 const BookContainer = () => {
   const dataBook = [
     { title1: "", title2: "", text1: "", text2: "" },
-    { title1: "Índice", title2: "Title1", text1: "hola", text2: "hola" },
-    { title1: "Title2", title2: "Title3", text1: "hola", text2: "hola" },
-    { title1: "Title4", title2: "Title5", text1: "hola", text2: "hola" },
-    { title1: "Title6", title2: "Title7", text1: "hola", text2: "hola" },
-    { title1: "Title8", title2: "Title9", text1: "hola", text2: "hola" },
-    { title1: "Title10", title2: "", text1: "hola", text2: "" },
+    { title1: "Índice", title2: "Inmobiliaria", text1: "", text2: "" },
+    { title1: "", title2: "Portfolio", text1: "", text2: "" },
+    { title1: "", title2: "Rollingcode", text1: "", text2: "" },
+    { title1: "", title2: "", text1: "proyecto final", text2: "" },
+  ];
+  const proyects = [
+    { proyect: "Proyecto inmobiliaria" },
+    { proyect: "proyecto portafolio de arquitecto" },
+    { proyect: "Proyecto final de Rolling de Code" },
   ];
 
   const indexInitial = dataBook.map((element, i) => i).reverse();
@@ -128,17 +131,25 @@ const BookContainer = () => {
             className={i == 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
           >
-            <h1
-              onClick={(e) => {
-                e.stopPropagation();
-                {
-                  i === 1 && functionPageIndex(5);
-                }
-              }}
-            >
-              {element.title1}
-            </h1>
-            <p>{element.text1}</p>
+            <h1>{element.title1}</h1>
+            <div>
+              <ul>
+                {i === 1 &&
+                  proyects.map((element, index) => (
+                    <li
+                      onClick={(e) => {
+                        e.stopPropagation();
+
+                        functionPageIndex((index + 1) * 2);
+                      }}
+                      className="mb-2 proyects"
+                    >
+                      {element.proyect}
+                    </li>
+                  ))}
+                {element.text1}
+              </ul>
+            </div>
           </div>
           <div
             onClick={() => {
@@ -161,7 +172,7 @@ const BookContainer = () => {
             style={{ pointerEvents: pointerEvent }}
           >
             <h1>{element.title2}</h1>
-            <p>{element.text2}</p>
+            <div>{element.text2}</div>
           </div>
         </div>
       ))}
