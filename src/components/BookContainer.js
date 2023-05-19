@@ -4,11 +4,31 @@ import "../styles/all.css";
 
 const BookContainer = () => {
   const dataBook = [
-    { title1: "", title2: "", text1: "", text2: "" },
-    { title1: "Índice", title2: "Inmobiliaria", text1: "", text2: "" },
-    { title1: "", title2: "Portfolio", text1: "", text2: "" },
-    { title1: "", title2: "Rollingcode", text1: "", text2: "" },
-    { title1: "", title2: "", text1: "proyecto final", text2: "" },
+    { title1: "", text1: "", title2: "", text2: "" },
+    {
+      title1: "Índice",
+      text1: "",
+      title2: "Inmobiliaria",
+      text2: "",
+      pageback: 1,
+    },
+    {
+      title1: "",
+      text1: "",
+      pagefront: 2,
+      title2: "Portfolio",
+      text2: "",
+      pageback: 3,
+    },
+    {
+      title1: "",
+      text1: "",
+      pagefront: 4,
+      title2: "Rollingcode",
+      text2: "",
+      pageback: 5,
+    },
+    { title1: "", text1: "", pagefront: 6, title2: "", text2: "" },
   ];
   const proyects = [
     { proyect: "Proyecto inmobiliaria" },
@@ -23,7 +43,10 @@ const BookContainer = () => {
   const [translateBook, setTranslateBook] = useState(0);
   const [pointerEvent, setPointerEvent] = useState("all");
   const [translate, setTranslate] = useState(translateInitial);
+  const [transition, setTransition] = useState(1);
+
   const functionTranslateFrontPage = (d) => {
+    setTransition(1);
     const newTranslate = translate.map((element, i) =>
       i === d ? -180 : element
     );
@@ -32,47 +55,105 @@ const BookContainer = () => {
   };
 
   const functionPageIndex = (proyectoId) => {
-    const numberOfTransaltions = Math.ceil(proyectoId / 2);
+    const numberOfTranslations = Math.ceil(proyectoId / 2);
+
+    if (numberOfTranslations !== 1) {
+      setTransition(0.6);
+    } else {
+      setTransition(1);
+    }
     const arrayTranslation = Array.from(
-      { length: numberOfTransaltions },
+      { length: numberOfTranslations },
       (_, index) => index + 1
     );
 
     arrayTranslation.forEach((element, i) => {
       setPointerEvent("none");
-      setTimeout(() => {
-        let newTranslate = translate.map((element, index) =>
-          index <= i + 1 ? -180 : element
-        );
+      setTimeout(
+        () => {
+          let newTranslate = translate.map((element, index) =>
+            index <= i + 1 ? -180 : element
+          );
 
-        const newindex = indexes.map((element, i3) => {
-          if (i + 1 === i3) {
-            return dataBook.length - 1;
-          } else {
-            if (i + 1 === i3 - 1) {
-              return dataBook.length - 2;
-            } else if (i + 1 === dataBook.length - 1) {
-              return dataBook.length - 2;
+          const newindex = indexes.map((element, i3) => {
+            if (i + 1 === i3) {
+              return dataBook.length - 1;
             } else {
-              return dataBook.length - 3;
+              if (i + 1 === i3 - 1) {
+                return dataBook.length - 2;
+              } else if (i + 1 === dataBook.length - 1) {
+                return dataBook.length - 2;
+              } else {
+                return dataBook.length - 3;
+              }
             }
-          }
-        });
+          });
 
-        setIndexes(newindex);
+          setIndexes(newindex);
 
-        console.log(newTranslate);
-
-        setTimeout(() => {
-          setTranslate(newTranslate);
-        }, 200);
-
-        if (i === arrayTranslation.length - 1) {
           setTimeout(() => {
-            setPointerEvent("all");
-          }, 700);
-        }
-      }, (i + 1) * 400);
+            setTranslate(newTranslate);
+          }, 150);
+
+          if (i === arrayTranslation.length - 1) {
+            setTimeout(() => {
+              setPointerEvent("all");
+            }, 450);
+          }
+        },
+        i === 0 ? 0 : i * 300
+      );
+    });
+  };
+  const backToIndex = (proyectoId) => {
+    const numberOfTranslations = Math.ceil(proyectoId / 2);
+    if (numberOfTranslations !== 1) {
+      setTransition(0.6);
+    } else {
+      setTransition(1);
+    }
+
+    const arrayTranslation = Array.from(
+      { length: numberOfTranslations },
+      (_, index) => index + 1
+    );
+
+    arrayTranslation.forEach((element, i) => {
+      setPointerEvent("none");
+      setTimeout(
+        () => {
+          let newTranslate = translate.map((element, index) =>
+            index >= arrayTranslation.length - i ? 0 : element
+          );
+
+          const newindex = indexes.map((element, i3) => {
+            if (arrayTranslation.length - i === i3) {
+              return dataBook.length - 1;
+            } else {
+              if (arrayTranslation.length - i === i3 - 1) {
+                return dataBook.length - 2;
+              } else {
+                return dataBook.length - 3;
+              }
+            }
+          });
+
+          setIndexes(newindex);
+
+          setTimeout(() => {
+            setTranslate(newTranslate);
+          }, 150);
+
+          console.log(newTranslate);
+
+          if (i === arrayTranslation.length - 1) {
+            setTimeout(() => {
+              setPointerEvent("all");
+            }, 450);
+          }
+        },
+        i === 0 ? 0 : i * 300
+      );
     });
   };
 
@@ -83,6 +164,7 @@ const BookContainer = () => {
   };
 
   const indexPage = (d) => {
+    setTransition(1);
     const newindex = indexes.map((element, i) => {
       if (i === d) {
         return dataBook.length - 1;
@@ -110,6 +192,7 @@ const BookContainer = () => {
           style={{
             zIndex: indexes[i],
             transform: `rotateY( ${translate[i]}deg`,
+            transition: `${transition}s`,
           }}
           className="book"
         >
@@ -118,6 +201,10 @@ const BookContainer = () => {
               indexPage(i);
               if (i === 0) {
                 setTranslateBook(90);
+              }
+
+              if (i === dataBook.length - 1) {
+                setTranslateBook(220);
               }
               setPointerEvent("none");
               setTimeout(() => {
@@ -149,6 +236,7 @@ const BookContainer = () => {
                   ))}
                 {element.text1}
               </ul>
+              <div className="number-page">{element.pagefront}</div>
             </div>
           </div>
           <div
@@ -157,6 +245,9 @@ const BookContainer = () => {
 
               if (i === 0) {
                 setTranslateBook(0);
+              }
+              if (i === dataBook.length - 1) {
+                setTranslateBook(90);
               }
               setPointerEvent("none");
               setTimeout(() => {
@@ -173,6 +264,19 @@ const BookContainer = () => {
           >
             <h1>{element.title2}</h1>
             <div>{element.text2}</div>
+
+            <div className="number-page">{element.pageback}</div>
+            {i > 0 && (
+              <div
+                className="back-to-index"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  backToIndex(i * 2);
+                }}
+              >
+                Índice
+              </div>
+            )}
           </div>
         </div>
       ))}
