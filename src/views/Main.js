@@ -7,13 +7,16 @@ import PageBody from "../components/PageBody";
 import Footer from "../components/Footer";
 import Error404 from "../components/Error404";
 
-const Main = () => {
+const Main = ({ language, setLanguage }) => {
   return (
     <Container fluid className="min-vh-100 page-main-container">
       <Container>
-        <NavBar />
+        <NavBar language={language} setLanguage={setLanguage} />
         <Routes>
-          <Route path="/" element={<PageBody />} />
+          <Route
+            path="/"
+            element={<PageBody language={language} setLanguage={setLanguage} />}
+          />
 
           <Route path="*" element={<Error404 />} />
         </Routes>

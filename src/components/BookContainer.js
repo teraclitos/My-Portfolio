@@ -1,9 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "../styles/all.css";
-import { dataBookSpanish, allProyectsSpanish } from "../Data";
+import {
+  dataBookSpanish,
+  allProyectsSpanish,
+  allProyectsEnglish,
+} from "../Data";
 
-const BookContainer = () => {
+const BookContainer = ({ language, setLanguage }) => {
   const indexInitial = dataBookSpanish.map((element, i) => i).reverse();
   const translateInitial = dataBookSpanish.map((element) => 0);
   const [indexes, setIndexes] = useState(indexInitial);
@@ -11,7 +15,7 @@ const BookContainer = () => {
   const [pointerEvent, setPointerEvent] = useState("all");
   const [translate, setTranslate] = useState(translateInitial);
   const [widthScreen, setWidthScreen] = useState(window.innerWidth);
-  const [rightTranslationBook, setRightTranslationBook] = useState(0);
+  const [allProyects, setAllProyects] = useState(allProyectsSpanish);
   const handleWindowScreen = () => {
     setWidthScreen(window.innerWidth);
   };
@@ -19,6 +23,14 @@ const BookContainer = () => {
   useEffect(() => {
     window.addEventListener("resize", handleWindowScreen);
   }, [widthScreen]);
+
+  useEffect(() => {
+    if (language === "spanish") {
+      setAllProyects(allProyectsSpanish);
+    } else {
+      setAllProyects(allProyectsEnglish);
+    }
+  }, [language]);
 
   const functionTranslateFrontPage = (d) => {
     const newTranslate = translate.map((element, i) =>
@@ -182,14 +194,14 @@ const BookContainer = () => {
                 setPointerEvent("all");
               }, 700);
             }}
-            className={i == 0 ? "face-front portada" : "face-front"}
+            className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
           >
             <h1>{element.title1}</h1>
             <div>
               <ul>
                 {i === 1 &&
-                  allProyectsSpanish.map((element, index) => (
+                  allProyects.map((element, index) => (
                     <li
                       onClick={(e) => {
                         e.stopPropagation();

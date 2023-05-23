@@ -31,5 +31,10 @@ const allProyectsSpanish = [
   { proyect: "proyecto portafolio de arquitecto" },
   { proyect: "Proyecto final de Rolling de Code" },
 ];
+const allProyectsEnglish = [
+  { proyect: "Real State Proyect" },
+  { proyect: "Architect portfolio proyect" },
+  { proyect: "Rolling code final proyect" },
+];
 
-export { dataBookSpanish, allProyectsSpanish };
+export { dataBookSpanish, allProyectsSpanish, allProyectsEnglish };

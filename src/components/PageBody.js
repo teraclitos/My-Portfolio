@@ -1,10 +1,10 @@
 import React from "react";
 import BookContainer from "./BookContainer";
 
-const PageBody = () => {
+const PageBody = ({ language, setLanguage }) => {
   return (
     <div className="min-vh-100 d-flex justify-content-center align-items-center">
-      <BookContainer />
+      <BookContainer language={language} setLanguage={setLanguage} />
     </div>
   );
 };

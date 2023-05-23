@@ -1,11 +1,13 @@
 import Main from "./views/Main";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 function App() {
+  const [language, setLanguage] = useState("spanish");
+
   return (
     <BrowserRouter>
-      <Main />
+      <Main language={language} setLanguage={setLanguage} />
     </BrowserRouter>
   );
 }
