@@ -1,49 +1,24 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import "../styles/all.css";
+import { dataBookSpanish, allProyectsSpanish } from "../Data";
 
 const BookContainer = () => {
-  const dataBook = [
-    { title1: "", text1: "", title2: "", text2: "" },
-    {
-      title1: "Índice",
-      text1: "",
-      title2: "Inmobiliaria",
-      text2: "",
-      pageback: 1,
-    },
-    {
-      title1: "",
-      text1: "",
-      pagefront: 2,
-      title2: "Portfolio",
-      text2: "",
-      pageback: 3,
-    },
-    {
-      title1: "",
-      text1: "",
-      pagefront: 4,
-      title2: "Rollingcode",
-      text2: "",
-      pageback: 5,
-    },
-
-    { title1: "", text1: "", pagefront: 6, title2: "", text2: "" },
-  ];
-  const proyects = [
-    { proyect: "Proyecto inmobiliaria" },
-    { proyect: "proyecto portafolio de arquitecto" },
-    { proyect: "Proyecto final de Rolling de Code" },
-  ];
-
-  const indexInitial = dataBook.map((element, i) => i).reverse();
-  const translateInitial = dataBook.map((element) => 0);
-
+  const indexInitial = dataBookSpanish.map((element, i) => i).reverse();
+  const translateInitial = dataBookSpanish.map((element) => 0);
   const [indexes, setIndexes] = useState(indexInitial);
   const [translateBook, setTranslateBook] = useState(0);
   const [pointerEvent, setPointerEvent] = useState("all");
   const [translate, setTranslate] = useState(translateInitial);
+  const [widthScreen, setWidthScreen] = useState(window.innerWidth);
+  const [rightTranslationBook, setRightTranslationBook] = useState(0);
+  const handleWindowScreen = () => {
+    setWidthScreen(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowScreen);
+  }, [widthScreen]);
 
   const functionTranslateFrontPage = (d) => {
     const newTranslate = translate.map((element, i) =>
@@ -70,14 +45,14 @@ const BookContainer = () => {
 
         const newindex = indexes.map((element, i3) => {
           if (i + 1 === i3) {
-            return dataBook.length - 1;
+            return dataBookSpanish.length - 1;
           } else {
             if (i + 1 === i3 - 1) {
-              return dataBook.length - 2;
-            } else if (i + 1 === dataBook.length - 1) {
-              return dataBook.length - 2;
+              return dataBookSpanish.length - 2;
+            } else if (i + 1 === dataBookSpanish.length - 1) {
+              return dataBookSpanish.length - 2;
             } else {
-              return dataBook.length - 3;
+              return dataBookSpanish.length - 3;
             }
           }
         });
@@ -113,12 +88,12 @@ const BookContainer = () => {
 
         const newindex = indexes.map((element, i3) => {
           if (arrayTranslation.length - i === i3) {
-            return dataBook.length - 1;
+            return dataBookSpanish.length - 1;
           } else {
             if (arrayTranslation.length - i === i3 - 1) {
-              return dataBook.length - 2;
+              return dataBookSpanish.length - 2;
             } else {
-              return dataBook.length - 3;
+              return dataBookSpanish.length - 3;
             }
           }
         });
@@ -128,8 +103,6 @@ const BookContainer = () => {
         setTimeout(() => {
           setTranslate(newTranslate);
         }, 200);
-
-        console.log(newTranslate);
 
         if (i === arrayTranslation.length - 1) {
           setTimeout(() => {
@@ -149,14 +122,14 @@ const BookContainer = () => {
   const indexPage = (d) => {
     const newindex = indexes.map((element, i) => {
       if (i === d) {
-        return dataBook.length - 1;
+        return dataBookSpanish.length - 1;
       } else {
         if (i === d + 1) {
-          return dataBook.length - 2;
-        } else if (d === dataBook.length - 1 && i === d - 1) {
-          return dataBook.length - 2;
+          return dataBookSpanish.length - 2;
+        } else if (d === dataBookSpanish.length - 1 && i === d - 1) {
+          return dataBookSpanish.length - 2;
         } else {
-          return dataBook.length - 3;
+          return dataBookSpanish.length - 3;
         }
       }
     });
@@ -166,10 +139,12 @@ const BookContainer = () => {
 
   return (
     <div
-      style={{ transform: `translateX( ${translateBook}px` }}
+      style={{
+        transform: `translateX( ${translateBook}`,
+      }}
       className="book-content "
     >
-      {dataBook.map((element, i) => (
+      {dataBookSpanish.map((element, i) => (
         <div
           style={{
             zIndex: indexes[i],
@@ -180,13 +155,24 @@ const BookContainer = () => {
           <div
             onClick={() => {
               indexPage(i);
-              if (i === 0) {
-                setTranslateBook(90);
+
+              if (widthScreen > 575) {
+                if (i === 0) {
+                  setTranslateBook(`90px`);
+                }
+
+                if (i === dataBookSpanish.length - 1) {
+                  setTranslateBook(`220px`);
+                }
+              } else {
+                if (i === 0) {
+                  setTranslateBook(`calc(47vw - 50%)`);
+                }
+                if (i === dataBookSpanish.length - 1) {
+                  setTranslateBook(`calc(72.5vw - 50%)`);
+                }
               }
 
-              if (i === dataBook.length - 1) {
-                setTranslateBook(220);
-              }
               setPointerEvent("none");
               setTimeout(() => {
                 functionTranslateFrontPage(i);
@@ -203,7 +189,7 @@ const BookContainer = () => {
             <div>
               <ul>
                 {i === 1 &&
-                  proyects.map((element, index) => (
+                  allProyectsSpanish.map((element, index) => (
                     <li
                       onClick={(e) => {
                         e.stopPropagation();
@@ -224,11 +210,20 @@ const BookContainer = () => {
             onClick={() => {
               indexPage(i);
 
-              if (i === 0) {
-                setTranslateBook(0);
-              }
-              if (i === dataBook.length - 1) {
-                setTranslateBook(90);
+              if (widthScreen > 575) {
+                if (i === 0) {
+                  setTranslateBook(`0px`);
+                }
+                if (i === dataBookSpanish.length - 1) {
+                  setTranslateBook(`90px`);
+                }
+              } else {
+                if (i === 0) {
+                  setTranslateBook(`0px`);
+                }
+                if (i === dataBookSpanish.length - 1) {
+                  setTranslateBook(`calc(47vw - 50%)`);
+                }
               }
               setPointerEvent("none");
               setTimeout(() => {
@@ -239,7 +234,9 @@ const BookContainer = () => {
               }, 700);
             }}
             className={
-              i === dataBook.length - 1 ? "face-back portada-back" : "face-back"
+              i === dataBookSpanish.length - 1
+                ? "face-back portada-back"
+                : "face-back"
             }
             style={{ pointerEvents: pointerEvent }}
           >
