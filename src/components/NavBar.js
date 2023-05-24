@@ -3,7 +3,7 @@ import "../styles/all.css";
 
 const NavBar = ({ language, setLanguage }) => {
   return (
-    <div className="py-5 d-flex justify-content-between">
+    <div className="py-5 d-flex justify-content-between align-items-center">
       <h1 className="portfolio-name">Francisco Terán</h1>
 
       <div
