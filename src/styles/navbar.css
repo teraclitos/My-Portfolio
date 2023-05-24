@@ -1,3 +1,28 @@
 .portfolio-name {
   font-family: "MedievalSharp", cursive;
 }
+
+.link-nav {
+  font-size: 1.1em;
+  cursor: pointer;
+}
+.wooden-button {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  background-image: url("../../public/images/quebracho.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+}
+
+.wooden-button:hover {
+  color: #e3c27e;
+}
+
+.wooden-button:active {
+  transform: scale(1.01);
+}

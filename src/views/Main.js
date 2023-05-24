@@ -10,8 +10,8 @@ import Error404 from "../components/Error404";
 const Main = ({ language, setLanguage }) => {
   return (
     <Container fluid className="min-vh-100 page-main-container">
+      <NavBar language={language} setLanguage={setLanguage} />
       <Container>
-        <NavBar language={language} setLanguage={setLanguage} />
         <Routes>
           <Route
             path="/"
@@ -20,8 +20,8 @@ const Main = ({ language, setLanguage }) => {
 
           <Route path="*" element={<Error404 />} />
         </Routes>
-        <Footer />
       </Container>
+      <Footer />
     </Container>
   );
 };

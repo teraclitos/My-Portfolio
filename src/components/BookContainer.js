@@ -8,7 +8,7 @@ import {
   allProyectsEnglish,
 } from "../Data";
 
-const BookContainer = ({ language, setLanguage }) => {
+const BookContainer = ({ language }) => {
   const [dataBook, setDataBook] = useState(dataBookSpanish);
   const indexInitial = dataBook.map((element, i) => i).reverse();
   const translateInitial = dataBook.map((element) => 0);
@@ -174,11 +174,11 @@ const BookContainer = ({ language, setLanguage }) => {
 
               if (widthScreen > 575) {
                 if (i === 0) {
-                  setTranslateBook(`90px`);
+                  setTranslateBook(`50%`);
                 }
 
                 if (i === dataBook.length - 1) {
-                  setTranslateBook(`220px`);
+                  setTranslateBook(`100%`);
                 }
               } else {
                 if (i === 0) {
@@ -228,10 +228,10 @@ const BookContainer = ({ language, setLanguage }) => {
 
               if (widthScreen > 575) {
                 if (i === 0) {
-                  setTranslateBook(`0px`);
+                  setTranslateBook(`0%`);
                 }
                 if (i === dataBook.length - 1) {
-                  setTranslateBook(`90px`);
+                  setTranslateBook(`50%`);
                 }
               } else {
                 if (i === 0) {
