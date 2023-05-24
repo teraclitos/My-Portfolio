@@ -6,8 +6,8 @@ const NavBar = ({ language, setLanguage }) => {
     <div className="py-5 d-flex justify-content-between">
       <h1 className="portfolio-name">Francisco Terán</h1>
 
-      <button
-        className="py-0"
+      <div
+        className="py-3 px-3 wooden-button"
         onClick={() => {
           language === "spanish"
             ? setLanguage("english")
@@ -15,7 +15,7 @@ const NavBar = ({ language, setLanguage }) => {
         }}
       >
         {language}
-      </button>
+      </div>
     </div>
   );
 };
