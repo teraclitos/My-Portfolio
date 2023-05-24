@@ -1,30 +1,72 @@
 const dataBookSpanish = [
-  { title1: "", text1: "", title2: "", text2: "" },
   {
-    title1: "Índice",
-    text1: "",
-    title2: "Inmobiliaria",
-    text2: "",
-    pageback: 1,
+    descriptionProyectFrontPage: "",
+    titleProyect: "",
+    descriptionProyectBackPage: "",
   },
   {
-    title1: "",
-    text1: "",
-    pagefront: 2,
-    title2: "Portfolio",
-    text2: "",
-    pageback: 3,
+    index: "Índice",
+    descriptionProyectFrontPage: "",
+    titleProyect: "Inmobiliaria",
+    descriptionProyectBackPage: "",
+    pageBackNumber: 1,
   },
   {
-    title1: "",
-    text1: "",
-    pagefront: 4,
-    title2: "Rollingcode",
-    text2: "",
-    pageback: 5,
+    descriptionProyectFrontPage: "",
+    pageFrontNumber: 2,
+    titleProyect: "Portfolio",
+    descriptionProyectBackPage: "",
+    pageBackNumber: 3,
+  },
+  {
+    descriptionProyectFrontPage: "",
+    pageFrontNumber: 4,
+    titleProyect: "Rollingcode",
+    descriptionProyectBackPage: "",
+    pageBackNumber: 5,
   },
 
-  { title1: "", text1: "", pagefront: 6, title2: "", text2: "" },
+  {
+    descriptionProyectFrontPage: "",
+    pageFrontNumber: 6,
+    titleProyect: "",
+    descriptionProyectBackPage: "",
+  },
+];
+const dataBookEnglish = [
+  {
+    descriptionProyectFrontPage: "",
+    titleProyect: "",
+    descriptionProyectBackPage: "",
+  },
+  {
+    index: "Index",
+    descriptionProyectFrontPage: "",
+    titleProyect: "Real State",
+    descriptionProyectBackPage: "",
+    pageBackNumber: 1,
+  },
+  {
+    descriptionProyectFrontPage: "",
+    pageFrontNumber: 2,
+    titleProyect: "Portfolio",
+    descriptionProyectBackPage: "",
+    pageBackNumber: 3,
+  },
+  {
+    descriptionProyectFrontPage: "",
+    pageFrontNumber: 4,
+    titleProyect: "Rollingcode",
+    descriptionProyectBackPage: "",
+    pageBackNumber: 5,
+  },
+
+  {
+    descriptionProyectFrontPage: "",
+    pageFrontNumber: 6,
+    titleProyect: "",
+    descriptionProyectBackPage: "",
+  },
 ];
 const allProyectsSpanish = [
   { proyect: "Proyecto inmobiliaria" },
@@ -37,4 +79,9 @@ const allProyectsEnglish = [
   { proyect: "Rolling code final proyect" },
 ];
 
-export { dataBookSpanish, allProyectsSpanish, allProyectsEnglish };
+export {
+  dataBookSpanish,
+  allProyectsSpanish,
+  allProyectsEnglish,
+  dataBookEnglish,
+};

@@ -3,13 +3,15 @@ import { useEffect, useState } from "react";
 import "../styles/all.css";
 import {
   dataBookSpanish,
+  dataBookEnglish,
   allProyectsSpanish,
   allProyectsEnglish,
 } from "../Data";
 
 const BookContainer = ({ language, setLanguage }) => {
-  const indexInitial = dataBookSpanish.map((element, i) => i).reverse();
-  const translateInitial = dataBookSpanish.map((element) => 0);
+  const [dataBook, setDataBook] = useState(dataBookSpanish);
+  const indexInitial = dataBook.map((element, i) => i).reverse();
+  const translateInitial = dataBook.map((element) => 0);
   const [indexes, setIndexes] = useState(indexInitial);
   const [translateBook, setTranslateBook] = useState(0);
   const [pointerEvent, setPointerEvent] = useState("all");
@@ -27,8 +29,10 @@ const BookContainer = ({ language, setLanguage }) => {
   useEffect(() => {
     if (language === "spanish") {
       setAllProyects(allProyectsSpanish);
+      setDataBook(dataBookSpanish);
     } else {
       setAllProyects(allProyectsEnglish);
+      setDataBook(dataBookEnglish);
     }
   }, [language]);
 
@@ -57,14 +61,14 @@ const BookContainer = ({ language, setLanguage }) => {
 
         const newindex = indexes.map((element, i3) => {
           if (i + 1 === i3) {
-            return dataBookSpanish.length - 1;
+            return dataBook.length - 1;
           } else {
             if (i + 1 === i3 - 1) {
-              return dataBookSpanish.length - 2;
-            } else if (i + 1 === dataBookSpanish.length - 1) {
-              return dataBookSpanish.length - 2;
+              return dataBook.length - 2;
+            } else if (i + 1 === dataBook.length - 1) {
+              return dataBook.length - 2;
             } else {
-              return dataBookSpanish.length - 3;
+              return dataBook.length - 3;
             }
           }
         });
@@ -100,12 +104,12 @@ const BookContainer = ({ language, setLanguage }) => {
 
         const newindex = indexes.map((element, i3) => {
           if (arrayTranslation.length - i === i3) {
-            return dataBookSpanish.length - 1;
+            return dataBook.length - 1;
           } else {
             if (arrayTranslation.length - i === i3 - 1) {
-              return dataBookSpanish.length - 2;
+              return dataBook.length - 2;
             } else {
-              return dataBookSpanish.length - 3;
+              return dataBook.length - 3;
             }
           }
         });
@@ -134,14 +138,14 @@ const BookContainer = ({ language, setLanguage }) => {
   const indexPage = (d) => {
     const newindex = indexes.map((element, i) => {
       if (i === d) {
-        return dataBookSpanish.length - 1;
+        return dataBook.length - 1;
       } else {
         if (i === d + 1) {
-          return dataBookSpanish.length - 2;
-        } else if (d === dataBookSpanish.length - 1 && i === d - 1) {
-          return dataBookSpanish.length - 2;
+          return dataBook.length - 2;
+        } else if (d === dataBook.length - 1 && i === d - 1) {
+          return dataBook.length - 2;
         } else {
-          return dataBookSpanish.length - 3;
+          return dataBook.length - 3;
         }
       }
     });
@@ -156,7 +160,7 @@ const BookContainer = ({ language, setLanguage }) => {
       }}
       className="book-content "
     >
-      {dataBookSpanish.map((element, i) => (
+      {dataBook.map((element, i) => (
         <div
           style={{
             zIndex: indexes[i],
@@ -173,14 +177,14 @@ const BookContainer = ({ language, setLanguage }) => {
                   setTranslateBook(`90px`);
                 }
 
-                if (i === dataBookSpanish.length - 1) {
+                if (i === dataBook.length - 1) {
                   setTranslateBook(`220px`);
                 }
               } else {
                 if (i === 0) {
                   setTranslateBook(`calc(47vw - 50%)`);
                 }
-                if (i === dataBookSpanish.length - 1) {
+                if (i === dataBook.length - 1) {
                   setTranslateBook(`calc(72.5vw - 50%)`);
                 }
               }
@@ -197,7 +201,7 @@ const BookContainer = ({ language, setLanguage }) => {
             className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
           >
-            <h1>{element.title1}</h1>
+            <h1>{element.index && element.index}</h1>
             <div>
               <ul>
                 {i === 1 &&
@@ -213,9 +217,9 @@ const BookContainer = ({ language, setLanguage }) => {
                       {element.proyect}
                     </li>
                   ))}
-                {element.text1}
+                {element.descriptionProyectFrontPage}
               </ul>
-              <div className="number-page">{element.pagefront}</div>
+              <div className="number-page">{element.pageFrontNumber}</div>
             </div>
           </div>
           <div
@@ -226,14 +230,14 @@ const BookContainer = ({ language, setLanguage }) => {
                 if (i === 0) {
                   setTranslateBook(`0px`);
                 }
-                if (i === dataBookSpanish.length - 1) {
+                if (i === dataBook.length - 1) {
                   setTranslateBook(`90px`);
                 }
               } else {
                 if (i === 0) {
                   setTranslateBook(`0px`);
                 }
-                if (i === dataBookSpanish.length - 1) {
+                if (i === dataBook.length - 1) {
                   setTranslateBook(`calc(47vw - 50%)`);
                 }
               }
@@ -246,16 +250,14 @@ const BookContainer = ({ language, setLanguage }) => {
               }, 700);
             }}
             className={
-              i === dataBookSpanish.length - 1
-                ? "face-back portada-back"
-                : "face-back"
+              i === dataBook.length - 1 ? "face-back portada-back" : "face-back"
             }
             style={{ pointerEvents: pointerEvent }}
           >
-            <h1>{element.title2}</h1>
-            <div>{element.text2}</div>
+            <h1>{element.titleProyect}</h1>
+            <div>{element.descriptionProyectBackPage}</div>
 
-            <div className="number-page">{element.pageback}</div>
+            <div className="number-page">{element.pageBackNumber}</div>
             {i > 0 && (
               <div
                 className="back-to-index"
@@ -264,7 +266,7 @@ const BookContainer = ({ language, setLanguage }) => {
                   backToIndex(i * 2);
                 }}
               >
-                Índice
+                {language === "spanish" ? "Índice" : "Index"}
               </div>
             )}
           </div>
