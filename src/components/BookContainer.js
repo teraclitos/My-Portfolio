@@ -18,6 +18,8 @@ const BookContainer = ({
   functionPageIndex,
   backToIndex,
   indexPage,
+  positionPage,
+  setPositionPage,
 }) => {
   return (
     <div
@@ -37,6 +39,8 @@ const BookContainer = ({
           <div
             onClick={() => {
               indexPage(i);
+
+              setPositionPage(i);
 
               if (widthScreen > 575) {
                 if (i === 0) {
@@ -77,6 +81,8 @@ const BookContainer = ({
                         e.stopPropagation();
 
                         functionPageIndex((index + 1) * 2);
+
+                        setPositionPage(index + 1);
                       }}
                       className="mb-2 proyects"
                     >
@@ -91,6 +97,7 @@ const BookContainer = ({
           <div
             onClick={() => {
               indexPage(i);
+              setPositionPage(i);
 
               if (widthScreen > 575) {
                 if (i === 0) {

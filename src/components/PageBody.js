@@ -20,6 +20,8 @@ const PageBody = ({
   functionPageIndex,
   backToIndex,
   indexPage,
+  positionPage,
+  setPositionPage,
 }) => {
   return (
     <div className="min-vh-100 d-flex justify-content-center align-items-center">
@@ -40,6 +42,8 @@ const PageBody = ({
         functionPageIndex={functionPageIndex}
         backToIndex={backToIndex}
         indexPage={indexPage}
+        positionPage={positionPage}
+        setPositionPage={setPositionPage}
       />
     </div>
   );

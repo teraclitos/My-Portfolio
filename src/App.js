@@ -19,6 +19,7 @@ function App() {
   const [translate, setTranslate] = useState(translateInitial);
   const [widthScreen, setWidthScreen] = useState(window.innerWidth);
   const [allProyects, setAllProyects] = useState(allProyectsSpanish);
+  const [positionPage, setPositionPage] = useState(0);
   const handleWindowScreen = () => {
     setWidthScreen(window.innerWidth);
   };
@@ -153,6 +154,10 @@ function App() {
     }
   }, [language]);
 
+  useEffect(() => {
+    console.log(positionPage);
+  }, [positionPage]);
+
   return (
     <BrowserRouter>
       <Main
@@ -172,6 +177,8 @@ function App() {
         functionPageIndex={functionPageIndex}
         backToIndex={backToIndex}
         indexPage={indexPage}
+        positionPage={positionPage}
+        setPositionPage={setPositionPage}
       />
     </BrowserRouter>
   );

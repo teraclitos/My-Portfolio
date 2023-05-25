@@ -24,10 +24,25 @@ const Main = ({
   functionPageIndex,
   backToIndex,
   indexPage,
+  positionPage,
+  setPositionPage,
 }) => {
   return (
     <Container fluid className="min-vh-100 page-main-container">
-      <NavBar language={language} setLanguage={setLanguage} />
+      <NavBar
+        language={language}
+        setLanguage={setLanguage}
+        setTranslateBook={setTranslateBook}
+        pointerEvent={pointerEvent}
+        setPointerEvent={setPointerEvent}
+        functionTranslateFrontPage={functionTranslateFrontPage}
+        indexPage={indexPage}
+        backToIndex={backToIndex}
+        positionPage={positionPage}
+        setPositionPage={setPositionPage}
+        dataBook={dataBook}
+        widthScreen={widthScreen}
+      />
       <Container>
         <Routes>
           <Route
@@ -50,6 +65,8 @@ const Main = ({
                 functionPageIndex={functionPageIndex}
                 backToIndex={backToIndex}
                 indexPage={indexPage}
+                positionPage={positionPage}
+                setPositionPage={setPositionPage}
               />
             }
           />
