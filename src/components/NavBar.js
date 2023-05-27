@@ -50,7 +50,7 @@ const NavBar = ({
     language === "spanish" ? setLanguage("english") : setLanguage("spanish");
   };
   return (
-    <div className="py-5 pe-lg-5 d-block d-lg-flex justify-content-between align-items-center ps-5 nav-bar-container ">
+    <div className="py-5 pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar-container ">
       <h1 className="portfolio-name text-center ">
         {widthScreen > 992 ? "Francisco Terán" : "F T"}
       </h1>
