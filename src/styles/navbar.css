@@ -1,5 +1,8 @@
-.nav-bar-container {
-  transition: 1s;
+.nav.bar-container {
+  position: sticky;
+}
+.nav-bar {
+  transition: 0.7s;
   overflow: hidden;
 }
 .portfolio-name {
@@ -37,8 +40,10 @@
   right: 2em;
   top: 2.5rem;
 }
-.wooden-button-responsive-open {
+.responsive-open {
   position: absolute;
-  left: 2em;
-  top: 2.5rem;
+  left: 0.7em;
+  top: 2.7rem;
+  font-size: 3em;
+  transition: 0.7s;
 }
