@@ -54,56 +54,54 @@ const NavBar = ({
     language === "spanish" ? setLanguage("english") : setLanguage("spanish");
   };
   return (
-    <nav className="nav-bar-container">
-      <div
-        style={{ height: heightNav }}
-        className="py-5 pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar "
-      >
-        <h1 className="portfolio-name text-center ">
-          {widthScreen > 992 ? "Francisco Terán" : "F T"}
-        </h1>
-        <div className=" d-block d-lg-flex justify-content-around ms-lg-5  align-items-center">
-          {navBarLinks.map((element) => (
-            <div className="link-nav text-center ">
-              <span
-                onClick={() => {
-                  if (element === "Proyectos" || element === "Proyects") {
-                    proyectFunctionBook();
-                  }
-                }}
-              >
-                {element}
-              </span>
-            </div>
-          ))}
-
-          <div
-            className="py-3 d-none d-lg-flex ms-lg-5 justify-content-center wooden-button "
-            onClick={() => {
-              functionLanguage();
-            }}
-          >
-            {language}
+    <div
+      style={{ height: heightNav }}
+      className="py-5 pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar "
+    >
+      <h1 className="portfolio-name text-center ">
+        {widthScreen > 992 ? "Francisco Terán" : "F T"}
+      </h1>
+      <div className=" d-block d-lg-flex justify-content-around ms-lg-5  align-items-center">
+        {navBarLinks.map((element) => (
+          <div className="link-nav text-center ">
+            <span
+              onClick={() => {
+                if (element === "Proyectos" || element === "Proyects") {
+                  proyectFunctionBook();
+                }
+              }}
+            >
+              {element}
+            </span>
           </div>
-        </div>
+        ))}
+
         <div
-          className="py-3 d-flex d-lg-none justify-content-center wooden-button wooden-button-responsive "
+          className="py-3 d-none d-lg-flex ms-lg-5 justify-content-center wooden-button "
           onClick={() => {
             functionLanguage();
           }}
         >
           {language}
         </div>
-
-        <FontAwesomeIcon
-          onClick={() => {
-            heightNav === "5em" ? setHeightNav("20em") : setHeightNav("5em");
-          }}
-          className="responsive-open d-flex d-lg-none"
-          icon={heightNav === "5em" ? faBars : faXmark}
-        />
       </div>
-    </nav>
+      <div
+        className="py-3 d-flex d-lg-none justify-content-center wooden-button wooden-button-responsive "
+        onClick={() => {
+          functionLanguage();
+        }}
+      >
+        {language}
+      </div>
+
+      <FontAwesomeIcon
+        onClick={() => {
+          heightNav === "5em" ? setHeightNav("20em") : setHeightNav("5em");
+        }}
+        className="responsive-open d-flex d-lg-none"
+        icon={heightNav === "5em" ? faBars : faXmark}
+      />
+    </div>
   );
 };
 

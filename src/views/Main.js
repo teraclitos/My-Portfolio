@@ -26,10 +26,10 @@ const Main = ({
   indexPage,
   positionPage,
   setPositionPage,
-  navBarLinks
+  navBarLinks,
 }) => {
   return (
-    <Container fluid className="min-vh-100 page-main-container">
+    <Container fluid className="min-vh-100 page-main-container pb-5 px-0">
       <NavBar
         language={language}
         setLanguage={setLanguage}
@@ -45,6 +45,7 @@ const Main = ({
         widthScreen={widthScreen}
         navBarLinks={navBarLinks}
       />
+
       <Container>
         <Routes>
           <Route

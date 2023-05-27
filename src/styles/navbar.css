@@ -1,9 +1,11 @@
-.nav.bar-container {
-  position: sticky;
-}
 .nav-bar {
   transition: 0.7s;
   overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  border-bottom: 2px solid #a31e23;
+  background-color: #eed9b0;
 }
 .portfolio-name {
   font-family: "MedievalSharp", cursive;
