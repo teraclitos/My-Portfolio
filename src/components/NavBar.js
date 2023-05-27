@@ -61,15 +61,16 @@ const NavBar = ({
       </h1>
       <div className=" d-block d-lg-flex justify-content-around ms-lg-5  align-items-center">
         {navBarLinks.map((element) => (
-          <div
-            onClick={() => {
-              if (element === "Proyectos" || element === "Proyects") {
-                proyectFunctionBook();
-              }
-            }}
-            className="link-nav text-center "
-          >
-            {element}
+          <div className="link-nav text-center ">
+            <span
+              onClick={() => {
+                if (element === "Proyectos" || element === "Proyects") {
+                  proyectFunctionBook();
+                }
+              }}
+            >
+              {element}
+            </span>
           </div>
         ))}
 
