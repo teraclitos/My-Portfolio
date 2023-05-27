@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/all.css";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({
   language,
@@ -45,10 +46,15 @@ const NavBar = ({
       }
     }
   };
+  const functionLanguage = () => {
+    language === "spanish" ? setLanguage("english") : setLanguage("spanish");
+  };
   return (
-    <div className="py-5 d-flex justify-content-between align-items-center ps-5">
-      <h1 className="portfolio-name">Francisco Terán</h1>
-      <div className="w-50 d-flex justify-content-around align-items-center">
+    <div className="py-5 pe-lg-5 d-block d-lg-flex justify-content-between align-items-center ps-5 nav-bar-container ">
+      <h1 className="portfolio-name text-center ">
+        {widthScreen > 992 ? "Francisco Terán" : "F T"}
+      </h1>
+      <div className=" d-block d-lg-flex justify-content-around ms-lg-5  align-items-center">
         {navBarLinks.map((element) => (
           <div
             onClick={() => {
@@ -56,21 +62,28 @@ const NavBar = ({
                 proyectFunctionBook();
               }
             }}
-            className="link-nav"
+            className="link-nav text-center "
           >
             {element}
           </div>
         ))}
+
         <div
-          className="py-3 px-3 wooden-button"
+          className="py-3 d-none d-lg-flex ms-lg-5 justify-content-center wooden-button "
           onClick={() => {
-            language === "spanish"
-              ? setLanguage("english")
-              : setLanguage("spanish");
+            functionLanguage();
           }}
         >
           {language}
         </div>
+      </div>
+      <div
+        className="py-3 d-flex d-lg-none justify-content-center wooden-button wooden-button-responsive "
+        onClick={() => {
+          functionLanguage();
+        }}
+      >
+        {language}
       </div>
     </div>
   );
