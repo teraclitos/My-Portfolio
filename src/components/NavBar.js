@@ -1,4 +1,5 @@
 import React from "react";
+import { useState, useEffect } from "react";
 import "../styles/all.css";
 import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
@@ -16,6 +17,7 @@ const NavBar = ({
   widthScreen,
   navBarLinks,
 }) => {
+  const [heightNav, setHeightNav] = useState("5em");
   const proyectFunctionBook = () => {
     if (positionPage === 0) {
       if (widthScreen > 575) {
@@ -50,7 +52,10 @@ const NavBar = ({
     language === "spanish" ? setLanguage("english") : setLanguage("spanish");
   };
   return (
-    <div className="py-5 pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar-container ">
+    <div
+      style={{ height: heightNav }}
+      className="py-5 pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar-container "
+    >
       <h1 className="portfolio-name text-center ">
         {widthScreen > 992 ? "Francisco Terán" : "F T"}
       </h1>
@@ -84,6 +89,14 @@ const NavBar = ({
         }}
       >
         {language}
+      </div>
+      <div
+        onClick={() => {
+          heightNav === "5em" ? setHeightNav("20em") : setHeightNav("5em");
+        }}
+        className="py-3 d-flex d-lg-none justify-content-center wooden-button wooden-button-responsive-open "
+      >
+        open
       </div>
     </div>
   );

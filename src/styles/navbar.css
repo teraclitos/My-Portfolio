@@ -1,6 +1,7 @@
-/* .nav-bar-container {
-  position: sticky;
-} */
+.nav-bar-container {
+  transition: 1s;
+  overflow: hidden;
+}
 .portfolio-name {
   font-family: "MedievalSharp", cursive;
 }
@@ -34,5 +35,10 @@
 .wooden-button-responsive {
   position: absolute;
   right: 3em;
+  top: 2.5rem;
+}
+.wooden-button-responsive-open {
+  position: absolute;
+  left: 3em;
   top: 2.5rem;
 }
