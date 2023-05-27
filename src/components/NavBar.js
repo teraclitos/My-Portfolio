@@ -19,7 +19,7 @@ const NavBar = ({
   widthScreen,
   navBarLinks,
 }) => {
-  const [heightNav, setHeightNav] = useState("5em");
+  const [heightNav, setHeightNav] = useState("7em");
   const proyectFunctionBook = () => {
     if (positionPage === 0) {
       if (widthScreen > 575) {
@@ -56,14 +56,14 @@ const NavBar = ({
   return (
     <div
       style={{ height: heightNav }}
-      className="py-5 pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar "
+      className=" pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar "
     >
-      <h1 className="portfolio-name text-center ">
+      <h1 className="portfolio-name text-center  ">
         {widthScreen > 992 ? "Francisco Terán" : "F T"}
       </h1>
-      <div className=" d-block d-lg-flex justify-content-around ms-lg-5  align-items-center">
+      <div className=" d-block d-lg-flex justify-content-around ms-lg-5 pt-4 pt-lg-0 align-items-center">
         {navBarLinks.map((element) => (
-          <div className="link-nav text-center ">
+          <div className="link-nav text-center  ">
             <span
               onClick={() => {
                 if (element === "Proyectos" || element === "Proyects") {
@@ -96,10 +96,10 @@ const NavBar = ({
 
       <FontAwesomeIcon
         onClick={() => {
-          heightNav === "5em" ? setHeightNav("20em") : setHeightNav("5em");
+          heightNav === "7em" ? setHeightNav("19em") : setHeightNav("7em");
         }}
         className="responsive-open d-flex d-lg-none"
-        icon={heightNav === "5em" ? faBars : faXmark}
+        icon={heightNav === "7em" ? faBars : faXmark}
       />
     </div>
   );

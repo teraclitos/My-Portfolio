@@ -1,11 +1,6 @@
 .nav-bar {
   transition: 0.7s;
   overflow: hidden;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-  border-bottom: 2px solid #a31e23;
-  background-color: #eed9b0;
 }
 .portfolio-name {
   font-family: "MedievalSharp", cursive;
@@ -40,12 +35,12 @@
 .wooden-button-responsive {
   position: absolute;
   right: 2em;
-  top: 2.5rem;
+  top: 1.5em;
 }
 .responsive-open {
   position: absolute;
   left: 0.7em;
-  top: 2.7rem;
+  top: 0.7em;
   font-size: 3em;
   transition: 0.7s;
 }

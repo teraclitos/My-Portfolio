@@ -1,5 +1,5 @@
 @media (max-width: 300px) {
-  .nav-bar-container {
+  .nav-bar {
     font-size: 8px;
   }
 }
@@ -18,7 +18,18 @@
   }
 }
 @media (max-width: 992px) {
+  .nav-bar {
+    background-image: url("https://res.cloudinary.com/duuwqmpmn/image/upload/v1684175801/fondo_hoja_vieja_ylj6au.jpg");
+    background-repeat: none;
+    background-size: cover;
+    z-index: 1;
+    border-bottom: 2px solid #a31e23;
+  }
   .link-nav {
     margin-top: 2em;
+  }
+  .portfolio-name {
+    position: relative;
+    top: 1em;
   }
 }
