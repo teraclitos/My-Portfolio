@@ -57,7 +57,7 @@ const NavBar = ({
     <nav className="nav-bar-container">
       <div
         style={{ height: heightNav }}
-        className="py-5 pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-barr "
+        className="py-5 pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar "
       >
         <h1 className="portfolio-name text-center ">
           {widthScreen > 992 ? "Francisco Terán" : "F T"}
