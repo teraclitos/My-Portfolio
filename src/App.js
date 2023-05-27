@@ -6,6 +6,8 @@ import {
   dataBookEnglish,
   allProyectsSpanish,
   allProyectsEnglish,
+  navBarLinksEnglish,
+  navBarLinksSpanish,
 } from "./Data";
 
 function App() {
@@ -20,6 +22,7 @@ function App() {
   const [widthScreen, setWidthScreen] = useState(window.innerWidth);
   const [allProyects, setAllProyects] = useState(allProyectsSpanish);
   const [positionPage, setPositionPage] = useState(0);
+  const [navBarLinks, setNavBarLinks] = useState(navBarLinksSpanish);
   const handleWindowScreen = () => {
     setWidthScreen(window.innerWidth);
   };
@@ -148,9 +151,11 @@ function App() {
     if (language === "spanish") {
       setAllProyects(allProyectsSpanish);
       setDataBook(dataBookSpanish);
+      setNavBarLinks(navBarLinksSpanish);
     } else {
       setAllProyects(allProyectsEnglish);
       setDataBook(dataBookEnglish);
+      setNavBarLinks(navBarLinksEnglish);
     }
   }, [language]);
 
@@ -179,6 +184,7 @@ function App() {
         indexPage={indexPage}
         positionPage={positionPage}
         setPositionPage={setPositionPage}
+        navBarLinks={navBarLinks}
       />
     </BrowserRouter>
   );

@@ -15,5 +15,6 @@ red: #c8293b
 @import url("main.css");
 @import url("navbar.css");
 @import url("book.css");
+@import url("footer.css");
 @import url("mediaqueries.css");
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");

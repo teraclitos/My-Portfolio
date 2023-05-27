@@ -16,6 +16,7 @@ p {
   perspective: 1000px;
   transition: 1s;
   margin-bottom: 8em;
+  cursor: pointer;
 }
 
 .book {

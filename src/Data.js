@@ -79,9 +79,15 @@ const allProyectsEnglish = [
   { proyect: "Rolling code final proyect" },
 ];
 
+const navBarLinksSpanish = ["Proyectos", "Acerca de mí", "Contacto"];
+
+const navBarLinksEnglish = ["Proyects", "About me", "Contact"];
+
 export {
   dataBookSpanish,
   allProyectsSpanish,
   allProyectsEnglish,
   dataBookEnglish,
+  navBarLinksEnglish,
+  navBarLinksSpanish,
 };

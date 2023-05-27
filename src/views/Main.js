@@ -26,6 +26,7 @@ const Main = ({
   indexPage,
   positionPage,
   setPositionPage,
+  navBarLinks
 }) => {
   return (
     <Container fluid className="min-vh-100 page-main-container">
@@ -42,6 +43,7 @@ const Main = ({
         setPositionPage={setPositionPage}
         dataBook={dataBook}
         widthScreen={widthScreen}
+        navBarLinks={navBarLinks}
       />
       <Container>
         <Routes>
