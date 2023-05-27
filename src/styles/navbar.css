@@ -34,11 +34,11 @@
 
 .wooden-button-responsive {
   position: absolute;
-  right: 1em;
+  right: 2em;
   top: 2.5rem;
 }
 .wooden-button-responsive-open {
   position: absolute;
-  left: 1em;
+  left: 2em;
   top: 2.5rem;
 }
