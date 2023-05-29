@@ -1,20 +1,25 @@
-/* colores: 
-
-marron:#b59a5b;
-bordo:#a31e23 
-dorado:#e3c27e
-red: #c8293b
-
-
-
-*/
-* {
-  color: #a31e23;
-}
-
 @import url("main.css");
 @import url("navbar.css");
 @import url("book.css");
 @import url("footer.css");
 @import url("mediaqueries.css");
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+
+.old-letter {
+  font-family: "MedievalSharp", cursive;
+}
+
+.red {
+  color: #c8293b;
+}
+
+.golden {
+  color: #e3c27e;
+}
+
+.brown {
+  color: #b59a5b;
+}
+.dark-brown {
+  color: #816930;
+}

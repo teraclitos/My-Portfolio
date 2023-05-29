@@ -2,13 +2,11 @@
   transition: 0.7s;
   overflow: hidden;
 }
-.portfolio-name {
-  font-family: "MedievalSharp", cursive;
-}
 
 .link-nav {
   font-size: 1.1em;
   cursor: pointer;
+  color: #b59a5b;
 }
 .wooden-button {
   color: #fff;

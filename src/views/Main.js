@@ -46,7 +46,7 @@ const Main = ({
         navBarLinks={navBarLinks}
       />
 
-      <Container>
+      <Container className="py-3">
         <Routes>
           <Route
             path="/"

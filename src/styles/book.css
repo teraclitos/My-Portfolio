@@ -32,7 +32,7 @@ p {
 .face-back {
   width: 100%;
   height: 100%;
-  background: url("../../public/images/OLD_PAPER_TEXTURE.jpg");
+  background: url("https://res.cloudinary.com/duuwqmpmn/image/upload/v1684175801/fondo_hoja_vieja_ylj6au.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 15px;
