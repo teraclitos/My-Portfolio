@@ -84,6 +84,7 @@ const NavBar = ({
         {/* {navBarLinks.map((element, i) => ( */}
         <div className="link-nav text-center dark-brown">
           <span
+            className="hover-nav-link"
             // className={colors[i] === 0 ? "dark-brown hover-nav-link" : "red"}
             onClick={() => {
               // setColorsFunction(i);

@@ -21,7 +21,6 @@ const BookContainer = ({
   positionPage,
   setPositionPage,
   index,
- 
 }) => {
   return (
     <div
@@ -73,10 +72,10 @@ const BookContainer = ({
             className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
           >
-            <h1>{element.index && element.index}</h1>
             <div>
+              <h2>{element.titleFront}</h2>
               <ul>
-                {i === 1 &&
+                {i === 2 &&
                   index.map((element, index) => (
                     <li
                       // onClick={(e) => {
@@ -91,8 +90,23 @@ const BookContainer = ({
                       {element}
                     </li>
                   ))}
-                {element.descriptionProyectFrontPage}
+                {i === 4 &&
+                  allProyects.map((element, index) => (
+                    <li
+                      onClick={(e) => {
+                        e.stopPropagation();
+
+                        functionPageIndex((index + 1) * 2, 4);
+
+                        setPositionPage(index + 1);
+                      }}
+                      className="mb-2 proyects"
+                    >
+                      {element.proyect}
+                    </li>
+                  ))}
               </ul>
+              {element.descriptionProyectFrontPage}
               <div className="number-page">{element.pageFrontNumber}</div>
             </div>
           </div>
@@ -129,7 +143,7 @@ const BookContainer = ({
             }
             style={{ pointerEvents: pointerEvent }}
           >
-            <h1>{element.titleProyect}</h1>
+            <h2>{element.titleBack}</h2>
             <div>{element.descriptionProyectBackPage}</div>
 
             <div className="number-page">{element.pageBackNumber}</div>

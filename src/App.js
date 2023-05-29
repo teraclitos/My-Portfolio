@@ -30,7 +30,7 @@ function App() {
     setWidthScreen(window.innerWidth);
   };
 
-  const functionTranslateFrontPage = (d) => {
+  const functionTranslateFrontPage = (d, start) => {
     const newTranslate = translate.map((element, i) =>
       i === d ? -180 : element
     );
@@ -38,7 +38,7 @@ function App() {
     setTranslate(newTranslate);
   };
 
-  const functionPageIndex = (proyectoId) => {
+  const functionPageIndex = (proyectoId, start) => {
     const numberOfTranslations = Math.ceil(proyectoId / 2);
 
     const arrayTranslation = Array.from(
@@ -50,16 +50,16 @@ function App() {
       setPointerEvent("none");
       setTimeout(() => {
         let newTranslate = translate.map((element, index) =>
-          index <= i + 1 ? -180 : element
+          index <= i + start ? -180 : element
         );
 
         const newindex = indexes.map((element, i3) => {
-          if (i + 1 === i3) {
+          if (i + start === i3) {
             return dataBook.length - 1;
           } else {
-            if (i + 1 === i3 - 1) {
+            if (i + start === i3 - 1) {
               return dataBook.length - 2;
-            } else if (i + 1 === dataBook.length - 1) {
+            } else if (i + start === dataBook.length - 1) {
               return dataBook.length - 2;
             } else {
               return dataBook.length - 3;

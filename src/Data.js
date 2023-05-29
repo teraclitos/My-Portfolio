@@ -1,27 +1,41 @@
 const dataBookSpanish = [
   {
     descriptionProyectFrontPage: "",
-    titleProyect: "",
+    titleBack: "",
     descriptionProyectBackPage: "",
   },
+
   {
-    index: "Índice",
+    titleFront: "Portfolio",
+    descriptionProyectBackPage: "Traducido por Francisco Terán",
+  },
+
+  {
+    titleFront: "Índice",
     descriptionProyectFrontPage: "",
-    titleProyect: "Inmobiliaria",
+  },
+  {
+    titleFront: "Acerca de mí",
+    descriptionProyectFrontPage: "Me llamo Francisco",
+  },
+
+  {
+    titleFront: "Mis proyectos",
+    titleBack: "Inmobiliaria",
     descriptionProyectBackPage: "",
     pageBackNumber: 1,
   },
   {
     descriptionProyectFrontPage: "",
     pageFrontNumber: 2,
-    titleProyect: "Portfolio",
+    titleBack: "Portfolio",
     descriptionProyectBackPage: "",
     pageBackNumber: 3,
   },
   {
     descriptionProyectFrontPage: "",
     pageFrontNumber: 4,
-    titleProyect: "Rollingcode",
+    titleBack: "Rollingcode",
     descriptionProyectBackPage: "",
     pageBackNumber: 5,
   },
@@ -29,34 +43,48 @@ const dataBookSpanish = [
   {
     descriptionProyectFrontPage: "",
     pageFrontNumber: 6,
-    titleProyect: "",
+    titleBack: "",
     descriptionProyectBackPage: "",
   },
 ];
 const dataBookEnglish = [
   {
     descriptionProyectFrontPage: "",
-    titleProyect: "",
+    titleBack: "",
     descriptionProyectBackPage: "",
   },
   {
-    index: "Index",
+    titleFront: "Portfolio",
+    descriptionProyectBackPage: "Translated by Francisco Terán",
+  },
+
+  {
+    titleFront: "Index",
     descriptionProyectFrontPage: "",
-    titleProyect: "Real State",
+  },
+  {
+    titleFront: "About me",
+    descriptionProyectFrontPage: "My name is Francisco",
+  },
+
+  {
+    titleFront: "My proyects",
+    titleBack: "Inmobiliaria",
     descriptionProyectBackPage: "",
     pageBackNumber: 1,
   },
+
   {
     descriptionProyectFrontPage: "",
     pageFrontNumber: 2,
-    titleProyect: "Portfolio",
+    titleBack: "Portfolio",
     descriptionProyectBackPage: "",
     pageBackNumber: 3,
   },
   {
     descriptionProyectFrontPage: "",
     pageFrontNumber: 4,
-    titleProyect: "Rollingcode",
+    titleBack: "Rollingcode",
     descriptionProyectBackPage: "",
     pageBackNumber: 5,
   },
@@ -64,7 +92,7 @@ const dataBookEnglish = [
   {
     descriptionProyectFrontPage: "",
     pageFrontNumber: 6,
-    titleProyect: "",
+    titleBack: "",
     descriptionProyectBackPage: "",
   },
 ];
