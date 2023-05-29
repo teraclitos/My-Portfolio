@@ -46,6 +46,7 @@ const Main = ({
         dataBook={dataBook}
         widthScreen={widthScreen}
         navBarLinks={navBarLinks}
+        functionPageIndex={functionPageIndex}
       />
 
       <Container className="py-3">

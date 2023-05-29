@@ -78,13 +78,17 @@ const BookContainer = ({
                 {i === 2 &&
                   index.map((element, index) => (
                     <li
-                      // onClick={(e) => {
-                      //   e.stopPropagation();
+                      onClick={(e) => {
+                        e.stopPropagation();
 
-                      //   functionPageIndex((index + 1) * 2);
+                        if (index === 0) {
+                          functionPageIndex(4, 2);
+                        } else if (index === 1) {
+                          functionPageIndex(2, 2);
+                        }
 
-                      //   setPositionPage(index + 1);
-                      // }}
+                        setPositionPage(index + 2);
+                      }}
                       className="mb-2 proyects"
                     >
                       {element}
@@ -147,12 +151,12 @@ const BookContainer = ({
             <div>{element.descriptionProyectBackPage}</div>
 
             <div className="number-page">{element.pageBackNumber}</div>
-            {i > 0 && (
+            {i > 1 && (
               <div
                 className="back-to-index"
                 onClick={(e) => {
                   e.stopPropagation();
-                  backToIndex(i * 2);
+                  backToIndex(i * 2, -1);
                 }}
               >
                 {language === "spanish" ? "Índice" : "Index"}

@@ -81,7 +81,7 @@ function App() {
       }, (i + 1) * 500);
     });
   };
-  const backToIndex = (proyectoId) => {
+  const backToIndex = (proyectoId, start) => {
     const numberOfTranslations = Math.ceil(proyectoId / 2);
 
     const arrayTranslation = Array.from(
@@ -93,14 +93,14 @@ function App() {
       setPointerEvent("none");
       setTimeout(() => {
         let newTranslate = translate.map((element, index) =>
-          index >= arrayTranslation.length - i ? 0 : element
+          index + start >= arrayTranslation.length - i ? 0 : element
         );
 
         const newindex = indexes.map((element, i3) => {
-          if (arrayTranslation.length - i === i3) {
+          if (arrayTranslation.length - i - start === i3) {
             return dataBook.length - 1;
           } else {
-            if (arrayTranslation.length - i === i3 - 1) {
+            if (arrayTranslation.length - i - start === i3 - 1) {
               return dataBook.length - 2;
             } else {
               return dataBook.length - 3;

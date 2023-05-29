@@ -13,9 +13,9 @@ const dataBookSpanish = [
   {
     titleFront: "Índice",
     descriptionProyectFrontPage: "",
+    titleBack: "Acerca de mí",
   },
   {
-    titleFront: "Acerca de mí",
     descriptionProyectFrontPage: "Me llamo Francisco",
   },
 
@@ -61,9 +61,10 @@ const dataBookEnglish = [
   {
     titleFront: "Index",
     descriptionProyectFrontPage: "",
+    titleBack: "About me",
   },
+
   {
-    titleFront: "About me",
     descriptionProyectFrontPage: "My name is Francisco",
   },
 

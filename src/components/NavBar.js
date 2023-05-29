@@ -18,46 +18,44 @@ const NavBar = ({
   setPositionPage,
   dataBook,
   widthScreen,
+  functionPageIndex,
   navBarLinks,
 }) => {
   // const [heightNav, setHeightNav] = useState("7em");
   const [openNav, setOpenNav] = useState(false);
   const indexFunctionBook = () => {
-    if (positionPage === 0) {
+    if (positionPage < 2) {
+      setPositionPage(2);
       if (!openNav) {
         setTimeout(() => {
-          functionTranslateFrontPage(0);
+          functionPageIndex((1 - positionPage + 1) * 2, positionPage);
         }, 200);
         if (widthScreen > 575) {
           setTranslateBook("50%");
         } else {
           setTranslateBook(`calc(47vw - 50%)`);
         }
-      } else {
-        setTimeout(() => {
-          functionTranslateBackPage(0);
-        }, 200);
-        setTranslateBook("0%");
       }
-
-      setPointerEvent("none");
-      indexPage(0);
-
-      setTimeout(() => {
-        setPointerEvent("all");
-      }, 700);
-      setPositionPage(0);
     } else {
-      backToIndex(positionPage * 2);
-      setPositionPage(0);
-
-      if (positionPage === dataBook.length - 1) {
-        if (widthScreen > 575) {
-          setTranslateBook("50%");
-        } else {
-          setTranslateBook(`calc(47vw - 50%)`);
+      if (widthScreen <= 575) {
+        backToIndex(positionPage * 2, 1);
+        setPositionPage(0);
+        setTranslateBook("0%");
+      } else {
+        if (positionPage > 2) {
+          backToIndex(positionPage * 2, -1);
         }
+
+        setPositionPage(2);
       }
+
+      // if (positionPage === dataBook.length - 1) {
+      //   if (widthScreen > 575) {
+      //     setTranslateBook("50%");
+      //   } else {
+      //     setTranslateBook(`calc(47vw - 50%)`);
+      //   }
+      // }
     }
   };
   const functionLanguage = () => {
