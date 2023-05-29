@@ -6,7 +6,9 @@
 .link-nav {
   font-size: 1.1em;
   cursor: pointer;
-  color: #b59a5b;
+}
+.hover-nav-link:hover {
+  color: #c8293b;
 }
 .wooden-button {
   color: #fff;

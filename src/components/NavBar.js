@@ -53,6 +53,15 @@ const NavBar = ({
   const functionLanguage = () => {
     language === "spanish" ? setLanguage("english") : setLanguage("spanish");
   };
+  const initailStateColors = navBarLinks.map((element) => 0);
+
+  const [colors, setColors] = useState(initailStateColors);
+
+  const setColorsFunction = (position) => {
+    const newColors = colors.map((element, i) => (position === i ? 1 : 0));
+
+    setColors(newColors);
+  };
   return (
     <div
       style={{ height: heightNav }}
@@ -61,11 +70,13 @@ const NavBar = ({
       <h1 className="portfolio-name old-letter text-center red  ">
         {widthScreen > 992 ? "Francisco Terán" : "F T"}
       </h1>
-      <div className=" d-block d-lg-flex justify-content-around ms-lg-5 pt-4 pt-lg-0 align-items-center brown ">
-        {navBarLinks.map((element) => (
-          <div className="link-nav text-center  ">
+      <div className=" d-block d-lg-flex justify-content-around ms-lg-5 pt-4 pt-lg-0 align-items-center ">
+        {navBarLinks.map((element, i) => (
+          <div className="link-nav text-center dark-brown">
             <span
+              className={colors[i] === 0 ? "dark-brown hover-nav-link" : "red"}
               onClick={() => {
+                setColorsFunction(i);
                 if (element === "Proyectos" || element === "Proyects") {
                   proyectFunctionBook();
                 }
@@ -98,7 +109,7 @@ const NavBar = ({
         onClick={() => {
           heightNav === "7em" ? setHeightNav("19em") : setHeightNav("7em");
         }}
-        className="responsive-open d-flex d-lg-none"
+        className="responsive-open red d-flex d-lg-none"
         icon={heightNav === "7em" ? faBars : faXmark}
       />
     </div>
