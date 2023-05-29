@@ -27,6 +27,7 @@ const Main = ({
   positionPage,
   setPositionPage,
   navBarLinks,
+  index,
 }) => {
   return (
     <Container fluid className="min-vh-100 page-main-container pb-5 px-0">
@@ -70,6 +71,7 @@ const Main = ({
                 indexPage={indexPage}
                 positionPage={positionPage}
                 setPositionPage={setPositionPage}
+                index={index}
               />
             }
           />

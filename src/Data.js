@@ -68,6 +68,11 @@ const dataBookEnglish = [
     descriptionProyectBackPage: "",
   },
 ];
+
+const indexEnglish = ["Proyects", "About me", "Contact"];
+
+const indexSpanish = ["Proyectos", "Acerca de mí", "Contacto"];
+
 const allProyectsSpanish = [
   { proyect: "Proyecto inmobiliaria" },
   { proyect: "proyecto portafolio de arquitecto" },
@@ -90,4 +95,6 @@ export {
   dataBookEnglish,
   navBarLinksEnglish,
   navBarLinksSpanish,
+  indexEnglish,
+  indexSpanish,
 };

@@ -20,6 +20,7 @@ const BookContainer = ({
   indexPage,
   positionPage,
   setPositionPage,
+  index,
 }) => {
   return (
     <div
@@ -75,18 +76,18 @@ const BookContainer = ({
             <div>
               <ul>
                 {i === 1 &&
-                  allProyects.map((element, index) => (
+                  index.map((element, index) => (
                     <li
-                      onClick={(e) => {
-                        e.stopPropagation();
+                      // onClick={(e) => {
+                      //   e.stopPropagation();
 
-                        functionPageIndex((index + 1) * 2);
+                      //   functionPageIndex((index + 1) * 2);
 
-                        setPositionPage(index + 1);
-                      }}
+                      //   setPositionPage(index + 1);
+                      // }}
                       className="mb-2 proyects"
                     >
-                      {element.proyect}
+                      {element}
                     </li>
                   ))}
                 {element.descriptionProyectFrontPage}
