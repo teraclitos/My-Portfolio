@@ -38,6 +38,7 @@ const Main = ({
         pointerEvent={pointerEvent}
         setPointerEvent={setPointerEvent}
         functionTranslateFrontPage={functionTranslateFrontPage}
+        functionTranslateBackPage={functionTranslateBackPage}
         indexPage={indexPage}
         backToIndex={backToIndex}
         positionPage={positionPage}
