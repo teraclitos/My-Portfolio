@@ -20,20 +20,27 @@ const NavBar = ({
   widthScreen,
   functionPageIndex,
   navBarLinks,
+  openNav,
+  setOpenNav,
 }) => {
   // const [heightNav, setHeightNav] = useState("7em");
-  const [openNav, setOpenNav] = useState(false);
+
   const indexFunctionBook = () => {
     if (positionPage < 2) {
-      setPositionPage(2);
       if (!openNav) {
-        setTimeout(() => {
-          functionPageIndex((1 - positionPage + 1) * 2, positionPage);
-        }, 200);
+        setPositionPage(2);
         if (widthScreen > 575) {
+          functionPageIndex((1 - positionPage + 1) * 2, positionPage);
           setTranslateBook("50%");
         } else {
+          functionPageIndex(4, 0);
           setTranslateBook(`calc(47vw - 50%)`);
+        }
+      } else {
+        if (widthScreen <= 575) {
+          backToIndex(positionPage * 2, 1);
+          setPositionPage(0);
+          setTranslateBook("0%");
         }
       }
     } else {

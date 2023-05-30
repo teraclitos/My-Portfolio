@@ -26,6 +26,7 @@ function App() {
   const [positionPage, setPositionPage] = useState(0);
   const [navBarLinks, setNavBarLinks] = useState(navBarLinksSpanish);
   const [index, setIndex] = useState(indexSpanish);
+   const [openNav, setOpenNav] = useState(false);
   const handleWindowScreen = () => {
     setWidthScreen(window.innerWidth);
   };
@@ -191,6 +192,8 @@ function App() {
         setPositionPage={setPositionPage}
         navBarLinks={navBarLinks}
         index={index}
+        openNav={openNav}
+        setOpenNav={setOpenNav}
       />
     </BrowserRouter>
   );

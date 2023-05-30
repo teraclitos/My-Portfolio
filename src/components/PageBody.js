@@ -23,6 +23,8 @@ const PageBody = ({
   positionPage,
   setPositionPage,
   index,
+  openNav,
+  setOpenNav,
 }) => {
   return (
     <div className="min-vh-100 d-flex justify-content-center align-items-center">
@@ -46,6 +48,8 @@ const PageBody = ({
         positionPage={positionPage}
         setPositionPage={setPositionPage}
         index={index}
+        openNav={openNav}
+        setOpenNav={setOpenNav}
       />
     </div>
   );

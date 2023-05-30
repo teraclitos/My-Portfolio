@@ -21,6 +21,8 @@ const BookContainer = ({
   positionPage,
   setPositionPage,
   index,
+  openNav,
+  setOpenNav,
 }) => {
   return (
     <div
@@ -41,11 +43,12 @@ const BookContainer = ({
             onClick={() => {
               indexPage(i);
 
-              setPositionPage(i);
+              setPositionPage(i + 1);
 
               if (widthScreen > 575) {
                 if (i === 0) {
                   setTranslateBook(`50%`);
+                  setOpenNav(true);
                 }
 
                 if (i === dataBook.length - 1) {
@@ -54,6 +57,7 @@ const BookContainer = ({
               } else {
                 if (i === 0) {
                   setTranslateBook(`calc(47vw - 50%)`);
+                  setOpenNav(true);
                 }
                 if (i === dataBook.length - 1) {
                   setTranslateBook(`calc(72.5vw - 50%)`);
@@ -83,11 +87,11 @@ const BookContainer = ({
 
                         if (index === 0) {
                           functionPageIndex(4, 2);
+                          setPositionPage(4);
                         } else if (index === 1) {
                           functionPageIndex(2, 2);
+                          setPositionPage(3);
                         }
-
-                        setPositionPage(index + 2);
                       }}
                       className="mb-2 proyects"
                     >
@@ -102,7 +106,7 @@ const BookContainer = ({
 
                         functionPageIndex((index + 1) * 2, 4);
 
-                        setPositionPage(index + 1);
+                        setPositionPage(index + 5);
                       }}
                       className="mb-2 proyects"
                     >
@@ -129,6 +133,7 @@ const BookContainer = ({
               } else {
                 if (i === 0) {
                   setTranslateBook(`0px`);
+                  setOpenNav(false);
                 }
                 if (i === dataBook.length - 1) {
                   setTranslateBook(`calc(47vw - 50%)`);
@@ -157,6 +162,7 @@ const BookContainer = ({
                 onClick={(e) => {
                   e.stopPropagation();
                   backToIndex(i * 2, -1);
+                  setPositionPage(2);
                 }}
               >
                 {language === "spanish" ? "Índice" : "Index"}

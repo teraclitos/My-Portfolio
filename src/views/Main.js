@@ -28,6 +28,8 @@ const Main = ({
   setPositionPage,
   navBarLinks,
   index,
+  openNav,
+  setOpenNav
 }) => {
   return (
     <Container fluid className="min-vh-100 page-main-container pb-5 px-0">
@@ -47,6 +49,8 @@ const Main = ({
         widthScreen={widthScreen}
         navBarLinks={navBarLinks}
         functionPageIndex={functionPageIndex}
+        openNav={openNav}
+        setOpenNav={setOpenNav}
       />
 
       <Container className="py-3">
@@ -74,6 +78,8 @@ const Main = ({
                 positionPage={positionPage}
                 setPositionPage={setPositionPage}
                 index={index}
+                openNav={openNav}
+                setOpenNav={setOpenNav}
               />
             }
           />
