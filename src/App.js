@@ -26,7 +26,7 @@ function App() {
   const [positionPage, setPositionPage] = useState(0);
   const [navBarLinks, setNavBarLinks] = useState(navBarLinksSpanish);
   const [index, setIndex] = useState(indexSpanish);
-   const [openNav, setOpenNav] = useState(false);
+  const [openNav, setOpenNav] = useState(false);
   const handleWindowScreen = () => {
     setWidthScreen(window.innerWidth);
   };
@@ -79,7 +79,7 @@ function App() {
             setPointerEvent("all");
           }, 700);
         }
-      }, (i + 1) * 500);
+      }, i * 500);
     });
   };
   const backToIndex = (proyectoId, start) => {
@@ -120,7 +120,7 @@ function App() {
             setPointerEvent("all");
           }, 700);
         }
-      }, (i + 1) * 500);
+      }, i * 500);
     });
   };
 
