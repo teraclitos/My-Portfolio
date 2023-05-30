@@ -26,43 +26,31 @@ const NavBar = ({
   // const [heightNav, setHeightNav] = useState("7em");
 
   const indexFunctionBook = () => {
-    if (positionPage < 2) {
+    if (widthScreen <= 992) {
       if (!openNav) {
+        functionPageIndex(4, 0);
+
         setPositionPage(2);
         if (widthScreen > 575) {
-          functionPageIndex((1 - positionPage + 1) * 2, positionPage);
           setTranslateBook("50%");
         } else {
-          functionPageIndex(4, 0);
           setTranslateBook(`calc(47vw - 50%)`);
         }
       } else {
-        if (widthScreen <= 575) {
-          backToIndex(positionPage * 2, 1);
-          setPositionPage(0);
-          setTranslateBook("0%");
-        }
-      }
-    } else {
-      if (widthScreen <= 575) {
         backToIndex(positionPage * 2, 1);
         setPositionPage(0);
         setTranslateBook("0%");
-      } else {
-        if (positionPage > 2) {
-          backToIndex(positionPage * 2, -1);
-        }
-
-        setPositionPage(2);
       }
-
-      // if (positionPage === dataBook.length - 1) {
-      //   if (widthScreen > 575) {
-      //     setTranslateBook("50%");
-      //   } else {
-      //     setTranslateBook(`calc(47vw - 50%)`);
-      //   }
-      // }
+    } else {
+      if (positionPage < 2) {
+        functionPageIndex((2 - positionPage) * 2, positionPage);
+        if (positionPage === 0) {
+          setTranslateBook("50%");
+        }
+      } else {
+        backToIndex((positionPage - 1) * 2, -1);
+      }
+      setPositionPage(2);
     }
   };
   const functionLanguage = () => {
