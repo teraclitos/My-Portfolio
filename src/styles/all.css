@@ -4,9 +4,26 @@
 @import url("footer.css");
 @import url("mediaqueries.css");
 @import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Plus&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital@1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap");
 
+* {
+  font-family: "Goudy Bookletter 1911", serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Gentium Book Plus", serif;
+}
 .old-letter {
   font-family: "MedievalSharp", cursive;
+  font-family: "Pacifico", cursive;
+}
+.letter-title-book {
+  font-family: "Cinzel", serif;
+  font-family: "Gentium Book Plus", serif;
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 .red {

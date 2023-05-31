@@ -86,8 +86,16 @@ p {
 .img-me {
   width: 6em;
 }
+.img-proyects-container {
+  overflow: hidden;
+}
+
 .img-proyects {
   width: 12em;
+  transition: 0.5s;
+}
+.img-proyects:hover {
+  transform: scale(1.1);
 }
 .wooden-button-cv {
   width: auto;

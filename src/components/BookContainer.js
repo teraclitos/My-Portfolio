@@ -83,7 +83,7 @@ const BookContainer = ({
                   <h5 className="text-center mt-3 sub-title-size">
                     <i>{element.subtitleFront}</i>
                   </h5>
-                  <h2 className="text-center old-letter mt-3 title-size">
+                  <h2 className="text-center letter-title-book mt-3 title-size">
                     {element.titleFront}
                   </h2>
                 </div>
@@ -91,7 +91,7 @@ const BookContainer = ({
 
               {arrayInclude.includes(i) && (
                 <div>
-                  <h2 className="old-letter title-size text-center mb-3">
+                  <h2 className="letter-title-book title-size text-center mb-3">
                     {element.titleFront}
                   </h2>
                   <ul className="list-style-none p-0 d-flex flex-column align-items-center">
@@ -175,7 +175,9 @@ const BookContainer = ({
             <div className="pt-3">
               {i === 2 && (
                 <div className="d-flex flex-column align-items-center ">
-                  <h2 className="title-size old-letter">{element.titleBack}</h2>
+                  <h2 className="title-size letter-title-book">
+                    {element.titleBack}
+                  </h2>
                   <img className="img-me mt-2" src={element.url} alt="me" />
                   <div className="wooden-button wooden-button-cv py-1 px-2 mt-3">
                     CV
@@ -185,10 +187,16 @@ const BookContainer = ({
 
               {i !== 2 && (
                 <div className="d-flex flex-column align-items-center ">
-                  <h2 className="old-letter title-size  text-center">
+                  <h2 className="letter-title-book title-size  text-center">
                     {element.titleBack}
                   </h2>
-                  <img className="mt-2 img-proyects" src={element.url} alt="" />
+                  <div className="img-proyects-container">
+                    <img
+                      className="mt-2 img-proyects"
+                      src={element.url}
+                      alt={element.titleBack}
+                    />
+                  </div>
                   <div>{element.descriptionProyectBackPage}</div>
                 </div>
               )}
