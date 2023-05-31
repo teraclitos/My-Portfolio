@@ -80,7 +80,7 @@ const dataBookEnglish = [
 
   {
     titleFront: "My proyects",
-    titleBack: "Inmobiliaria",
+    titleBack: "Real State",
     descriptionProyectBackPage: "",
     pageFrontNumber: 4,
     pageBackNumber: 5,
@@ -114,13 +114,13 @@ const indexEnglish = ["Proyects", "About me", "Contact"];
 const indexSpanish = ["Proyectos", "Acerca de mí", "Contacto"];
 
 const allProyectsSpanish = [
-  { proyect: "Proyecto inmobiliaria" },
-  { proyect: "proyecto portafolio de arquitecto" },
+  { proyect: "Inmobiliaria" },
+  { proyect: "Portfolio de arquitecto" },
   { proyect: "Proyecto final de Rolling de Code" },
 ];
 const allProyectsEnglish = [
-  { proyect: "Real State Proyect" },
-  { proyect: "Architect portfolio proyect" },
+  { proyect: "Real State" },
+  { proyect: "Architect portfolio" },
   { proyect: "Rolling code final proyect" },
 ];
 
