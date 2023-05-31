@@ -184,8 +184,11 @@ const BookContainer = ({
               )}
 
               {i !== 2 && (
-                <div>
-                  <h2>{element.titleBack}</h2>
+                <div className="d-flex flex-column align-items-center ">
+                  <h2 className="old-letter title-size  text-center">
+                    {element.titleBack}
+                  </h2>
+                  <img className="mt-2 img-proyects" src={element.url} alt="" />
                   <div>{element.descriptionProyectBackPage}</div>
                 </div>
               )}
