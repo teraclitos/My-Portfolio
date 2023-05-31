@@ -15,7 +15,7 @@ p {
   position: relative;
   perspective: 1000px;
   transition: 1s;
-  margin-bottom: 8em;
+  margin-bottom: 8rem;
   cursor: pointer;
 }
 
@@ -82,4 +82,10 @@ p {
   margin-left: 1em;
   margin-bottom: 0.5em;
   cursor: pointer;
+}
+.img-me {
+  width: 6em;
+}
+.wooden-button-cv {
+  width: auto;
 }

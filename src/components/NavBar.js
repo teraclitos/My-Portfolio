@@ -23,8 +23,6 @@ const NavBar = ({
   openNav,
   setOpenNav,
 }) => {
-  // const [heightNav, setHeightNav] = useState("7em");
-
   const indexFunctionBook = () => {
     if (widthScreen <= 992) {
       if (!openNav) {
@@ -49,6 +47,9 @@ const NavBar = ({
         }
       } else {
         backToIndex((positionPage - 1) * 2, -1);
+        if (positionPage === dataBook.length) {
+          setTranslateBook("50%");
+        }
       }
       setPositionPage(2);
     }
@@ -56,41 +57,23 @@ const NavBar = ({
   const functionLanguage = () => {
     language === "spanish" ? setLanguage("english") : setLanguage("spanish");
   };
-  // const initailStateColors = navBarLinks.map((element) => 0);
 
-  // const [colors, setColors] = useState(initailStateColors);
-
-  // const setColorsFunction = (position) => {
-  //   const newColors = colors.map((element, i) => (position === i ? 1 : 0));
-
-  //   setColors(newColors);
-  // };
   return (
-    <div
-      // style={{ height: heightNav }}
-      className=" pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar "
-    >
+    <div className=" pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar ">
       <h1 className="portfolio-name old-letter text-center red  ">
         {widthScreen > 992 ? "Francisco Terán" : "F T"}
       </h1>
       <div className=" d-block d-lg-flex justify-content-around ms-lg-5 pt-4 pt-lg-0 align-items-center ">
-        {/* {navBarLinks.map((element, i) => ( */}
         <div className="link-nav text-center dark-brown">
           <span
             className="hover-nav-link"
-            // className={colors[i] === 0 ? "dark-brown hover-nav-link" : "red"}
             onClick={() => {
-              // setColorsFunction(i);
-              // if (element === "Proyectos" || element === "Proyects") {
               indexFunctionBook();
-              // }
             }}
           >
             {language === "english" ? "Index" : "Índice"}
-            {/* {element} */}
           </span>
         </div>
-        {/* ))} */}
 
         <div
           className="py-3 d-none d-lg-flex ms-lg-5 justify-content-center wooden-button "
@@ -111,10 +94,6 @@ const NavBar = ({
       </div>
 
       <FontAwesomeIcon
-        // onClick={() => {
-        //   heightNav === "7em" ? setHeightNav("19em") : setHeightNav("7em");
-        // }}
-
         onClick={() => {
           !openNav ? setOpenNav(true) : setOpenNav(false);
 

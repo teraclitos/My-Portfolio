@@ -24,6 +24,7 @@ const BookContainer = ({
   openNav,
   setOpenNav,
 }) => {
+  const arrayInclude = [2, 4];
   return (
     <div
       style={{
@@ -76,44 +77,61 @@ const BookContainer = ({
             className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
           >
-            <div>
-              <h2>{element.titleFront}</h2>
-              <ul>
-                {i === 2 &&
-                  index.map((element, index) => (
-                    <li
-                      onClick={(e) => {
-                        e.stopPropagation();
+            <div className="pt-3">
+              {i === 1 && (
+                <div className="book-title-container ">
+                  <h5 className="text-center mt-3 sub-title-size">
+                    <i>{element.subtitleFront}</i>
+                  </h5>
+                  <h2 className="text-center old-letter mt-3 title-size">
+                    {element.titleFront}
+                  </h2>
+                </div>
+              )}
 
-                        if (index === 0) {
-                          functionPageIndex(4, 2);
-                          setPositionPage(4);
-                        } else if (index === 1) {
-                          functionPageIndex(2, 2);
-                          setPositionPage(3);
-                        }
-                      }}
-                      className="mb-2 proyects"
-                    >
-                      {element}
-                    </li>
-                  ))}
-                {i === 4 &&
-                  allProyects.map((element, index) => (
-                    <li
-                      onClick={(e) => {
-                        e.stopPropagation();
+              {arrayInclude.includes(i) && (
+                <div>
+                  <h2 className="old-letter title-size text-center mb-3">
+                    {element.titleFront}
+                  </h2>
+                  <ul className="list-style-none p-0 d-flex flex-column align-items-center">
+                    {i === 2 &&
+                      index.map((element, index) => (
+                        <li
+                          onClick={(e) => {
+                            e.stopPropagation();
 
-                        functionPageIndex((index + 1) * 2, 4);
+                            if (index === 0) {
+                              functionPageIndex(4, 2);
+                              setPositionPage(4);
+                            } else if (index === 1) {
+                              functionPageIndex(2, 2);
+                              setPositionPage(3);
+                            }
+                          }}
+                          className="mb-2 proyects "
+                        >
+                          {element}
+                        </li>
+                      ))}
+                    {i === 4 &&
+                      allProyects.map((element, index) => (
+                        <li
+                          onClick={(e) => {
+                            e.stopPropagation();
 
-                        setPositionPage(index + 5);
-                      }}
-                      className="mb-2 proyects"
-                    >
-                      {element.proyect}
-                    </li>
-                  ))}
-              </ul>
+                            functionPageIndex((index + 1) * 2, 4);
+
+                            setPositionPage(index + 5);
+                          }}
+                          className="mb-2 proyects "
+                        >
+                          {element.proyect}
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+              )}
               {element.descriptionProyectFrontPage}
               <div className="number-page">{element.pageFrontNumber}</div>
             </div>
@@ -148,26 +166,44 @@ const BookContainer = ({
               }, 700);
             }}
             className={
-              i === dataBook.length - 1 ? "face-back portada-back" : "face-back"
+              i === dataBook.length - 1
+                ? "face-back portada-back "
+                : "face-back "
             }
             style={{ pointerEvents: pointerEvent }}
           >
-            <h2>{element.titleBack}</h2>
-            <div>{element.descriptionProyectBackPage}</div>
+            <div className="pt-3">
+              {i === 2 && (
+                <div className="d-flex flex-column align-items-center ">
+                  <h2 className="title-size old-letter">{element.titleBack}</h2>
+                  <img className="img-me mt-2" src={element.url} alt="me" />
+                  <div className="wooden-button wooden-button-cv py-1 px-2 mt-3">
+                    CV
+                  </div>
+                </div>
+              )}
 
-            <div className="number-page">{element.pageBackNumber}</div>
-            {i > 1 && (
-              <div
-                className="back-to-index"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  backToIndex(i * 2, -1);
-                  setPositionPage(2);
-                }}
-              >
-                {language === "spanish" ? "Índice" : "Index"}
-              </div>
-            )}
+              {i !== 2 && (
+                <div>
+                  <h2>{element.titleBack}</h2>
+                  <div>{element.descriptionProyectBackPage}</div>
+                </div>
+              )}
+
+              <div className="number-page">{element.pageBackNumber}</div>
+              {i > 1 && (
+                <div
+                  className="back-to-index"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    backToIndex(i * 2, -1);
+                    setPositionPage(2);
+                  }}
+                >
+                  {language === "spanish" ? "Índice" : "Index"}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       ))}

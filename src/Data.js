@@ -6,43 +6,49 @@ const dataBookSpanish = [
   },
 
   {
-    titleFront: "Portfolio",
-    descriptionProyectBackPage: "Traducido por Francisco Terán",
+    titleFront: "Mi Portfolio ",
+
+    subtitleFront: "Francisco Terán  ",
   },
 
   {
     titleFront: "Índice",
     descriptionProyectFrontPage: "",
     titleBack: "Acerca de mí",
+    url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685544528/porfolio_definitiva_bwojbr.png",
+    pageBackNumber: 1,
   },
   {
     descriptionProyectFrontPage: "Me llamo Francisco",
+    pageFrontNumber: 2,
+    pageBackNumber: 3,
   },
 
   {
     titleFront: "Mis proyectos",
     titleBack: "Inmobiliaria",
     descriptionProyectBackPage: "",
-    pageBackNumber: 1,
+    pageFrontNumber: 4,
+    pageBackNumber: 5,
   },
   {
     descriptionProyectFrontPage: "",
-    pageFrontNumber: 2,
+    pageFrontNumber: 6,
     titleBack: "Portfolio",
     descriptionProyectBackPage: "",
-    pageBackNumber: 3,
+    pageBackNumber: 7,
   },
   {
     descriptionProyectFrontPage: "",
-    pageFrontNumber: 4,
+    pageFrontNumber: 8,
     titleBack: "Rollingcode",
     descriptionProyectBackPage: "",
-    pageBackNumber: 5,
+    pageBackNumber: 9,
   },
 
   {
     descriptionProyectFrontPage: "",
-    pageFrontNumber: 6,
+    pageFrontNumber: 10,
     titleBack: "",
     descriptionProyectBackPage: "",
   },
@@ -54,45 +60,50 @@ const dataBookEnglish = [
     descriptionProyectBackPage: "",
   },
   {
-    titleFront: "Portfolio",
-    descriptionProyectBackPage: "Translated by Francisco Terán",
+    titleFront: "My portfolio",
+    subtitleFront: "Francisco Teran",
   },
 
   {
     titleFront: "Index",
     descriptionProyectFrontPage: "",
     titleBack: "About me",
+    url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685544528/porfolio_definitiva_bwojbr.png",
+    pageBackNumber: 1,
   },
 
   {
     descriptionProyectFrontPage: "My name is Francisco",
+    pageFrontNumber: 2,
+    pageBackNumber: 3,
   },
 
   {
     titleFront: "My proyects",
     titleBack: "Inmobiliaria",
     descriptionProyectBackPage: "",
-    pageBackNumber: 1,
-  },
-
-  {
-    descriptionProyectFrontPage: "",
-    pageFrontNumber: 2,
-    titleBack: "Portfolio",
-    descriptionProyectBackPage: "",
-    pageBackNumber: 3,
-  },
-  {
-    descriptionProyectFrontPage: "",
     pageFrontNumber: 4,
-    titleBack: "Rollingcode",
-    descriptionProyectBackPage: "",
     pageBackNumber: 5,
   },
 
   {
     descriptionProyectFrontPage: "",
     pageFrontNumber: 6,
+    titleBack: "Portfolio",
+    descriptionProyectBackPage: "",
+    pageBackNumber: 7,
+  },
+  {
+    descriptionProyectFrontPage: "",
+    pageFrontNumber: 8,
+    titleBack: "Rollingcode",
+    descriptionProyectBackPage: "",
+    pageBackNumber: 9,
+  },
+
+  {
+    descriptionProyectFrontPage: "",
+    pageFrontNumber: 10,
     titleBack: "",
     descriptionProyectBackPage: "",
   },
@@ -113,9 +124,14 @@ const allProyectsEnglish = [
   { proyect: "Rolling code final proyect" },
 ];
 
-const navBarLinksSpanish = ["Proyectos", "Acerca de mí", "Contacto"];
+const navBarLinksSpanish = [
+  "Proyectos",
+  "Acerca de mí",
+  "Habilidades",
+  "Contacto",
+];
 
-const navBarLinksEnglish = ["Proyects", "About me", "Contact"];
+const navBarLinksEnglish = ["Proyects", "About me", "Skills", "Contact"];
 
 export {
   dataBookSpanish,

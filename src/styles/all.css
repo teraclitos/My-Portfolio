@@ -23,3 +23,14 @@
 .dark-brown {
   color: #816930;
 }
+
+.list-style-none {
+  list-style: none;
+}
+
+.title-size {
+  font-size: 1.7em;
+}
+.sub-title-size {
+  font-size: 1.2em;
+}
