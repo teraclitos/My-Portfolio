@@ -9,6 +9,7 @@ const NavBar = ({
   language,
   setLanguage,
   setTranslateBook,
+  pointerEvent,
   setPointerEvent,
   functionTranslateFrontPage,
   functionTranslateBackPage,
@@ -66,6 +67,7 @@ const NavBar = ({
       <div className=" d-block d-lg-flex justify-content-around ms-lg-5 pt-4 pt-lg-0 align-items-center ">
         <div className="link-nav text-center dark-brown">
           <span
+            style={{ pointerEvents: pointerEvent }}
             className="hover-nav-link letter-title-book"
             onClick={() => {
               indexFunctionBook();
@@ -94,6 +96,7 @@ const NavBar = ({
       </div>
 
       <FontAwesomeIcon
+        style={{ pointerEvents: pointerEvent }}
         onClick={() => {
           !openNav ? setOpenNav(true) : setOpenNav(false);
 

@@ -29,7 +29,7 @@ const Main = ({
   navBarLinks,
   index,
   openNav,
-  setOpenNav
+  setOpenNav,
 }) => {
   return (
     <Container fluid className="min-vh-100 page-main-container pb-5 px-0">

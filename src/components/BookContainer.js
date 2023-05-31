@@ -212,6 +212,7 @@ const BookContainer = ({
               <div className="number-page">{element.pageBackNumber}</div>
               {i > 1 && (
                 <div
+                  style={{ pointerEvents: pointerEvent }}
                   className="back-to-index letter-title-book"
                   onClick={(e) => {
                     e.stopPropagation();
