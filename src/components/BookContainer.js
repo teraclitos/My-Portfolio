@@ -77,7 +77,7 @@ const BookContainer = ({
             className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
           >
-            <div className="pt-3">
+            <div className={i === 3 ? "pt-0" : "pt-3"}>
               {i === 1 && (
                 <div className="book-title-container ">
                   <h5 className="text-center mt-3 sub-title-size">
