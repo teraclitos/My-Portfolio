@@ -19,7 +19,13 @@ const dataBookSpanish = [
     pageBackNumber: 1,
   },
   {
-    descriptionProyectFrontPage: "Me llamo Francisco",
+    descriptionProyectFrontPage: `Soy un asombrado del razonamiento lógico; de
+cómo a partir de principios simples, sólidos y
+evidentes pueden surgir estructuras bellas y
+complejas. El hecho de poder construir estos edificios lógicos "dialogando" con la computadora en un
+inequívoco y a su vez creativo lenguaje es algo
+fascinante que deseo seguir perfeccionando. En mi tiempo libre me gusta leer todo tipo de libros (literatura, filosofìa, ciencia, etc) y hacer
+deportes, en particular tenis`,
     pageFrontNumber: 2,
     pageBackNumber: 3,
   },
@@ -76,7 +82,13 @@ const dataBookEnglish = [
   },
 
   {
-    descriptionProyectFrontPage: "My name is Francisco",
+    descriptionProyectFrontPage: `I am amazed by logical reasoning; of
+how from simple, solid and
+evident principles, can emerge beutiful and 
+complex structures. Being able to build these logical towers by having a "dialogue" with the computer in a
+straightfoward and at the same time creative language is something
+fascinating that I want to improve more and more. In my leisure time I love to read all kinds of books (literature, philosophy, science, etc.) and do
+sports, in particular tennis.`,
     pageFrontNumber: 2,
     pageBackNumber: 3,
   },

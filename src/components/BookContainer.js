@@ -132,7 +132,9 @@ const BookContainer = ({
                   </ul>
                 </div>
               )}
-              {element.descriptionProyectFrontPage}
+              <p className="letter-body-size">
+                {element.descriptionProyectFrontPage}
+              </p>
               <div className="number-page">{element.pageFrontNumber}</div>
             </div>
           </div>
