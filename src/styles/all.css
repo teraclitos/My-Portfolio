@@ -10,6 +10,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital@1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Julee&display=swap");
 
 * {
   font-family: "Goudy Bookletter 1911", serif;
@@ -17,8 +18,10 @@
   font-family: "Gentium Book Plus", serif;
 }
 .old-letter {
+  font-family: "Barlow Semi Condensed", sans-serif;
   font-family: "MedievalSharp", cursive;
   font-family: "Pacifico", cursive;
+  font-family: "Julee", cursive;
 }
 .letter-title-book {
   font-family: "Cinzel", serif;
