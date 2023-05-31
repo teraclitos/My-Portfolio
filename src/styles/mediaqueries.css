@@ -7,7 +7,7 @@
 @media (max-width: 575px) {
   .book-content {
     min-width: 47.5vw;
-    /* font-size: 12px; */
+    font-size: 12px;
   }
   .nav-bar {
     font-size: 12px;
