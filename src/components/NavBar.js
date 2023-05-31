@@ -59,14 +59,14 @@ const NavBar = ({
   };
 
   return (
-    <div className=" pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar ">
+    <div className=" pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar  ">
       <h1 className="portfolio-name old-letter text-center red  ">
         {widthScreen > 992 ? "Francisco Terán" : "F T"}
       </h1>
       <div className=" d-block d-lg-flex justify-content-around ms-lg-5 pt-4 pt-lg-0 align-items-center ">
         <div className="link-nav text-center dark-brown">
           <span
-            className="hover-nav-link"
+            className="hover-nav-link letter-title-book"
             onClick={() => {
               indexFunctionBook();
             }}
@@ -76,7 +76,7 @@ const NavBar = ({
         </div>
 
         <div
-          className="py-3 d-none d-lg-flex ms-lg-5 justify-content-center wooden-button "
+          className="py-3 d-none d-lg-flex ms-lg-5 justify-content-center wooden-button letter-title-book"
           onClick={() => {
             functionLanguage();
           }}

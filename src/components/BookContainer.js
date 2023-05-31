@@ -80,10 +80,10 @@ const BookContainer = ({
             <div className={i === 3 ? "pt-0" : "pt-3"}>
               {i === 1 && (
                 <div className="book-title-container ">
-                  <h5 className="text-center mt-3 sub-title-size">
+                  <h5 className="text-center mt-3 sub-title-size letter-book-title">
                     <i>{element.subtitleFront}</i>
                   </h5>
-                  <h2 className="text-center letter-title-book mt-3 title-size">
+                  <h2 className="text-center old-letter red mt-3 title-size">
                     {element.titleFront}
                   </h2>
                 </div>
@@ -91,9 +91,11 @@ const BookContainer = ({
 
               {arrayInclude.includes(i) && (
                 <div>
-                  <h2 className="letter-title-book title-size text-center mb-3">
-                    {element.titleFront}
-                  </h2>
+                  <b>
+                    <h2 className="letter-title-book title-size text-center mb-3">
+                      {element.titleFront}
+                    </h2>
+                  </b>
                   <ul className="list-style-none p-0 d-flex flex-column align-items-center">
                     {i === 2 &&
                       index.map((element, index) => (
@@ -109,7 +111,7 @@ const BookContainer = ({
                               setPositionPage(3);
                             }
                           }}
-                          className="mb-2 proyects "
+                          className="mb-2 proyects letter-title-book"
                         >
                           {element}
                         </li>
@@ -124,7 +126,7 @@ const BookContainer = ({
 
                             setPositionPage(index + 5);
                           }}
-                          className="mb-2 proyects "
+                          className="mb-2 proyects letter-title-book "
                         >
                           {element.proyect}
                         </li>
@@ -177,9 +179,11 @@ const BookContainer = ({
             <div className="pt-3">
               {i === 2 && (
                 <div className="d-flex flex-column align-items-center ">
-                  <h2 className="title-size letter-title-book">
-                    {element.titleBack}
-                  </h2>
+                  <b>
+                    <h2 className="title-size letter-title-book">
+                      {element.titleBack}
+                    </h2>
+                  </b>
                   <img className="img-me mt-2" src={element.url} alt="me" />
                   <div className="wooden-button wooden-button-cv py-1 px-2 mt-3">
                     CV
@@ -189,9 +193,11 @@ const BookContainer = ({
 
               {i !== 2 && (
                 <div className="d-flex flex-column align-items-center ">
-                  <h2 className="letter-title-book title-size  text-center">
-                    {element.titleBack}
-                  </h2>
+                  <b>
+                    <h2 className="letter-title-book title-size  text-center">
+                      {element.titleBack}
+                    </h2>
+                  </b>
                   <div className="img-proyects-container">
                     <img
                       className="mt-2 img-proyects"
@@ -206,7 +212,7 @@ const BookContainer = ({
               <div className="number-page">{element.pageBackNumber}</div>
               {i > 1 && (
                 <div
-                  className="back-to-index"
+                  className="back-to-index letter-title-book"
                   onClick={(e) => {
                     e.stopPropagation();
                     backToIndex(i * 2, -1);

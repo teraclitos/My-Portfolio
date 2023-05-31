@@ -2,6 +2,7 @@
   transition: 0.7s;
   overflow: hidden;
   height: 7em;
+  
 }
 
 .link-nav {
@@ -50,4 +51,7 @@
 }
 .back-to-index:hover {
   color: #c8293b;
+}
+.portfolio-name {
+  cursor: pointer;
 }
