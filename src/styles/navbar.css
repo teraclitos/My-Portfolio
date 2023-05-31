@@ -2,7 +2,6 @@
   transition: 0.7s;
   overflow: hidden;
   height: 7em;
-  
 }
 
 .link-nav {
@@ -36,7 +35,7 @@
 
 .wooden-button-responsive {
   position: absolute;
-  right: 0.5em;
+  right: 1.8em;
   top: 1.5em;
 }
 .responsive-open {
