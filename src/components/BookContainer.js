@@ -184,8 +184,8 @@ const BookContainer = ({
                       {element.titleBack}
                     </h2>
                   </b>
-                  <img className="img-me mt-2" src={element.url} alt="me" />
-                  <div className="wooden-button wooden-button-cv py-2 px-3 mt-3 letter-title-book">
+                  <img className="img-me mt-3" src={element.url} alt="me" />
+                  <div className="wooden-button wooden-button-cv  mt-2 letter-title-book">
                     CV
                   </div>
                 </div>
