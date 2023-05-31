@@ -96,7 +96,7 @@ const BookContainer = ({
                       {element.titleFront}
                     </h2>
                   </b>
-                  <ul className="list-style-none p-0 d-flex flex-column align-items-center">
+                  <ul className="list-style-none p-0 d-flex flex-column align-items-center ">
                     {i === 2 &&
                       index.map((element, index) => (
                         <li
@@ -126,7 +126,7 @@ const BookContainer = ({
 
                             setPositionPage(index + 5);
                           }}
-                          className="mb-2 proyects letter-title-book "
+                          className="mb-2 proyects  letter-title-book "
                         >
                           {element.proyect}
                         </li>
@@ -185,7 +185,7 @@ const BookContainer = ({
                     </h2>
                   </b>
                   <img className="img-me mt-2" src={element.url} alt="me" />
-                  <div className="wooden-button wooden-button-cv py-1 px-2 mt-3">
+                  <div className="wooden-button wooden-button-cv py-2 px-3 mt-3 letter-title-book">
                     CV
                   </div>
                 </div>
