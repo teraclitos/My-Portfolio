@@ -134,12 +134,12 @@ const indexSpanish = ["Proyectos", "Acerca de mí", "Contacto"];
 const allProyectsSpanish = [
   { proyect: "Inmobiliaria" },
   { proyect: "Portfolio de arquitecto" },
-  { proyect: "Proyecto final de Rolling de Code" },
+  { proyect: "Proyecto final de RollingCode" },
 ];
 const allProyectsEnglish = [
   { proyect: "Real State" },
   { proyect: "Architect portfolio" },
-  { proyect: "Rolling code final proyect" },
+  { proyect: "RollingCode final proyect" },
 ];
 
 const navBarLinksSpanish = [
