@@ -93,6 +93,7 @@ p {
 .img-proyects {
   width: 12em;
   transition: 0.5s;
+  margin-top: 0.8em;
 }
 /* .img-proyects:hover {
   transform: scale(1.1);

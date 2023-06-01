@@ -83,7 +83,7 @@ const NavBar = ({
             functionLanguage();
           }}
         >
-          {language}
+          {language === "english" ? "Español" : "English"}
         </div>
       </div>
       <div

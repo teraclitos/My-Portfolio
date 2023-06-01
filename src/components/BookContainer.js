@@ -219,7 +219,7 @@ const BookContainer = ({
                       href={element.link}
                     >
                       <img
-                        className="mt-3 img-proyects"
+                        className=" img-proyects"
                         src={element.url}
                         alt={element.titleBack}
                       />
