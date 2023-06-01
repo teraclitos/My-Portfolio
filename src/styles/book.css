@@ -94,10 +94,24 @@ p {
   width: 12em;
   transition: 0.5s;
 }
-.img-proyects:hover {
+/* .img-proyects:hover {
   transform: scale(1.1);
-}
+} */
 .wooden-button-cv {
   width: auto;
   padding: 0.3em 0.7em;
+}
+.wooden-button-link {
+  width: auto;
+  padding: 0.5em 0.7em;
+}
+.icon-git-book:hover {
+  transform: none !important;
+}
+.links-book {
+  text-decoration: none;
+  color: white;
+}
+.links-book:hover {
+  color: #e3c27e;
 }

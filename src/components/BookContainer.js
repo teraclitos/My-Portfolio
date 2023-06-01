@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import "../styles/all.css";
 
 const BookContainer = ({
@@ -25,6 +27,13 @@ const BookContainer = ({
   setOpenNav,
 }) => {
   const arrayInclude = [2, 4];
+  const proyectDisplay = (i) => {
+    if (i > 3 && i < dataBook.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   return (
     <div
       style={{
@@ -185,27 +194,69 @@ const BookContainer = ({
                     </h2>
                   </b>
                   <img className="img-me mt-3" src={element.url} alt="me" />
-                  <div className="wooden-button wooden-button-cv  mt-2 letter-title-book">
+                  <div className="wooden-button wooden-button-cv  mt-3 letter-title-book">
                     CV
                   </div>
                 </div>
               )}
 
-              {i !== 2 && (
+              {proyectDisplay(i) && (
                 <div className="d-flex flex-column align-items-center ">
                   <b>
                     <h2 className="letter-title-book title-size  text-center">
                       {element.titleBack}
                     </h2>
                   </b>
-                  <div className="img-proyects-container">
-                    <img
-                      className="mt-2 img-proyects"
-                      src={element.url}
-                      alt={element.titleBack}
-                    />
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                    className="img-proyects-container"
+                  >
+                    <a
+                      className="links-book letter-title-book"
+                      target="blank"
+                      href={element.link}
+                    >
+                      <img
+                        className="mt-3 img-proyects"
+                        src={element.url}
+                        alt={element.titleBack}
+                      />
+                    </a>
                   </div>
-                  <div>{element.descriptionProyectBackPage}</div>
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                    className="d-flex  mt-3"
+                  >
+                    <div className="wooden-button wooden-button-cv me-2">
+                      <a
+                        className="links-book"
+                        target="blank"
+                        href={element.github}
+                      >
+                        <FontAwesomeIcon
+                          className="icon-footer icon-git-book  "
+                          icon={faGithub}
+                        />
+                      </a>
+                    </div>
+
+                    <div className="wooden-button wooden-button-link ">
+                      <a
+                        className="links-book letter-title-book"
+                        target="blank"
+                        href={element.link}
+                      >
+                        Link
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <p>{element.descriptionProyectBackPage}</p>
+                  </div>
                 </div>
               )}
 
