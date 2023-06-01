@@ -34,7 +34,11 @@ deportes, en particular tenis`,
     pageBackNumber: 5,
   },
   {
-    descriptionProyectFrontPage: "",
+    descriptionProyectFrontPage: `Proyecto desarrollado con React.js y Node.js. Es una página inmobiliaria donde el
+    agente inmobiliario muestra las casas que está vendiendo actualmente. La página presenta sólidas validaciones tanto en el
+    back como en el front. Presenta, a su vez, un buscador que realiza la busqueda en el back. Los colores blanco y
+    negro rememoran un elegante traje. EL administrador puede realizar todas las funciones CRUD y además destacar propiedades. La
+    base de datos usada fue Mongo db.`,
     pageFrontNumber: 6,
     titleBack: "Portfolio",
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/portfolio_diego_foto_gae0mw.png",
@@ -43,10 +47,10 @@ deportes, en particular tenis`,
     pageBackNumber: 7,
   },
   {
-    descriptionProyectFrontPage: `Portfolio de arquitecto hecho con javascript y css puros. Fue todo un desafío,
+    descriptionProyectFrontPage: `Portfolio de arquitecto desarrollado con javascript y css puros. Fue todo un desafío,
     ya que fue el primero que realicé. Fue un proyecto bastante artesanal por así decirlo; por ejemplo, en desktop,
     la disposicion espacial de las casas en la página principal no sigue una estructura predeterminada, sino que fueron colocadas
-    una por una mediante postions. Es poco escalable pero le da un toque personalizado. En desktop,
+    una por una mediante positions. Es poco escalable pero le da un toque personalizado. En desktop,
     en el detalle de las casas, se puede hacer un zoom dinámico a las mismas.`,
     pageFrontNumber: 8,
     titleBack: "Rollingcode",
@@ -92,7 +96,7 @@ sports, in particular tennis.`,
 
   {
     titleFront: "My proyects",
-    titleBack: "Real State",
+    titleBack: "Real Estate",
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_inmobiliaria_aqt7fa.png",
     github: "https://github.com/teraclitos/gori-inmobiliaria-front",
     link: "https://gonzalodelavega-ases-com.vercel.app/",
@@ -102,7 +106,8 @@ sports, in particular tennis.`,
   },
 
   {
-    descriptionProyectFrontPage: "",
+    descriptionProyectFrontPage: `Project developed with React.js and Node.js. It is a real estate web-site where the real estate agent shows the houses he is currently selling. The page presents strong validations in the back and in the front. It presents, also, a searcher that searchs in the back. The colors give the web-site an elegant black and white suit style. The administrator can perform all CRUD functions and also highlight properties. The
+Database used was Mongo db.`,
     pageFrontNumber: 6,
     titleBack: "Portfolio",
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/portfolio_diego_foto_gae0mw.png",
@@ -112,7 +117,7 @@ sports, in particular tennis.`,
     pageBackNumber: 7,
   },
   {
-    descriptionProyectFrontPage: `Architect portfolio made with pure javascript and css.
+    descriptionProyectFrontPage: `Architect portfolio developed with pure javascript and css.
     It was a great challenge for me, since
     it was the first one I did. It was a sort of a craft project; for example, on desktop,
     the spatial arrangement of the houses on the main page does not follow a rigid and predetermined structure,
@@ -143,7 +148,7 @@ const allProyectsSpanish = [
   { proyect: "Proyecto final de RollingCode" },
 ];
 const allProyectsEnglish = [
-  { proyect: "Real State" },
+  { proyect: "Real Estate" },
   { proyect: "Architect portfolio" },
   { proyect: "RollingCode final proyect" },
 ];
