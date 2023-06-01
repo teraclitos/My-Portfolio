@@ -62,7 +62,11 @@ deportes, en particular tenis`,
   },
 
   {
-    descriptionProyectFrontPage: "",
+    descriptionProyectFrontPage: `Proyecto final del curso que hice en RollingCode, desarrollado con React.js y Node.js. Es una página de noticias,
+     desarrollada grupalmente, detalle no menor, ya que aprendí
+    a trabajar en equipo, con todo lo que implica: enriquecerse de otros aportes, dar una mano al compañero que lo necesita,
+    ceder en pos de la armonía del trabajo, etc. El administrador puede: CRUD (noticias y usuarios) y destacar noticias. Los usuarios pueden
+    dar me gusta a las noticias, las cuales se almacenan en un carrito.`,
     pageFrontNumber: 10,
     titleBack: "",
   },
@@ -132,7 +136,8 @@ Database used was Mongo db.`,
   },
 
   {
-    descriptionProyectFrontPage: "",
+    descriptionProyectFrontPage: `Final project of the course I did in RollingCode, developed with React.js and Node.js. It's a news web-site developed with my work team, which is not a minor detail, since i learned how to work as part of a team, with all that it entails: getting rich from other contributions, giving a hand to a colleague who needs it, give way in pursuit of the harmony of the team, etc. The administrator can: CRUD (news and users) and highlight news. Users can
+like the news, which are stored in a cart.`,
     pageFrontNumber: 10,
     titleBack: "",
   },
