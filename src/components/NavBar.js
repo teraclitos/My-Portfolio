@@ -92,7 +92,9 @@ const NavBar = ({
           functionLanguage();
         }}
       >
-        {language}
+        {language === "spanish"
+          ? setLanguage("english")
+          : setLanguage("spanish")}
       </div>
 
       <FontAwesomeIcon
