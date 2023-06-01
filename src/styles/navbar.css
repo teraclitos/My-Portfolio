@@ -54,3 +54,6 @@
 .portfolio-name {
   cursor: pointer;
 }
+.text-description {
+  hyphens: auto;
+}

@@ -151,7 +151,7 @@ const BookContainer = ({
                 </div>
               )}
               <div>
-                <p className="letter-body-size">
+                <p className="letter-body-size text-description">
                   {element.descriptionProyectFrontPage}
                 </p>
               </div>
