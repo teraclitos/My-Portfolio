@@ -1,18 +1,3 @@
-@media (max-width: 300px) {
-  .book-content {
-    font-size: 9px !important;
-  }
-}
-
-@media (max-width: 575px) {
-  .book-content {
-    min-width: 47.5vw;
-    font-size: 13px;
-  }
-  .nav-bar {
-    font-size: 12px;
-  }
-}
 @media (min-width: 992px) {
   .link-nav {
     margin-left: 4em;
@@ -28,5 +13,20 @@
   .portfolio-name {
     position: relative;
     top: 1.15em;
+  }
+}
+
+@media (max-width: 575px) {
+  .book-content {
+    min-width: 47.5vw;
+    font-size: 13px;
+  }
+  .nav-bar {
+    font-size: 12px;
+  }
+}
+@media (max-width: 300px) {
+  .book-content {
+    font-size: 9px;
   }
 }
