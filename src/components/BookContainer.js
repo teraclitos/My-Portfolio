@@ -34,6 +34,13 @@ const BookContainer = ({
       return false;
     }
   };
+  const paddingTopDisplay = (i) => {
+    if (i === 3 || i > 4) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   return (
     <div
       style={{
@@ -86,7 +93,7 @@ const BookContainer = ({
             className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
           >
-            <div className={i === 3 ? "pt-0" : "pt-3"}>
+            <div className={paddingTopDisplay(i) ? "pt-0" : "pt-3"}>
               {i === 1 && (
                 <div className="book-title-container ">
                   <h5 className="text-center mt-3 sub-title-size letter-book-title">
@@ -143,9 +150,11 @@ const BookContainer = ({
                   </ul>
                 </div>
               )}
-              <p className="letter-body-size">
-                {element.descriptionProyectFrontPage}
-              </p>
+              <div>
+                <p className="letter-body-size">
+                  {element.descriptionProyectFrontPage}
+                </p>
+              </div>
               <div className="number-page">{element.pageFrontNumber}</div>
             </div>
           </div>
@@ -193,7 +202,14 @@ const BookContainer = ({
                       {element.titleBack}
                     </h2>
                   </b>
-                  <img className="img-me mt-3" src={element.url} alt="me" />
+                  <img
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                    className="img-me mt-3"
+                    src={element.url}
+                    alt="me"
+                  />
                   <div className="wooden-button wooden-button-cv  mt-3 letter-title-book">
                     CV
                   </div>
@@ -253,9 +269,6 @@ const BookContainer = ({
                         Link
                       </a>
                     </div>
-                  </div>
-                  <div>
-                    <p>{element.descriptionProyectBackPage}</p>
                   </div>
                 </div>
               )}

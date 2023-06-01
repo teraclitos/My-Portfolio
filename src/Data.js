@@ -1,19 +1,13 @@
 const dataBookSpanish = [
-  {
-    descriptionProyectFrontPage: "",
-    titleBack: "",
-    descriptionProyectBackPage: "",
-  },
+  {},
 
   {
     titleFront: "Mi Portfolio ",
-
     subtitleFront: "Francisco Terán  ",
   },
 
   {
     titleFront: "Índice",
-    descriptionProyectFrontPage: "",
     titleBack: "Acerca de mí",
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685544528/porfolio_definitiva_bwojbr.png",
     pageBackNumber: 1,
@@ -36,7 +30,6 @@ deportes, en particular tenis`,
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_inmobiliaria_aqt7fa.png",
     github: "https://github.com/teraclitos/gori-inmobiliaria-front",
     link: "https://gonzalodelavega-ases-com.vercel.app/",
-    descriptionProyectBackPage: "",
     pageFrontNumber: 4,
     pageBackNumber: 5,
   },
@@ -47,17 +40,20 @@ deportes, en particular tenis`,
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/portfolio_diego_foto_gae0mw.png",
     github: "https://github.com/teraclitos/Portafolio-Diego-Helguera",
     link: "https://diegohelguera.com/",
-    descriptionProyectBackPage: "",
     pageBackNumber: 7,
   },
   {
-    descriptionProyectFrontPage: "",
+    descriptionProyectFrontPage: `Portfolio de arquitecto hecho con javascript y css puros. Fue todo un desafío,
+    ya que fue el primero que realicé. Fue un proyecto bastante artesanal por así decirlo; por ejemplo, en desktop,
+    la disposicion espacial de las casas en la página principal no sigue una estructura predeterminada, sino que fueron colocadas
+    una por una mediante postions. Es poco escalable pero le da un toque personalizado. En desktop,
+    en el detalle de las casas, se puede hacer un zoom dinámico a las mismas.`,
     pageFrontNumber: 8,
     titleBack: "Rollingcode",
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_rolling_foto_qdnyf5.png",
     github: "https://github.com/teraclitos/proyecto-final-rolling-code-blog",
     link: "https://proyecto-final-rolling-code-blog.vercel.app/",
-    descriptionProyectBackPage: "",
+
     pageBackNumber: 9,
   },
 
@@ -65,15 +61,10 @@ deportes, en particular tenis`,
     descriptionProyectFrontPage: "",
     pageFrontNumber: 10,
     titleBack: "",
-    descriptionProyectBackPage: "",
   },
 ];
 const dataBookEnglish = [
-  {
-    descriptionProyectFrontPage: "",
-    titleBack: "",
-    descriptionProyectBackPage: "",
-  },
+  {},
   {
     titleFront: "My portfolio",
     subtitleFront: "Francisco Teran",
@@ -105,7 +96,7 @@ sports, in particular tennis.`,
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_inmobiliaria_aqt7fa.png",
     github: "https://github.com/teraclitos/gori-inmobiliaria-front",
     link: "https://gonzalodelavega-ases-com.vercel.app/",
-    descriptionProyectBackPage: "",
+
     pageFrontNumber: 4,
     pageBackNumber: 5,
   },
@@ -117,17 +108,21 @@ sports, in particular tennis.`,
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/portfolio_diego_foto_gae0mw.png",
     github: "https://github.com/teraclitos/Portafolio-Diego-Helguera",
     link: "https://diegohelguera.com/",
-    descriptionProyectBackPage: "",
+
     pageBackNumber: 7,
   },
   {
-    descriptionProyectFrontPage: "",
+    descriptionProyectFrontPage: `Architect portfolio made with pure javascript and css.
+    It was a great challenge for me, since
+    it was the first one I did. It was a sort of a craft project; for example, on desktop,
+    the spatial arrangement of the houses on the main page does not follow a rigid and predetermined structure,
+    but rather they were placed one by one through positions. It is not very scalable but it gives it a unique style. On desktop, in the detail of the houses, you can make a dynamic zoom to them.`,
     pageFrontNumber: 8,
     titleBack: "Rollingcode",
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_rolling_foto_qdnyf5.png",
     github: "https://github.com/teraclitos/proyecto-final-rolling-code-blog",
     link: "https://proyecto-final-rolling-code-blog.vercel.app/",
-    descriptionProyectBackPage: "",
+
     pageBackNumber: 9,
   },
 
@@ -135,7 +130,6 @@ sports, in particular tennis.`,
     descriptionProyectFrontPage: "",
     pageFrontNumber: 10,
     titleBack: "",
-    descriptionProyectBackPage: "",
   },
 ];
 
