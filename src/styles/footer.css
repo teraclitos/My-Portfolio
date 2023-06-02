@@ -9,3 +9,9 @@
 .icon-footer-container {
   gap: 2em;
 }
+.icon-footer-link {
+  color: #c8293b;
+}
+.icon-footer-link:hover {
+  color: #c8293b;
+}

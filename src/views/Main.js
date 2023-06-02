@@ -87,7 +87,7 @@ const Main = ({
           <Route path="*" element={<Error404 />} />
         </Routes>
       </Container>
-      <Footer />
+      <Footer language={language} />
     </Container>
   );
 };
