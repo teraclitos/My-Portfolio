@@ -41,6 +41,14 @@ const BookContainer = ({
       return false;
     }
   };
+
+  const indexProyects = (i, min) => {
+    if (i > min && i < dataBook.length - 1) {
+      return true;
+    } else {
+      return false;
+    }
+  };
   return (
     <div
       style={{
@@ -273,20 +281,34 @@ const BookContainer = ({
                 </div>
               )}
 
-              <div className="number-page">{element.pageBackNumber}</div>
-              {i > 1 && (
-                <div
-                  style={{ pointerEvents: pointerEvent }}
-                  className="back-to-index letter-title-book"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    backToIndex(i * 2, -1);
-                    setPositionPage(2);
-                  }}
-                >
-                  {language === "spanish" ? "Índice" : "Index"}
-                </div>
-              )}
+              <div className=" d-flex  container-bottom">
+                {indexProyects(i, 1) && (
+                  <div
+                    style={{ pointerEvents: pointerEvent }}
+                    className="back-to-index letter-title-book"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      backToIndex(i * 2, -1);
+                      setPositionPage(2);
+                    }}
+                  >
+                    {language === "spanish" ? "Índice" : "Index"}
+                  </div>
+                )}
+                {indexProyects(i, 3) && (
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      backToIndex(i * 2, -3);
+                      setPositionPage(4);
+                    }}
+                    className="back-to-proyects  letter-title-book"
+                  >
+                    {language === "spanish" ? "Proyectos" : "Proyects"}
+                  </div>
+                )}
+              </div>
+              <div className="number-page ">{element.pageBackNumber}</div>
             </div>
           </div>
         </div>

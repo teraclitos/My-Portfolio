@@ -83,7 +83,7 @@ function App() {
     });
   };
   const backToIndex = (proyectoId, start) => {
-    const numberOfTranslations = Math.ceil(proyectoId / 2);
+    const numberOfTranslations = Math.ceil(proyectoId / 2 + start);
 
     const arrayTranslation = Array.from(
       { length: numberOfTranslations },
@@ -164,10 +164,6 @@ function App() {
       setIndex(indexEnglish);
     }
   }, [language]);
-
-  useEffect(() => {
-    console.log(positionPage);
-  }, [positionPage]);
 
   return (
     <BrowserRouter>
