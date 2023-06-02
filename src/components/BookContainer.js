@@ -137,7 +137,19 @@ const BookContainer = ({
                           }}
                           className="mb-2 proyects letter-title-book"
                         >
-                          {element}
+                          {index == 2 ? (
+                            <a
+                              onClick={(e) => {
+                                e.stopPropagation();
+                              }}
+                              className="contact-link "
+                              href="mailto:tefans12@gmail.com"
+                            >
+                              {element}
+                            </a>
+                          ) : (
+                            element
+                          )}
                         </li>
                       ))}
                     {i === 4 &&

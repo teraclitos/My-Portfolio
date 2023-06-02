@@ -1,10 +1,3 @@
-p {
-  margin-top: 10px;
-  font-size: 13px;
-  text-align: justify;
-  color: rgb(93, 97, 102);
-}
-
 .book-content {
   display: flex;
   justify-content: center;
@@ -128,4 +121,18 @@ p {
 }
 .links-book:hover {
   color: #e3c27e;
+}
+.contact-link {
+  text-decoration: none;
+  color: rgb(93, 97, 102);
+}
+
+.contact-link:hover {
+  color: #c8293b;
+}
+.text-description {
+  hyphens: auto;
+  color: rgb(93, 97, 102);
+  text-align: justify;
+  font-size: 1em;
 }
