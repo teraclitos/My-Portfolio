@@ -13,7 +13,7 @@ import {
 } from "./Data";
 
 function App() {
-  const [language, setLanguage] = useState("spanish");
+  const [language, setLanguage] = useState("english");
   const [dataBook, setDataBook] = useState(dataBookSpanish);
   const indexInitial = dataBook.map((element, i) => i).reverse();
   const translateInitial = dataBook.map((element) => 0);
