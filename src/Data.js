@@ -89,7 +89,7 @@ const dataBookEnglish = [
   {
     descriptionProyectFrontPage: `I am amazed by logical reasoning; of
 how from simple, solid and
-evident principles, can emerge beutiful and 
+evident principles, can emerge beautiful and 
 complex structures. Being able to build these logical towers by having a "dialogue" with the computer in a
 straightfoward and at the same time creative language is something
 fascinating that I want to improve more and more. In my leisure time I love to read all kinds of books (literature, philosophy, science, etc.) and do
@@ -110,7 +110,7 @@ sports, in particular tennis.`,
   },
 
   {
-    descriptionProyectFrontPage: `Project developed with React.js and Node.js. It is a real estate web-site where the real estate agent shows the houses he is currently selling. The page presents strong validations in the back and in the front. It presents, also, a searcher that searchs in the back. The colors give the web-site an elegant black and white suit style. The administrator can perform all CRUD functions and also highlight properties. The
+    descriptionProyectFrontPage: `Project developed with React.js and Node.js. It is a real estate web-site where the real estate agent showcases the houses he is currently selling. The page implements robust validations on the server-side and client-side. It also includes a back-end search functionality. The color scheme gives the website an elegant black and white appearance. The administrator has full CRUD functionality and he also can highlight properties. The
 Database used was Mongo db.`,
     pageFrontNumber: 6,
     titleBack: "Portfolio",
@@ -123,9 +123,9 @@ Database used was Mongo db.`,
   {
     descriptionProyectFrontPage: `Architect portfolio developed with pure javascript and css.
     It was a great challenge for me, since
-    it was the first one I did. It was a sort of a craft project; for example, on desktop,
-    the spatial arrangement of the houses on the main page does not follow a rigid and predetermined structure,
-    but rather they were placed one by one through positions. It is not very scalable but it gives it a unique style. On desktop, in the detail of the houses, you can make a dynamic zoom to them.`,
+    it was the first one I did. It was a sort of a craft project; for example, on the desktop version,
+    the spatial arrangement of the houses on the main page does not follow a rigid and predetermined structure, instead, each house was individually positioned
+   . It is not very scalable but it showcase a unique style. On the desktop version, you can dynamically zoom in on each picture for a detailed view of the houses.`,
     pageFrontNumber: 8,
     titleBack: "Rollingcode",
     url: "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_rolling_foto_qdnyf5.png",
@@ -136,7 +136,7 @@ Database used was Mongo db.`,
   },
 
   {
-    descriptionProyectFrontPage: `Final project of the course I did in RollingCode, developed with React.js and Node.js. It's a news web-site developed with my work team, which is not a minor detail, since i learned how to work as part of a team, with all that it entails: getting rich from other contributions, giving a hand to a colleague who needs it, give way in pursuit of the harmony of the team, etc. The administrator can: CRUD (news and users) and highlight news. Users can
+    descriptionProyectFrontPage: `Final project of the course I did in RollingCode, developed with React.js and Node.js. It's a news web-site developed with my work team, which is not insignificant, as it taught me how to work effectively as part of a team, with all that it entails: getting rich from other contributions, giving a hand to a colleague who needs it, compromising personal preferences to maintain team harmony, etc. The administrator can: CRUD (news and users) and highlight news. Users can
 like the news, which are stored in a cart.`,
     pageFrontNumber: 10,
     titleBack: "",

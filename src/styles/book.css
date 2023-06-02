@@ -127,7 +127,8 @@
 }
 .contact-link {
   text-decoration: none;
-  color: inherit;
+
+  color: #212529;
 }
 
 .contact-link:hover {
@@ -138,4 +139,5 @@
   color: rgb(93, 97, 102);
   text-align: justify;
   font-size: 1em;
+  margin-top: 0.2em;
 }
