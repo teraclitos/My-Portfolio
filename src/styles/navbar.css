@@ -55,3 +55,6 @@
   cursor: pointer;
 }
 
+.portfolio-name {
+  user-select: none;
+}

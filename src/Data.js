@@ -75,7 +75,7 @@ const dataBookEnglish = [
   {},
   {
     titleFront: "My portfolio",
-    subtitleFront: "Francisco Teran",
+    subtitleFront: "Francisco Terán",
   },
 
   {
