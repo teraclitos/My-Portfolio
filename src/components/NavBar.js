@@ -89,8 +89,9 @@ const NavBar = ({
   }, [move]);
   return (
     <div className=" pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar  ">
-      <h1 className="portfolio-name old-letter text-center red  ">
+      <h1>
         <span
+          className="portfolio-name old-letter text-center red "
           onClick={() => {
             activateNewLoad();
           }}
