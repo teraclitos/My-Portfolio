@@ -25,7 +25,20 @@ const NavBar = ({
   setOpenNav,
   move,
   setMove,
+  setLoader,
+  setOpacityLoader,
+  setDisplayLoader,
+  setBodyLoader,
+  newLoad,
+  setNewLoad,
 }) => {
+  const activateNewLoad = () => {
+    setOpacityLoader("100%");
+    setDisplayLoader("flex");
+    setBodyLoader("none");
+    setLoader(true);
+    setNewLoad(newLoad + 1);
+  };
   const [moveResponsive, setMoveResponsive] = useState(false);
   const indexFunctionBook = () => {
     if (widthScreen <= 992) {
@@ -76,7 +89,12 @@ const NavBar = ({
   }, [move]);
   return (
     <div className=" pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar  ">
-      <h1 className="portfolio-name old-letter text-center red  ">
+      <h1
+        onClick={() => {
+          activateNewLoad();
+        }}
+        className="portfolio-name old-letter text-center red  "
+      >
         {widthScreen > 992 ? "Francisco Terán" : "F T"}
       </h1>
       <div className=" d-block d-lg-flex justify-content-around ms-lg-5 pt-4 pt-lg-0 align-items-center ">

@@ -29,6 +29,7 @@ function App() {
   const [openNav, setOpenNav] = useState(false);
   const [move, setMove] = useState(false);
   const [loader, setLoader] = useState(true);
+  const [newLoad, setNewLoad] = useState(0);
   const [opacityLoader, setOpacityLoader] = useState("100%");
   const [displayLoader, setDisplayLoader] = useState("flex");
   const [bodyLoader, setBodyLoader] = useState("none");
@@ -177,7 +178,7 @@ function App() {
       setLoader(false);
       setBodyLoader("block");
     }, 2000);
-  }, []);
+  }, [newLoad]);
 
   return (
     <BrowserRouter>
@@ -213,6 +214,9 @@ function App() {
         displayLoader={displayLoader}
         setDisplayLoader={setDisplayLoader}
         bodyLoader={bodyLoader}
+        setBodyLoader={setBodyLoader}
+        newLoad={newLoad}
+        setNewLoad={setNewLoad}
       />
     </BrowserRouter>
   );
