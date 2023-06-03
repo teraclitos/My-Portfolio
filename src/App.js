@@ -27,6 +27,7 @@ function App() {
   const [navBarLinks, setNavBarLinks] = useState(navBarLinksSpanish);
   const [index, setIndex] = useState(indexSpanish);
   const [openNav, setOpenNav] = useState(false);
+  const [move, setMove] = useState(false);
   const handleWindowScreen = () => {
     setWidthScreen(window.innerWidth);
   };
@@ -116,8 +117,10 @@ function App() {
         }, 200);
 
         if (i === arrayTranslation.length - 1) {
+          setMove(true);
           setTimeout(() => {
             setPointerEvent("all");
+            setMove(false);
           }, 700);
         }
       }, i * 500);
@@ -164,6 +167,9 @@ function App() {
       setIndex(indexEnglish);
     }
   }, [language]);
+  useEffect(() => {
+    console.log(move);
+  }, [move]);
 
   return (
     <BrowserRouter>
@@ -190,6 +196,8 @@ function App() {
         index={index}
         openNav={openNav}
         setOpenNav={setOpenNav}
+        move={move}
+        setMove={setMove}
       />
     </BrowserRouter>
   );

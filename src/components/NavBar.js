@@ -23,7 +23,10 @@ const NavBar = ({
   navBarLinks,
   openNav,
   setOpenNav,
+  move,
+  setMove,
 }) => {
+  const [moveResponsive, setMoveResponsive] = useState(false);
   const indexFunctionBook = () => {
     if (widthScreen <= 992) {
       if (!openNav) {
@@ -37,8 +40,15 @@ const NavBar = ({
         }
       } else {
         backToIndex(positionPage * 2, 1);
+
+        if (dataBook.length !== positionPage) {
+          setMoveResponsive(true);
+        } else {
+          setTranslateBook(`calc(47vw - 50%)`);
+          setMoveResponsive(true);
+        }
+
         setPositionPage(0);
-        setTranslateBook("0%");
       }
     } else {
       if (positionPage < 2) {
@@ -58,7 +68,12 @@ const NavBar = ({
   const functionLanguage = () => {
     language === "spanish" ? setLanguage("english") : setLanguage("spanish");
   };
-
+  useEffect(() => {
+    if ((move, moveResponsive)) {
+      setTranslateBook("0%");
+      setMoveResponsive(false);
+    }
+  }, [move]);
   return (
     <div className=" pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar  ">
       <h1 className="portfolio-name old-letter text-center red  ">
