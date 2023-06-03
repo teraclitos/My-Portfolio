@@ -89,13 +89,14 @@ const NavBar = ({
   }, [move]);
   return (
     <div className=" pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar  ">
-      <h1
-        onClick={() => {
-          activateNewLoad();
-        }}
-        className="portfolio-name old-letter text-center red  "
-      >
-        {widthScreen > 992 ? "Francisco Terán" : "F T"}
+      <h1 className="portfolio-name old-letter text-center red  ">
+        <span
+          onClick={() => {
+            activateNewLoad();
+          }}
+        >
+          {widthScreen > 992 ? "Francisco Terán" : "F T"}
+        </span>
       </h1>
       <div className=" d-block d-lg-flex justify-content-around ms-lg-5 pt-4 pt-lg-0 align-items-center ">
         <div className="link-nav text-center dark-brown">
