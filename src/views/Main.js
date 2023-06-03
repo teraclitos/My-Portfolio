@@ -35,6 +35,11 @@ const Main = ({
   setMove,
   loader,
   setLoader,
+  opacityLoader,
+  setOpacityLoader,
+  displayLoader,
+  setDisplayLoader,
+  bodyLoader,
 }) => {
   return (
     <Container fluid className="min-vh-100 page-main-container pb-5 px-0">
@@ -60,9 +65,16 @@ const Main = ({
         setMove={setMove}
       />
 
-      <Loader loader={loader} setLoader={setLoader} />
+      <Loader
+        loader={loader}
+        setLoader={setLoader}
+        opacityLoader={opacityLoader}
+        setOpacityLoader={setOpacityLoader}
+        displayLoader={displayLoader}
+        setDisplayLoader={setDisplayLoader}
+      />
 
-      <Container className="py-3">
+      <Container style={{ display: bodyLoader }} className="py-3">
         <Routes>
           <Route
             path="/"

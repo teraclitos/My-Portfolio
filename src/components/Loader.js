@@ -2,10 +2,14 @@ import React from "react";
 import "../styles/all.css";
 import { useState, useEffect } from "react";
 
-const Loader = ({ loader, setLoader }) => {
-  const [opacityLoader, setOpacityLoader] = useState("100%");
-  const [displayLoader, setDisplayLoader] = useState("flex");
-
+const Loader = ({
+  loader,
+  setLoader,
+  opacityLoader,
+  setOpacityLoader,
+  displayLoader,
+  setDisplayLoader,
+}) => {
   useEffect(() => {
     if (loader === false) {
       setOpacityLoader("0%");

@@ -29,6 +29,9 @@ function App() {
   const [openNav, setOpenNav] = useState(false);
   const [move, setMove] = useState(false);
   const [loader, setLoader] = useState(true);
+  const [opacityLoader, setOpacityLoader] = useState("100%");
+  const [displayLoader, setDisplayLoader] = useState("flex");
+  const [bodyLoader, setBodyLoader] = useState("none");
 
   const handleWindowScreen = () => {
     setWidthScreen(window.innerWidth);
@@ -172,6 +175,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
+      setBodyLoader("block");
     }, 2000);
   }, []);
 
@@ -204,6 +208,11 @@ function App() {
         setMove={setMove}
         loader={loader}
         setLoader={setLoader}
+        opacityLoader={opacityLoader}
+        setOpacityLoader={setOpacityLoader}
+        displayLoader={displayLoader}
+        setDisplayLoader={setDisplayLoader}
+        bodyLoader={bodyLoader}
       />
     </BrowserRouter>
   );
