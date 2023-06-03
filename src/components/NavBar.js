@@ -24,24 +24,7 @@ const NavBar = ({
   openNav,
   setOpenNav,
   move,
-  setMove,
-  setLoader,
-  setOpacityLoader,
-  setDisplayLoader,
-  setBodyLoader,
-  newLoad,
-  setNewLoad,
-  setIndexes,
-  indexInitial,
 }) => {
-  const activateNewLoad = () => {
-    setOpacityLoader("100%");
-    setDisplayLoader("flex");
-    setBodyLoader("none");
-    setIndexes = { indexInitial };
-    setLoader(true);
-    setNewLoad(newLoad + 1);
-  };
   const [moveResponsive, setMoveResponsive] = useState(false);
   const indexFunctionBook = () => {
     if (widthScreen <= 992) {
