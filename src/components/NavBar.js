@@ -31,11 +31,14 @@ const NavBar = ({
   setBodyLoader,
   newLoad,
   setNewLoad,
+  setIndexes,
+  indexInitial,
 }) => {
   const activateNewLoad = () => {
     setOpacityLoader("100%");
     setDisplayLoader("flex");
     setBodyLoader("none");
+    setIndexes = { indexInitial };
     setLoader(true);
     setNewLoad(newLoad + 1);
   };
@@ -93,7 +96,7 @@ const NavBar = ({
         <span
           className="old-letter red"
           onClick={() => {
-            activateNewLoad();
+            window.location.reload();
           }}
         >
           {widthScreen > 992 ? "Francisco Terán" : "F T"}

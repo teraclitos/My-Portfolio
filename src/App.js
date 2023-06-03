@@ -202,6 +202,7 @@ function App() {
         widthScreen={widthScreen}
         allProyects={allProyects}
         indexes={indexes}
+        setIndexes={setIndexes}
         pointerEvent={pointerEvent}
         setPointerEvent={setPointerEvent}
         translate={translate}
@@ -228,6 +229,7 @@ function App() {
         setBodyLoader={setBodyLoader}
         newLoad={newLoad}
         setNewLoad={setNewLoad}
+        indexInitial={indexInitial}
       />
     </BrowserRouter>
   );

@@ -43,6 +43,8 @@ const Main = ({
   setBodyLoader,
   newLoad,
   setNewLoad,
+  setIndexes,
+  indexInitial,
 }) => {
   return (
     <Container fluid className="min-vh-100 page-main-container pb-5 px-0">
@@ -72,6 +74,8 @@ const Main = ({
         setOpacityLoader={setOpacityLoader}
         setDisplayLoader={setDisplayLoader}
         setBodyLoader={setBodyLoader}
+        setIndexes={setIndexes}
+        indexInitial={indexInitial}
       />
 
       <Loader
