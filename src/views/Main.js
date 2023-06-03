@@ -6,6 +6,7 @@ import NavBar from "../components/NavBar";
 import PageBody from "../components/PageBody";
 import Footer from "../components/Footer";
 import Error404 from "../components/Error404";
+import Loader from "../components/Loader";
 
 const Main = ({
   language,
@@ -31,7 +32,9 @@ const Main = ({
   openNav,
   setOpenNav,
   move,
-  setMove
+  setMove,
+  loader,
+  setLoader,
 }) => {
   return (
     <Container fluid className="min-vh-100 page-main-container pb-5 px-0">
@@ -56,6 +59,8 @@ const Main = ({
         move={move}
         setMove={setMove}
       />
+
+      <Loader loader={loader} setLoader={setLoader} />
 
       <Container className="py-3">
         <Routes>

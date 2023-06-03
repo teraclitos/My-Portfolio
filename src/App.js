@@ -28,6 +28,8 @@ function App() {
   const [index, setIndex] = useState(indexSpanish);
   const [openNav, setOpenNav] = useState(false);
   const [move, setMove] = useState(false);
+  const [loader, setLoader] = useState(true);
+
   const handleWindowScreen = () => {
     setWidthScreen(window.innerWidth);
   };
@@ -168,8 +170,10 @@ function App() {
     }
   }, [language]);
   useEffect(() => {
-    console.log(move);
-  }, [move]);
+    setTimeout(() => {
+      setLoader(false);
+    }, 2000);
+  }, []);
 
   return (
     <BrowserRouter>
@@ -198,6 +202,8 @@ function App() {
         setOpenNav={setOpenNav}
         move={move}
         setMove={setMove}
+        loader={loader}
+        setLoader={setLoader}
       />
     </BrowserRouter>
   );
