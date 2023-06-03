@@ -15,7 +15,15 @@ import {
 function App() {
   const [language, setLanguage] = useState("english");
   const [dataBook, setDataBook] = useState(dataBookSpanish);
-  const indexInitial = dataBook.map((element, i) => i).reverse();
+  const indexInitial = dataBook
+    .map((element, i) => {
+      if (i >= dataBook.length - 2) {
+        return i;
+      } else {
+        return dataBook.length - 3;
+      }
+    })
+    .reverse();
   const translateInitial = dataBook.map((element) => 0);
   const [indexes, setIndexes] = useState(indexInitial);
   const [translateBook, setTranslateBook] = useState(0);
@@ -179,6 +187,9 @@ function App() {
       setBodyLoader("block");
     }, 2000);
   }, [newLoad]);
+  useEffect(() => {
+    console.log(indexes);
+  }, [indexes]);
 
   return (
     <BrowserRouter>
