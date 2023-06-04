@@ -38,9 +38,9 @@ const BookContainer = ({
 
     const swipeDistance = touchEndX - touchStartX;
 
-    if (swipeDistance > 10) {
+    if (swipeDistance > 30) {
       onePageLeft(i);
-    } else if (swipeDistance < 10) {
+    } else if (swipeDistance < 30) {
       onePageRight(i);
     }
   };
