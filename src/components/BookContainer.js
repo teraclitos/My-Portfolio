@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import { isMobile } from "react-device-detect";
+
 import "../styles/all.css";
 
 const BookContainer = ({
@@ -38,9 +38,9 @@ const BookContainer = ({
 
     const swipeDistance = touchEndX - touchStartX;
 
-    if (swipeDistance > 0) {
+    if (swipeDistance > 10) {
       onePageLeft(i);
-    } else if (swipeDistance < 0) {
+    } else if (swipeDistance < 10) {
       onePageRight(i);
     }
   };
@@ -105,6 +105,7 @@ const BookContainer = ({
       setPointerEvent("all");
     }, 700);
   };
+
   const arrayInclude = [2, 4];
   const proyectDisplay = (i) => {
     if (i > 3 && i < dataBook.length - 1) {
@@ -151,9 +152,7 @@ const BookContainer = ({
               handleTouchEnd(e, i);
             }}
             onClick={(e) => {
-              if (!isMobile) {
-                onePageRight(i);
-              }
+              onePageRight(i);
             }}
             className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
@@ -248,9 +247,7 @@ const BookContainer = ({
               handleTouchEnd(e, i);
             }}
             onClick={(e) => {
-              if (!isMobile) {
-                onePageLeft(i);
-              }
+              onePageLeft(i);
             }}
             className={
               i === dataBook.length - 1
