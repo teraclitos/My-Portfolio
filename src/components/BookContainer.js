@@ -143,14 +143,14 @@ const BookContainer = ({
           className="book"
         >
           <div
-            onClick={() => {
-              onePageRight(i);
-            }}
             onTouchStart={(e) => {
               handleTouchStart(e);
             }}
             onTouchEnd={(e) => {
               handleTouchEnd(e, i);
+            }}
+            onClick={(e) => {
+              onePageRight(i);
             }}
             className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
@@ -178,9 +178,10 @@ const BookContainer = ({
                     {i === 2 &&
                       index.map((element, index) => (
                         <li
-                          onClick={(e) => {
+                          onTouchEnd={(e) => {
                             e.stopPropagation();
-
+                          }}
+                          onClick={(e) => {
                             if (index === 0) {
                               functionPageIndex(4, 2);
                               setPositionPage(4);
@@ -196,6 +197,9 @@ const BookContainer = ({
                               onClick={(e) => {
                                 e.stopPropagation();
                               }}
+                              onTouchEnd={(e) => {
+                                e.stopPropagation();
+                              }}
                               className="contact-link "
                               href="mailto:tefans12@gmail.com"
                             >
@@ -209,9 +213,10 @@ const BookContainer = ({
                     {i === 4 &&
                       allProyects.map((element, index) => (
                         <li
-                          onClick={(e) => {
+                          onTouchEnd={(e) => {
                             e.stopPropagation();
-
+                          }}
+                          onClick={(e) => {
                             functionPageIndex((index + 1) * 2, 4);
 
                             setPositionPage(index + 5);
@@ -233,14 +238,14 @@ const BookContainer = ({
             </div>
           </div>
           <div
-            onClick={() => {
-              onePageLeft(i);
-            }}
             onTouchStart={(e) => {
               handleTouchStart(e);
             }}
             onTouchEnd={(e) => {
               handleTouchEnd(e, i);
+            }}
+            onClick={(e) => {
+              onePageLeft(i);
             }}
             className={
               i === dataBook.length - 1
@@ -278,12 +283,7 @@ const BookContainer = ({
                       {element.titleBack}
                     </h2>
                   </b>
-                  <div
-                    onClick={(e) => {
-                      e.stopPropagation();
-                    }}
-                    className="img-proyects-container"
-                  >
+                  <div onClick={(e) => {}} className="img-proyects-container">
                     <a
                       className="links-book letter-title-book"
                       target="blank"
@@ -296,12 +296,7 @@ const BookContainer = ({
                       />
                     </a>
                   </div>
-                  <div
-                    onClick={(e) => {
-                      e.stopPropagation();
-                    }}
-                    className="d-flex  mt-3"
-                  >
+                  <div onClick={(e) => {}} className="d-flex  mt-3">
                     <div className="wooden-button wooden-button-cv me-2">
                       <a
                         className="links-book"
@@ -334,9 +329,11 @@ const BookContainer = ({
                     style={{ pointerEvents: pointerEvent }}
                     className="back-to-index letter-title-book"
                     onClick={(e) => {
-                      e.stopPropagation();
                       backToIndex(i * 2, -1);
                       setPositionPage(2);
+                    }}
+                    onTouchEnd={(e) => {
+                      e.stopPropagation();
                     }}
                   >
                     {language === "spanish" ? "Índice" : "Index"}
@@ -344,8 +341,10 @@ const BookContainer = ({
                 )}
                 {indexProyects(i, 3) && (
                   <div
-                    onClick={(e) => {
+                    onTouchEnd={(e) => {
                       e.stopPropagation();
+                    }}
+                    onClick={(e) => {
                       backToIndex(i * 2, -3);
                       setPositionPage(4);
                     }}

@@ -187,9 +187,6 @@ function App() {
       setBodyLoader("block");
     }, 2000);
   }, [newLoad]);
-  useEffect(() => {
-    console.log(indexes);
-  }, [indexes]);
 
   return (
     <BrowserRouter>
