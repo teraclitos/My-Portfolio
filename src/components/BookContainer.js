@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import "../styles/all.css";
+import { isMobile } from "react-device-detect";
 
 const BookContainer = ({
   language,
@@ -27,23 +28,6 @@ const BookContainer = ({
   openNav,
   setOpenNav,
 }) => {
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
-  const handleTouchStart = (event) => {
-    setTouchStartX(event.touches[0].clientX);
-  };
-
-  const handleTouchEnd = (event, i) => {
-    setTouchEndX(event.changedTouches[0].clientX);
-
-    const swipeDistance = touchEndX - touchStartX;
-
-    if (swipeDistance > 30) {
-      onePageLeft(i);
-    } else if (swipeDistance < 30) {
-      onePageRight(i);
-    }
-  };
   const onePageRight = (i) => {
     indexPage(i);
 
@@ -146,13 +130,12 @@ const BookContainer = ({
         >
           <div
             onTouchStart={(e) => {
-              handleTouchStart(e);
-            }}
-            onTouchEnd={(e) => {
-              handleTouchEnd(e, i);
+              onePageRight(i);
             }}
             onClick={(e) => {
-              onePageRight(i);
+              if (!isMobile) {
+                onePageRight(i);
+              }
             }}
             className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
@@ -180,7 +163,7 @@ const BookContainer = ({
                     {i === 2 &&
                       index.map((element, index) => (
                         <li
-                          onTouchEnd={(e) => {
+                          onTouchStart={(e) => {
                             e.stopPropagation();
                           }}
                           onClick={(e) => {
@@ -199,7 +182,7 @@ const BookContainer = ({
                               onClick={(e) => {
                                 e.stopPropagation();
                               }}
-                              onTouchEnd={(e) => {
+                              onTouchStart={(e) => {
                                 e.stopPropagation();
                               }}
                               className="contact-link "
@@ -215,7 +198,7 @@ const BookContainer = ({
                     {i === 4 &&
                       allProyects.map((element, index) => (
                         <li
-                          onTouchEnd={(e) => {
+                          onTouchStart={(e) => {
                             e.stopPropagation();
                           }}
                           onClick={(e) => {
@@ -241,13 +224,12 @@ const BookContainer = ({
           </div>
           <div
             onTouchStart={(e) => {
-              handleTouchStart(e);
-            }}
-            onTouchEnd={(e) => {
-              handleTouchEnd(e, i);
+              onePageLeft(i);
             }}
             onClick={(e) => {
-              onePageLeft(i);
+              if (!isMobile) {
+                onePageLeft(i);
+              }
             }}
             className={
               i === dataBook.length - 1
@@ -269,7 +251,7 @@ const BookContainer = ({
                     onClick={(e) => {
                       e.stopPropagation();
                     }}
-                    onTouchEnd={(e) => {
+                    onTouchStart={(e) => {
                       e.stopPropagation();
                     }}
                     className="wooden-button wooden-button-cv  mt-3 letter-title-book"
@@ -296,7 +278,7 @@ const BookContainer = ({
                         onClick={(e) => {
                           e.stopPropagation();
                         }}
-                        onTouchEnd={(e) => {
+                        onTouchStart={(e) => {
                           e.stopPropagation();
                         }}
                         className=" img-proyects"
@@ -309,7 +291,7 @@ const BookContainer = ({
                     onClick={(e) => {
                       e.stopPropagation();
                     }}
-                    onTouchEnd={(e) => {
+                    onTouchStart={(e) => {
                       e.stopPropagation();
                     }}
                     className="d-flex  mt-3"
@@ -346,10 +328,11 @@ const BookContainer = ({
                     style={{ pointerEvents: pointerEvent }}
                     className="back-to-index letter-title-book"
                     onClick={(e) => {
+                      e.stopPropagation();
                       backToIndex(i * 2, -1);
                       setPositionPage(2);
                     }}
-                    onTouchEnd={(e) => {
+                    onTouchStart={(e) => {
                       e.stopPropagation();
                     }}
                   >
@@ -358,10 +341,11 @@ const BookContainer = ({
                 )}
                 {indexProyects(i, 3) && (
                   <div
-                    onTouchEnd={(e) => {
+                    onTouchStart={(e) => {
                       e.stopPropagation();
                     }}
                     onClick={(e) => {
+                      e.stopPropagation();
                       backToIndex(i * 2, -3);
                       setPositionPage(4);
                     }}
