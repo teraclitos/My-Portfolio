@@ -26,6 +26,84 @@ const BookContainer = ({
   openNav,
   setOpenNav,
 }) => {
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+  const handleTouchStart = (event) => {
+    setTouchStartX(event.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (event, i) => {
+    setTouchEndX(event.changedTouches[0].clientX);
+
+    const swipeDistance = touchEndX - touchStartX;
+
+    if (swipeDistance > 0) {
+      onePageLeft(i);
+    } else if (swipeDistance < 0) {
+      onePageRight(i);
+    }
+  };
+  const onePageRight = (i) => {
+    indexPage(i);
+
+    setPositionPage(i + 1);
+
+    if (widthScreen > 575) {
+      if (i === 0) {
+        setTranslateBook(`50%`);
+        setOpenNav(true);
+      }
+
+      if (i === dataBook.length - 1) {
+        setTranslateBook(`100%`);
+      }
+    } else {
+      if (i === 0) {
+        setTranslateBook(`calc(47vw - 50%)`);
+        setOpenNav(true);
+      }
+      if (i === dataBook.length - 1) {
+        setTranslateBook(`calc(72.5vw - 50%)`);
+      }
+    }
+
+    setPointerEvent("none");
+    setTimeout(() => {
+      functionTranslateFrontPage(i);
+    }, 200);
+
+    setTimeout(() => {
+      setPointerEvent("all");
+    }, 700);
+  };
+  const onePageLeft = (i) => {
+    indexPage(i);
+    setPositionPage(i);
+
+    if (widthScreen > 575) {
+      if (i === 0) {
+        setTranslateBook(`0%`);
+      }
+      if (i === dataBook.length - 1) {
+        setTranslateBook(`50%`);
+      }
+    } else {
+      if (i === 0) {
+        setTranslateBook(`0px`);
+        setOpenNav(false);
+      }
+      if (i === dataBook.length - 1) {
+        setTranslateBook(`calc(47vw - 50%)`);
+      }
+    }
+    setPointerEvent("none");
+    setTimeout(() => {
+      functionTranslateBackPage(i);
+    }, 200);
+    setTimeout(() => {
+      setPointerEvent("all");
+    }, 700);
+  };
   const arrayInclude = [2, 4];
   const proyectDisplay = (i) => {
     if (i > 3 && i < dataBook.length - 1) {
@@ -66,37 +144,13 @@ const BookContainer = ({
         >
           <div
             onClick={() => {
-              indexPage(i);
-
-              setPositionPage(i + 1);
-
-              if (widthScreen > 575) {
-                if (i === 0) {
-                  setTranslateBook(`50%`);
-                  setOpenNav(true);
-                }
-
-                if (i === dataBook.length - 1) {
-                  setTranslateBook(`100%`);
-                }
-              } else {
-                if (i === 0) {
-                  setTranslateBook(`calc(47vw - 50%)`);
-                  setOpenNav(true);
-                }
-                if (i === dataBook.length - 1) {
-                  setTranslateBook(`calc(72.5vw - 50%)`);
-                }
-              }
-
-              setPointerEvent("none");
-              setTimeout(() => {
-                functionTranslateFrontPage(i);
-              }, 200);
-
-              setTimeout(() => {
-                setPointerEvent("all");
-              }, 700);
+              onePageRight(i);
+            }}
+            onTouchStart={(e) => {
+              handleTouchStart(e);
+            }}
+            onTouchEnd={(e) => {
+              handleTouchEnd(e, i);
             }}
             className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
@@ -180,32 +234,13 @@ const BookContainer = ({
           </div>
           <div
             onClick={() => {
-              indexPage(i);
-              setPositionPage(i);
-
-              if (widthScreen > 575) {
-                if (i === 0) {
-                  setTranslateBook(`0%`);
-                }
-                if (i === dataBook.length - 1) {
-                  setTranslateBook(`50%`);
-                }
-              } else {
-                if (i === 0) {
-                  setTranslateBook(`0px`);
-                  setOpenNav(false);
-                }
-                if (i === dataBook.length - 1) {
-                  setTranslateBook(`calc(47vw - 50%)`);
-                }
-              }
-              setPointerEvent("none");
-              setTimeout(() => {
-                functionTranslateBackPage(i);
-              }, 200);
-              setTimeout(() => {
-                setPointerEvent("all");
-              }, 700);
+              onePageLeft(i);
+            }}
+            onTouchStart={(e) => {
+              handleTouchStart(e);
+            }}
+            onTouchEnd={(e) => {
+              handleTouchEnd(e, i);
             }}
             className={
               i === dataBook.length - 1
