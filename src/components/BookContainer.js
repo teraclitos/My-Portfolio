@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { isMobile } from "react-device-detect";
 import "../styles/all.css";
 
 const BookContainer = ({
@@ -150,7 +151,9 @@ const BookContainer = ({
               handleTouchEnd(e, i);
             }}
             onClick={(e) => {
-              onePageRight(i);
+              if (!isMobile) {
+                onePageRight(i);
+              }
             }}
             className={i === 0 ? "face-front portada" : "face-front"}
             style={{ pointerEvents: pointerEvent }}
@@ -245,7 +248,9 @@ const BookContainer = ({
               handleTouchEnd(e, i);
             }}
             onClick={(e) => {
-              onePageLeft(i);
+              if (!isMobile) {
+                onePageLeft(i);
+              }
             }}
             className={
               i === dataBook.length - 1
@@ -262,15 +267,16 @@ const BookContainer = ({
                       {element.titleBack}
                     </h2>
                   </b>
-                  <img
+                  <img className="img-me mt-3" src={element.url} alt="me" />
+                  <div
                     onClick={(e) => {
                       e.stopPropagation();
                     }}
-                    className="img-me mt-3"
-                    src={element.url}
-                    alt="me"
-                  />
-                  <div className="wooden-button wooden-button-cv  mt-3 letter-title-book">
+                    onTouchEnd={(e) => {
+                      e.stopPropagation();
+                    }}
+                    className="wooden-button wooden-button-cv  mt-3 letter-title-book"
+                  >
                     CV
                   </div>
                 </div>
@@ -290,13 +296,27 @@ const BookContainer = ({
                       href={element.link}
                     >
                       <img
+                        onClick={(e) => {
+                          e.stopPropagation();
+                        }}
+                        onTouchEnd={(e) => {
+                          e.stopPropagation();
+                        }}
                         className=" img-proyects"
                         src={element.url}
                         alt={element.titleBack}
                       />
                     </a>
                   </div>
-                  <div onClick={(e) => {}} className="d-flex  mt-3">
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                    onTouchEnd={(e) => {
+                      e.stopPropagation();
+                    }}
+                    className="d-flex  mt-3"
+                  >
                     <div className="wooden-button wooden-button-cv me-2">
                       <a
                         className="links-book"
