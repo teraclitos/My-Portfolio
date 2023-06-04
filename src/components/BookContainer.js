@@ -167,6 +167,7 @@ const BookContainer = ({
                             e.stopPropagation();
                           }}
                           onClick={(e) => {
+                            e.stopPropagation();
                             if (index === 0) {
                               functionPageIndex(4, 2);
                               setPositionPage(4);
@@ -202,6 +203,7 @@ const BookContainer = ({
                             e.stopPropagation();
                           }}
                           onClick={(e) => {
+                            e.stopPropagation();
                             functionPageIndex((index + 1) * 2, 4);
 
                             setPositionPage(index + 5);

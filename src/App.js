@@ -163,6 +163,20 @@ function App() {
     });
 
     setIndexes(newindex);
+    if (d == dataBook.length - 1 && positionPage === dataBook.length) {
+      const exceptionIndex = indexes.map((element, i) => {
+        if (i === dataBook.length - 1) {
+          return dataBook.length - 2;
+        } else if (i === dataBook.length - 2) {
+          return dataBook.length - 1;
+        } else {
+          return dataBook.length - 3;
+        }
+      });
+      setTimeout(() => {
+        setIndexes(exceptionIndex);
+      }, 500);
+    }
   };
   useEffect(() => {
     window.addEventListener("resize", handleWindowScreen);
