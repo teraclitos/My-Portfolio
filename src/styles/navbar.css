@@ -34,15 +34,7 @@
   transform: scale(1.01);
 }
 
-.wooden-button-responsive {
-  position: absolute;
-  right: 1.8em;
-  top: 1.5em;
-}
 .responsive-open {
-  position: absolute;
-  left: 0.7em;
-  top: 0.7em;
   font-size: 3em;
   transition: 0.7s;
 }

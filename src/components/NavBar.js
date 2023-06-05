@@ -74,48 +74,7 @@ const NavBar = ({
     }
   }, [move]);
   return (
-    <div className=" pe-lg-5 ps-lg-5  d-block d-lg-flex justify-content-between align-items-center nav-bar  ">
-      <h1 className="text-center  portfolio-name ">
-        <span
-          className="old-letter red"
-          onClick={() => {
-            window.location.reload();
-          }}
-        >
-          {widthScreen > 992 ? "Francisco Terán" : "F T"}
-        </span>
-      </h1>
-      <div className=" d-block d-lg-flex justify-content-around ms-lg-5 pt-4 pt-lg-0 align-items-center ">
-        <div className="link-nav text-center dark-brown">
-          <span
-            style={{ pointerEvents: pointerEvent }}
-            className="hover-nav-link letter-title-book"
-            onClick={() => {
-              indexFunctionBook();
-            }}
-          >
-            {language === "english" ? "Index" : "Índice"}
-          </span>
-        </div>
-
-        <div
-          className="py-3 d-none d-lg-flex ms-lg-5 justify-content-center wooden-button letter-title-book"
-          onClick={() => {
-            functionLanguage();
-          }}
-        >
-          {language === "english" ? "Español" : "English"}
-        </div>
-      </div>
-      <div
-        className="py-3 d-flex d-lg-none justify-content-center wooden-button wooden-button-responsive "
-        onClick={() => {
-          functionLanguage();
-        }}
-      >
-        {language === "english" ? "Español" : "English"}
-      </div>
-
+    <div className=" px-3 px-lg-5   d-flex justify-content-between align-items-center nav-bar  ">
       <FontAwesomeIcon
         style={{ pointerEvents: pointerEvent }}
         onClick={() => {
@@ -129,6 +88,38 @@ const NavBar = ({
         className="responsive-open red d-flex d-lg-none"
         icon={!openNav ? faBars : faXmark}
       />
+      <h1 className="text-center mt-2 mt-lg-0  portfolio-name ">
+        <span
+          className="old-letter red"
+          onClick={() => {
+            window.location.reload();
+          }}
+        >
+          {widthScreen > 992 ? "Francisco Terán" : "F T"}
+        </span>
+      </h1>
+      <div className="  d-flex justify-content-around ms-lg-5  align-items-center ">
+        <div className="link-nav text-center dark-brown">
+          <span
+            style={{ pointerEvents: pointerEvent }}
+            className="hover-nav-link letter-title-book d-none d-lg-inline-block"
+            onClick={() => {
+              indexFunctionBook();
+            }}
+          >
+            {language === "english" ? "Index" : "Índice"}
+          </span>
+        </div>
+
+        <div
+          className="py-3 d-flex ms-lg-5  justify-content-center wooden-button letter-title-book"
+          onClick={() => {
+            functionLanguage();
+          }}
+        >
+          {language === "english" ? "Español" : "English"}
+        </div>
+      </div>
     </div>
   );
 };

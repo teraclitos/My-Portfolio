@@ -10,10 +10,6 @@
   .link-nav {
     margin-top: 2em;
   }
-  .portfolio-name {
-    position: relative;
-    top: 0.95em;
-  }
 }
 
 @media (max-width: 575px) {
