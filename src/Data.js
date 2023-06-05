@@ -1,5 +1,9 @@
 const dataBookSpanish = [
-  {},
+  {
+    tapeBookTitleFirst: "MI",
+    tapeBookTitleSecond: "PORTFOLIO",
+    tapeName: "F.TERÁN",
+  },
 
   {
     titleFront: "Mi Portfolio ",
@@ -72,7 +76,11 @@ deportes, en particular tenis`,
   },
 ];
 const dataBookEnglish = [
-  {},
+  {
+    tapeBookTitleFirst: "MY",
+    tapeBookTitleSecond: "PORTFOLIO",
+    tapeName: "F.TERÁN",
+  },
   {
     titleFront: "My portfolio",
     subtitleFront: "Francisco Terán",

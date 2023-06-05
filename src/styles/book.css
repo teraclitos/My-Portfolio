@@ -47,20 +47,19 @@
   border-bottom-right-radius: 3px;
 }
 
-.portada-back {
-  background: url("https://res.cloudinary.com/duuwqmpmn/image/upload/v1685972007/contratapa_ubrqxh.png");
- 
-}
 .portada,
 .portada-back {
-  background-size: 100% 100%;
+  background: #c8293b;
 }
 
 .proyects {
   cursor: pointer;
   font-size: 0.8em;
 }
-
+.portada-container {
+  width: 100%;
+  height: 100%;
+}
 .container-bottom {
   position: absolute;
   bottom: 0;
@@ -139,4 +138,17 @@
   text-align: justify;
   font-size: 1em;
   margin-top: 0.2em;
+}
+.first-title-tape {
+  font-size: 1.7em;
+}
+.second-title-tape {
+  font-size: 2em;
+  position: relative;
+  bottom: 0.2em;
+}
+.bottom-tape {
+  font-size: 1.3em;
+  position: relative;
+  top: 30%;
 }

@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import CV from "./CV";
 
 import "../styles/all.css";
 import { isMobile } from "react-device-detect";
@@ -29,25 +28,12 @@ const BookContainer = ({
   openNav,
   setOpenNav,
 }) => {
-  const tapeEnglishUrl =
-    "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685972007/tapalibroingles_xxt6go.png";
-  const tapeSpanishUrl =
-    "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685972007/tapalibroespa%C3%B1ol_ku4pqt.png";
-
-  const [tapeBook, setTapeBook] = useState(tapeEnglishUrl);
   const downloadCV = () => {
     const cvFile = "/FranciscoTerán CV.pdf";
     const urlcvFile = process.env.PUBLIC_URL + cvFile;
     window.open(urlcvFile);
   };
 
-  useEffect(() => {
-    if (language === "spanish") {
-      setTapeBook(tapeSpanishUrl);
-    } else {
-      setTapeBook(tapeEnglishUrl);
-    }
-  }, [language]);
   const onePageRight = (i) => {
     indexPage(i);
 
@@ -158,16 +144,19 @@ const BookContainer = ({
               }
             }}
             className={i === 0 ? "face-front portada" : "face-front"}
-            style={
-              i === 0
-                ? {
-                    pointerEvents: pointerEvent,
-                    backgroundImage: `url(${tapeBook})`,
-                    backgroundSize: "100% 100%",
-                  }
-                : { pointerEvents: pointerEvent }
-            }
+            style={{ pointerEvents: pointerEvent }}
           >
+            {i === 0 && (
+              <div className="portada-container d-flex flex-column justify-content-center align-items-center">
+                <h2 className="golden  old-letter first-title-tape">
+                  {element.tapeBookTitleFirst}
+                </h2>
+                <h2 className="golden  old-letter second-title-tape">
+                  {element.tapeBookTitleSecond}
+                </h2>
+                <h3 className="golden old-letter bottom-tape">{element.tapeName}</h3>
+              </div>
+            )}
             <div className={paddingTopDisplay(i) ? "pt-0" : "pt-3"}>
               {i === 1 && (
                 <div className="book-title-container ">
