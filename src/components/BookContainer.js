@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import CV from "./CV";
 
 import "../styles/all.css";
 import { isMobile } from "react-device-detect";
@@ -34,6 +35,11 @@ const BookContainer = ({
     "https://res.cloudinary.com/duuwqmpmn/image/upload/v1685972007/tapalibroespa%C3%B1ol_ku4pqt.png";
 
   const [tapeBook, setTapeBook] = useState(tapeEnglishUrl);
+  const downloadCV = () => {
+    const cvFile = "/FranciscoTerán CV.pdf";
+    const urlcvFile = process.env.PUBLIC_URL + cvFile;
+    window.open(urlcvFile);
+  };
 
   useEffect(() => {
     if (language === "spanish") {
@@ -274,6 +280,7 @@ const BookContainer = ({
                   <div
                     onClick={(e) => {
                       e.stopPropagation();
+                      downloadCV();
                     }}
                     onTouchStart={(e) => {
                       e.stopPropagation();
