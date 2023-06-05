@@ -40,7 +40,7 @@ function App() {
   const [newLoad, setNewLoad] = useState(0);
   const [opacityLoader, setOpacityLoader] = useState("100%");
   const [displayLoader, setDisplayLoader] = useState("flex");
-  const [bodyLoader, setBodyLoader] = useState("none");
+  const [bodyLoader, setBodyLoader] = useState("100vh");
 
   const handleWindowScreen = () => {
     setWidthScreen(window.innerWidth);
@@ -198,7 +198,7 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoader(false);
-      setBodyLoader("block");
+      setBodyLoader("auto");
     }, 2000);
   }, [newLoad]);
 

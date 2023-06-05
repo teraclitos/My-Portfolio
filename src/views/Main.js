@@ -47,37 +47,7 @@ const Main = ({
   indexInitial,
 }) => {
   return (
-    <Container fluid className="min-vh-100 page-main-container pb-5 px-0">
-      <NavBar
-        language={language}
-        setLanguage={setLanguage}
-        setTranslateBook={setTranslateBook}
-        pointerEvent={pointerEvent}
-        setPointerEvent={setPointerEvent}
-        functionTranslateFrontPage={functionTranslateFrontPage}
-        functionTranslateBackPage={functionTranslateBackPage}
-        indexPage={indexPage}
-        backToIndex={backToIndex}
-        positionPage={positionPage}
-        setPositionPage={setPositionPage}
-        dataBook={dataBook}
-        widthScreen={widthScreen}
-        navBarLinks={navBarLinks}
-        functionPageIndex={functionPageIndex}
-        openNav={openNav}
-        setOpenNav={setOpenNav}
-        move={move}
-        setMove={setMove}
-        newLoad={newLoad}
-        setNewLoad={setNewLoad}
-        setLoader={setLoader}
-        setOpacityLoader={setOpacityLoader}
-        setDisplayLoader={setDisplayLoader}
-        setBodyLoader={setBodyLoader}
-        setIndexes={setIndexes}
-        indexInitial={indexInitial}
-      />
-
+    <>
       <Loader
         loader={loader}
         setLoader={setLoader}
@@ -86,43 +56,78 @@ const Main = ({
         displayLoader={displayLoader}
         setDisplayLoader={setDisplayLoader}
       />
+      <Container
+        style={{ height: bodyLoader }}
+        fluid
+        className="min-vh-100 page-main-container pb-5 px-0"
+      >
+        <NavBar
+          language={language}
+          setLanguage={setLanguage}
+          setTranslateBook={setTranslateBook}
+          pointerEvent={pointerEvent}
+          setPointerEvent={setPointerEvent}
+          functionTranslateFrontPage={functionTranslateFrontPage}
+          functionTranslateBackPage={functionTranslateBackPage}
+          indexPage={indexPage}
+          backToIndex={backToIndex}
+          positionPage={positionPage}
+          setPositionPage={setPositionPage}
+          dataBook={dataBook}
+          widthScreen={widthScreen}
+          navBarLinks={navBarLinks}
+          functionPageIndex={functionPageIndex}
+          openNav={openNav}
+          setOpenNav={setOpenNav}
+          move={move}
+          setMove={setMove}
+          newLoad={newLoad}
+          setNewLoad={setNewLoad}
+          setLoader={setLoader}
+          setOpacityLoader={setOpacityLoader}
+          setDisplayLoader={setDisplayLoader}
+          setBodyLoader={setBodyLoader}
+          setIndexes={setIndexes}
+          indexInitial={indexInitial}
+        />
 
-      <Container style={{ display: bodyLoader }} className="py-3">
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <PageBody
-                language={language}
-                setLanguage={setLanguage}
-                dataBook={dataBook}
-                translateBook={translateBook}
-                setTranslateBook={setTranslateBook}
-                widthScreen={widthScreen}
-                allProyects={allProyects}
-                indexes={indexes}
-                pointerEvent={pointerEvent}
-                setPointerEvent={setPointerEvent}
-                translate={translate}
-                functionTranslateFrontPage={functionTranslateFrontPage}
-                functionTranslateBackPage={functionTranslateBackPage}
-                functionPageIndex={functionPageIndex}
-                backToIndex={backToIndex}
-                indexPage={indexPage}
-                positionPage={positionPage}
-                setPositionPage={setPositionPage}
-                index={index}
-                openNav={openNav}
-                setOpenNav={setOpenNav}
-              />
-            }
-          />
+        <Container className="py-3">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <PageBody
+                  language={language}
+                  setLanguage={setLanguage}
+                  dataBook={dataBook}
+                  translateBook={translateBook}
+                  setTranslateBook={setTranslateBook}
+                  widthScreen={widthScreen}
+                  allProyects={allProyects}
+                  indexes={indexes}
+                  pointerEvent={pointerEvent}
+                  setPointerEvent={setPointerEvent}
+                  translate={translate}
+                  functionTranslateFrontPage={functionTranslateFrontPage}
+                  functionTranslateBackPage={functionTranslateBackPage}
+                  functionPageIndex={functionPageIndex}
+                  backToIndex={backToIndex}
+                  indexPage={indexPage}
+                  positionPage={positionPage}
+                  setPositionPage={setPositionPage}
+                  index={index}
+                  openNav={openNav}
+                  setOpenNav={setOpenNav}
+                />
+              }
+            />
 
-          <Route path="*" element={<Error404 />} />
-        </Routes>
+            <Route path="*" element={<Error404 />} />
+          </Routes>
+        </Container>
+        <Footer language={language} />
       </Container>
-      <Footer language={language} />
-    </Container>
+    </>
   );
 };
 
