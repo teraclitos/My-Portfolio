@@ -97,7 +97,7 @@ const NavBar = ({
             window.location.reload();
           }}
         >
-          {widthScreen > 992 ? "Francisco Terán" : "F T"}
+          {widthScreen > 992 ? "FRANCISCO TERÁN" : "F.TERÁN"}
         </span>
       </h1>
       <div className="  d-flex justify-content-around ms-lg-5  align-items-center ">

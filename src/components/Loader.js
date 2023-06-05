@@ -22,8 +22,13 @@ const Loader = ({
   return (
     <div
       style={{ opacity: opacityLoader, display: displayLoader }}
-      className="loader-container"
+      className="loader-container "
     >
+      <img
+        src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1685998235/logo-loading-nuevo_dxsgnj.png"
+        alt="logo-loading"
+        className="logo-loading"
+      />
       <div class="lds-dual-ring"></div>
     </div>
   );

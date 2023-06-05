@@ -6,6 +6,7 @@
   background-color: #fdfdea;
   z-index: 100;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 1s;
@@ -16,12 +17,14 @@
   justify-content: center;
   width: 5em;
   height: 5em;
+  position: relative;
+  bottom: 7.6em;
 }
 .lds-dual-ring:after {
   content: " ";
   display: block;
-  width: 2.5em;
-  height: 2.5em;
+  width: 2em;
+  height: 2em;
   border-radius: 50%;
   border: 1.5px solid #c8293b;
   border-color: #c8293b #c8293b #c8293b transparent;
@@ -34,4 +37,7 @@
   100% {
     transform: rotate(360deg);
   }
+}
+.logo-loading {
+  width: 9em;
 }
