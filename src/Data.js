@@ -2,7 +2,6 @@ const dataBookSpanish = [
   {
     tapeBookTitleFirst: "MI",
     tapeBookTitleSecond: "PORTFOLIO",
-    tapeName: "F.TERÁN",
   },
 
   {
@@ -79,7 +78,6 @@ const dataBookEnglish = [
   {
     tapeBookTitleFirst: "MY",
     tapeBookTitleSecond: "PORTFOLIO",
-    tapeName: "F.TERÁN",
   },
   {
     titleFront: "My portfolio",

@@ -147,8 +147,11 @@
   position: relative;
   bottom: 0.2em;
 }
-.bottom-tape {
-  font-size: 1.3em;
+
+.img-logo-libro {
+  width: 8.5em;
+}
+.title-book-container {
   position: relative;
-  top: 30%;
+  top: 0.9em;
 }

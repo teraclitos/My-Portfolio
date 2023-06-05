@@ -148,13 +148,20 @@ const BookContainer = ({
           >
             {i === 0 && (
               <div className="portada-container d-flex flex-column justify-content-center align-items-center">
-                <h2 className="golden  old-letter first-title-tape">
-                  {element.tapeBookTitleFirst}
-                </h2>
-                <h2 className="golden  old-letter second-title-tape">
-                  {element.tapeBookTitleSecond}
-                </h2>
-                <h3 className="golden old-letter bottom-tape">{element.tapeName}</h3>
+                <div className="title-book-container">
+                  <h2 className="golden text-center old-letter first-title-tape">
+                    {element.tapeBookTitleFirst}
+                  </h2>
+
+                  <h2 className="golden  old-letter second-title-tape">
+                    {element.tapeBookTitleSecond}
+                  </h2>
+                </div>
+                <img
+                  className="img-logo-libro"
+                  src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1685995705/logo-fondo-librorojo_qplqze.png"
+                  alt="logo-libro"
+                />
               </div>
             )}
             <div className={paddingTopDisplay(i) ? "pt-0" : "pt-3"}>
