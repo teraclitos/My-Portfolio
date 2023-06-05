@@ -141,11 +141,13 @@
 }
 .first-title-tape {
   font-size: 1.7em;
+  user-select: none;
 }
 .second-title-tape {
   font-size: 2em;
   position: relative;
   bottom: 0.2em;
+  user-select: none;
 }
 
 .img-logo-libro {
