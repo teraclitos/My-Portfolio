@@ -51,3 +51,6 @@
 .portfolio-name {
   user-select: none;
 }
+.open-container {
+  width: 6em;
+}

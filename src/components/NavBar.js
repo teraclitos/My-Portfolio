@@ -75,20 +75,22 @@ const NavBar = ({
   }, [move]);
   return (
     <div className=" px-3 px-lg-5   d-flex justify-content-between align-items-center nav-bar  ">
-      <FontAwesomeIcon
-        style={{ pointerEvents: pointerEvent }}
-        onClick={() => {
-          !openNav ? setOpenNav(true) : setOpenNav(false);
+      <div className="open-container d-flex d-lg-none">
+        <FontAwesomeIcon
+          style={{ pointerEvents: pointerEvent }}
+          onClick={() => {
+            !openNav ? setOpenNav(true) : setOpenNav(false);
 
-          if (!openNav) {
-            setOpenNav(true);
-          }
-          indexFunctionBook();
-        }}
-        className="responsive-open red d-flex d-lg-none"
-        icon={!openNav ? faBars : faXmark}
-      />
-      <h1 className="text-center mt-2 mt-lg-0  portfolio-name ">
+            if (!openNav) {
+              setOpenNav(true);
+            }
+            indexFunctionBook();
+          }}
+          className="responsive-open red "
+          icon={!openNav ? faBars : faXmark}
+        />
+      </div>
+      <h1 className="text-center  portfolio-name mb-0 ">
         <span
           className="old-letter red"
           onClick={() => {
