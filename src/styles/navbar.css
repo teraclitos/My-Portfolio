@@ -23,6 +23,7 @@
   background-size: cover;
   cursor: pointer;
   width: 6em;
+  user-select: none;
 }
 
 .wooden-button:hover {

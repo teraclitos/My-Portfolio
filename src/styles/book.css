@@ -46,11 +46,10 @@
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-.portada {
-  background: url("https://www.dymocks.com.au/Pages/ImageHandler.ashx?q=9780261103252&w=&h=570");
-}
+
 .portada-back {
-  background: url("../../public/images/portadaBack.jpg");
+  background: url("https://res.cloudinary.com/duuwqmpmn/image/upload/v1685972007/contratapa_ubrqxh.png");
+ 
 }
 .portada,
 .portada-back {
