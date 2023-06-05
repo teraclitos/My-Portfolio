@@ -4,6 +4,7 @@ import "../styles/all.css";
 
 const Error404 = ({ language }) => {
   const navigation = useNavigate();
+  const titleMain = (document.title = "FRANCISCO TERÁN | ERROR 404 ");
 
   return (
     <div className="error-404-container">
