@@ -29,7 +29,7 @@ const BookContainer = ({
   setOpenNav,
 }) => {
   const downloadCV = () => {
-    const cvFile = "/FranciscoTerán CV.pdf";
+    const cvFile = "/Francisco Terán CV.pdf";
     const urlcvFile = process.env.PUBLIC_URL + cvFile;
     window.open(urlcvFile);
   };
