@@ -26,6 +26,22 @@ const NavBar = ({
   move,
 }) => {
   const [moveResponsive, setMoveResponsive] = useState(false);
+
+  const nameTilte = () => {
+    if (widthScreen > 992) {
+      if (language === "english") {
+        return "FRANCISCO TERAN";
+      } else {
+        return "FRANCISCO TERÁN";
+      }
+    } else {
+      if (language === "english") {
+        return "F.TERAN";
+      } else {
+        return "F.TERÁN";
+      }
+    }
+  };
   const indexFunctionBook = () => {
     if (widthScreen <= 992) {
       if (!openNav) {
@@ -97,7 +113,7 @@ const NavBar = ({
             window.location.reload();
           }}
         >
-          {widthScreen > 992 ? "FRANCISCO TERÁN" : "F.TERÁN"}
+          {nameTilte()}
         </span>
       </h1>
       <div className="  d-flex justify-content-around ms-lg-5  align-items-center ">
