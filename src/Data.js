@@ -97,7 +97,7 @@ const dataBookEnglish = [
 how from simple, solid and
 evident principles, can emerge beautiful and 
 complex structures. Being able to build these logical towers by having a "dialogue" with the computer in a
-straightfoward and at the same time creative language is something
+straightforward and at the same time creative language is something
 fascinating that I want to improve more and more. In my leisure time I love to read all kinds of books (literature, philosophy, science, etc.) and do
 sports, in particular tennis.`,
     pageFrontNumber: 2,
