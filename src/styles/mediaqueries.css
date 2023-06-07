@@ -16,11 +16,11 @@
   .book-content {
     min-width: 47.5vw;
     font-size: 13px;
+    height: 300px;
   }
   .nav-bar {
     font-size: 12px;
   }
- 
 }
 @media (max-width: 300px) {
   .book-content {
