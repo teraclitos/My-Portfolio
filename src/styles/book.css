@@ -1,10 +1,11 @@
 .book-content {
+  font-size: 18px;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 250px;
+  min-width: 15.62em;
   max-width: 450px;
-  height: 300px;
+  height: 18.75em;
   position: relative;
   perspective: 1000px;
   transition: 1s;
