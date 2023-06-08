@@ -32,6 +32,15 @@
   }
   .book-content {
     font-size: 9px;
-    height: 27em;
+    height: 23em;
+  }
+}
+
+@media (max-width: 270px) {
+  .book-content {
+    font-size: 7px;
+    height: 24.5em;
+
+    margin-bottom: 0rem;
   }
 }
