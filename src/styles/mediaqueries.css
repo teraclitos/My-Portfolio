@@ -16,7 +16,7 @@
     font-size: 16px;
   }
 }
-@media (max-width: 575px) {
+@media (max-width: 500px) {
   .book-content {
     min-width: 47.5vw;
     font-size: 13px;
