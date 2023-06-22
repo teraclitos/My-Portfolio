@@ -17,8 +17,9 @@
   justify-content: center;
   width: 5em;
   height: 5em;
-  position: relative;
-  bottom: 7.6em;
+  position: absolute;
+  top: 0.2em;
+  left: 2em;
 }
 .lds-dual-ring:after {
   content: " ";
@@ -40,4 +41,7 @@
 }
 .logo-loading {
   width: 9em;
+}
+.logo-loading-container {
+  position: relative;
 }

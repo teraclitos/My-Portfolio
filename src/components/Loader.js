@@ -24,12 +24,14 @@ const Loader = ({
       style={{ opacity: opacityLoader, display: displayLoader }}
       className="loader-container "
     >
-      <img
-        src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1685998235/logo-loading-nuevo_dxsgnj.png"
-        alt="logo-loading"
-        className="logo-loading"
-      />
-      <div class="lds-dual-ring"></div>
+      <div className="logo-loading-container">
+        <img
+          src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1685998235/logo-loading-nuevo_dxsgnj.png"
+          alt="logo-loading"
+          className="logo-loading"
+        />
+        <div class="lds-dual-ring"></div>
+      </div>
     </div>
   );
 };
