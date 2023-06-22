@@ -121,7 +121,7 @@ const BookContainer = ({
     }
   };
   return (
-    <div
+    <section
       style={{
         transform: `translateX( ${translateBook}`,
       }}
@@ -391,7 +391,7 @@ const BookContainer = ({
           </div>
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 
