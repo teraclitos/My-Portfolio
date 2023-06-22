@@ -62,3 +62,16 @@
 .letter-body-size {
   font-size: 0.8em;
 }
+::-webkit-scrollbar {
+  width: 6px; /* Set width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fdfdea; /* Set color for the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c8293b; /* Set color for the scrollbar thumb */
+  background-color: #816930;
+  border-radius: 5px; /* Add rounded corners to the thumb */
+}
