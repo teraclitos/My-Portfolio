@@ -187,22 +187,7 @@ const BookContainer = ({
                   <ul className="list-style-none p-0 d-flex flex-column align-items-center ">
                     {i === 2 &&
                       index.map((element, index) => (
-                        <li
-                          onTouchStart={(e) => {
-                            e.stopPropagation();
-                          }}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            if (index === 0) {
-                              functionPageIndex(4, 2);
-                              setPositionPage(4);
-                            } else if (index === 1) {
-                              functionPageIndex(2, 2);
-                              setPositionPage(3);
-                            }
-                          }}
-                          className="mb-2 proyects letter-title-book"
-                        >
+                        <li>
                           {index == 2 ? (
                             <a
                               onClick={(e) => {
@@ -211,31 +196,50 @@ const BookContainer = ({
                               onTouchStart={(e) => {
                                 e.stopPropagation();
                               }}
-                              className="contact-link "
+                              className="mb-2 proyects letter-title-book contact-link "
                               href="mailto:tefans12@gmail.com"
                             >
                               {element}
                             </a>
                           ) : (
-                            element
+                            <span
+                              className="mb-2 proyects letter-title-book"
+                              onTouchStart={(e) => {
+                                e.stopPropagation();
+                              }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (index === 0) {
+                                  functionPageIndex(4, 2);
+                                  setPositionPage(4);
+                                } else if (index === 1) {
+                                  functionPageIndex(2, 2);
+                                  setPositionPage(3);
+                                }
+                              }}
+                            >
+                              {element}
+                            </span>
                           )}
                         </li>
                       ))}
                     {i === 4 &&
                       allProyects.map((element, index) => (
-                        <li
-                          onTouchStart={(e) => {
-                            e.stopPropagation();
-                          }}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            functionPageIndex((index + 1) * 2, 4);
+                        <li>
+                          <span
+                            onTouchStart={(e) => {
+                              e.stopPropagation();
+                            }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              functionPageIndex((index + 1) * 2, 4);
 
-                            setPositionPage(index + 5);
-                          }}
-                          className="mb-2 proyects  letter-title-book "
-                        >
-                          {element.proyect}
+                              setPositionPage(index + 5);
+                            }}
+                            className="mb-2 proyects  letter-title-book "
+                          >
+                            {element.proyect}
+                          </span>
                         </li>
                       ))}
                   </ul>
@@ -268,13 +272,14 @@ const BookContainer = ({
             <div className="pt-3">
               {i === 2 && (
                 <div className="d-flex flex-column align-items-center ">
-                  <b>
-                    <h2 className="title-size letter-title-book">
-                      {element.titleBack}
-                    </h2>
-                  </b>
+                  <h2 className="title-size letter-title-book">
+                    {element.titleBack}
+                  </h2>
+
                   <img className="img-me mt-3" src={element.url} alt="me" />
-                  <div
+                  <button
+                    className="wooden-button wooden-button-cv mt-3
+                    letter-title-book"
                     onClick={(e) => {
                       e.stopPropagation();
                       downloadCV();
@@ -282,20 +287,18 @@ const BookContainer = ({
                     onTouchStart={(e) => {
                       e.stopPropagation();
                     }}
-                    className="wooden-button wooden-button-cv  mt-3 letter-title-book"
                   >
                     CV
-                  </div>
+                  </button>
                 </div>
               )}
 
               {proyectDisplay(i) && (
                 <div className="d-flex flex-column align-items-center ">
-                  <b>
-                    <h2 className="letter-title-book title-size  text-center">
-                      {element.titleBack}
-                    </h2>
-                  </b>
+                  <h2 className="letter-title-book title-size  text-center">
+                    {element.titleBack}
+                  </h2>
+
                   <div onClick={(e) => {}} className="img-proyects-container">
                     <a
                       className="links-book letter-title-book"
@@ -352,7 +355,7 @@ const BookContainer = ({
 
               <div className=" d-flex  container-bottom">
                 {indexProyects(i, 1) && (
-                  <div
+                  <span
                     style={{ pointerEvents: pointerEvent }}
                     className="back-to-index letter-title-book"
                     onClick={(e) => {
@@ -365,10 +368,10 @@ const BookContainer = ({
                     }}
                   >
                     {language === "spanish" ? "Índice" : "Index"}
-                  </div>
+                  </span>
                 )}
                 {indexProyects(i, 3) && (
-                  <div
+                  <span
                     onTouchStart={(e) => {
                       e.stopPropagation();
                     }}
@@ -380,10 +383,10 @@ const BookContainer = ({
                     className="back-to-proyects  letter-title-book"
                   >
                     {language === "spanish" ? "Proyectos" : "Proyects"}
-                  </div>
+                  </span>
                 )}
               </div>
-              <div className="number-page ">{element.pageBackNumber}</div>
+              <span className="number-page ">{element.pageBackNumber}</span>
             </div>
           </div>
         </div>

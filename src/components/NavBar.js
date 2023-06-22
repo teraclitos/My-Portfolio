@@ -117,7 +117,7 @@ const NavBar = ({
         </span>
       </h1>
       <div className="  d-flex justify-content-around ms-lg-5  align-items-center ">
-        <div className="link-nav text-center dark-brown">
+        <a className="link-nav text-center dark-brown">
           <span
             style={{ pointerEvents: pointerEvent }}
             className="hover-nav-link letter-title-book d-none d-lg-inline-block"
@@ -127,16 +127,16 @@ const NavBar = ({
           >
             {language === "english" ? "Index" : "Índice"}
           </span>
-        </div>
+        </a>
 
-        <div
+        <button
           className="py-3 d-flex ms-lg-5  justify-content-center wooden-button letter-title-book"
           onClick={() => {
             functionLanguage();
           }}
         >
           {language === "english" ? "Español" : "English"}
-        </div>
+        </button>
       </div>
     </div>
   );
