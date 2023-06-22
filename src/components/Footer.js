@@ -7,7 +7,7 @@ import "../styles/all.css";
 
 const Footer = ({ language }) => {
   return (
-    <div className="py-2 px-lg-5 d-flex flex-column flex-lg-row justify-content-between align-items-center red  ">
+    <footer className="py-2 px-lg-5 d-flex flex-column flex-lg-row justify-content-between align-items-center red  ">
       <div className="mb-4 mb-lg-0 ">
         <img
           onClick={() => {
@@ -24,7 +24,7 @@ const Footer = ({ language }) => {
         <LinkedinIcon />
         <WhatsupIcon language={language} />
       </div>
-    </div>
+    </footer>
   );
 };
 
