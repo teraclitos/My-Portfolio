@@ -1,10 +1,12 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, {useEffect} from "react";
+import { Link } from 'react-router-dom';
 import "../styles/all.css";
 
 const Error404 = ({ language }) => {
-  const navigation = useNavigate();
-  const titleMain = (document.title = "Francisco Teran | Error 404 ");
+
+   useEffect(() => {
+    document.title = 'Francisco Teran | Error 404';
+  }, []);
 
   return (
     <div className="error-404-container">
@@ -14,16 +16,14 @@ const Error404 = ({ language }) => {
         className="logo-404"
       />
       <div>
-        <span
-          onClick={() => {
-            navigation("/");
-          }}
-          className="letter-title-book dark-brown back-main"
+        <Link
+        to="/"
+          className="letter-title-book dark-brown back-main link-404"
         >
           {language === "english"
             ? "Back to main page"
             : "Volver a la pàgina prinipal"}
-        </span>
+        </Link>
       </div>
     </div>
   );

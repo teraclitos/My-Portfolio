@@ -95,6 +95,7 @@ const Main = ({
           <Routes>
             <Route
               path="/"
+              exact
               element={
                 <PageBody
                   language={language}
@@ -122,7 +123,8 @@ const Main = ({
               }
             />
 
-            <Route path="*" element={<Error404 language={language} />} />
+            <Route   
+        path="*" element={<Error404 language={language} />} />
           </Routes>
         </Container>
         <Footer  language={language} />

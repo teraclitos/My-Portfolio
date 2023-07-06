@@ -28,7 +28,9 @@ const BookContainer = ({
   openNav,
   setOpenNav,
 }) => {
-  const titleMain = (document.title = "Francisco Teran ");
+    useEffect(() => {
+    document.title = 'Francisco Teran';
+  }, []);
   const downloadCV = () => {
     const cvFile = "/FRANCISCO TERAN CV.pdf";
     const urlcvFile = process.env.PUBLIC_URL + cvFile;
