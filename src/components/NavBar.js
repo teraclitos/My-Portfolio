@@ -88,7 +88,7 @@ const NavBar = ({
       setTranslateBook('0%')
       setMoveResponsive(false)
     }
-  }, [move, moveResponsive, setTranslateBook])
+  }, [move])
   return (
     <div className=' px-3 px-lg-5   d-flex justify-content-between align-items-center nav-bar  '>
       <div className='open-container d-flex d-lg-none'>
