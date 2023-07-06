@@ -208,8 +208,9 @@ const BookContainer = ({
                                 </a>
                                 )
                               : (
-                                <span
-                                  className='mb-2 proyects letter-title-book'
+                                <button
+                                  type='button'
+                                  className='mb-2 proyects letter-title-book no-button-styles'
                                   onTouchStart={(e) => {
                                     e.stopPropagation()
                                   }}
@@ -225,14 +226,15 @@ const BookContainer = ({
                                   }}
                                 >
                                   {element}
-                                </span>
+                                </button>
                                 )}
                           </li>
                         ))}
                       {i === 4 &&
                         allProyects.map((element, index) => (
                           <li key={`proyectslinks${i}`}>
-                            <span
+                            <button
+                              type='button'
                               onTouchStart={(e) => {
                                 e.stopPropagation()
                               }}
@@ -242,10 +244,10 @@ const BookContainer = ({
 
                                 setPositionPage(index + 5)
                               }}
-                              className='mb-2 proyects  letter-title-book '
+                              className='mb-2 proyects  letter-title-book no-button-styles '
                             >
                               {element.proyect}
-                            </span>
+                            </button>
                           </li>
                         ))}
                     </ul>
@@ -284,6 +286,7 @@ const BookContainer = ({
 
                     <img className='img-me mt-3' src={element.url} alt='me' />
                     <button
+                      type='button'
                       className='wooden-button wooden-button-cv mt-3
                     letter-title-book'
                       onClick={(e) => {
@@ -361,9 +364,10 @@ const BookContainer = ({
 
                 <div className=' d-flex  container-bottom'>
                   {indexProyects(i, 1) && (
-                    <span
+                    <button
+                      type='button'
                       style={{ pointerEvents: pointerEvent }}
-                      className='back-to-index letter-title-book'
+                      className='back-to-index letter-title-book no-button-styles'
                       onClick={(e) => {
                         e.stopPropagation()
                         backToIndex(i * 2, -1)
@@ -374,10 +378,11 @@ const BookContainer = ({
                       }}
                     >
                       {language === 'spanish' ? 'Índice' : 'Index'}
-                    </span>
+                    </button>
                   )}
                   {indexProyects(i, 3) && (
-                    <span
+                    <button
+                      type='button'
                       onTouchStart={(e) => {
                         e.stopPropagation()
                       }}
@@ -386,10 +391,10 @@ const BookContainer = ({
                         backToIndex(i * 2, -3)
                         setPositionPage(4)
                       }}
-                      className='back-to-proyects  letter-title-book'
+                      className='back-to-proyects  letter-title-book no-button-styles'
                     >
                       {language === 'spanish' ? 'Proyectos' : 'Proyects'}
-                    </span>
+                    </button>
                   )}
                 </div>
                 <span className='number-page '>{element.pageBackNumber}</span>

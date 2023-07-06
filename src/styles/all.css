@@ -63,6 +63,13 @@
 .letter-body-size {
   font-size: 0.8em;
 }
+.no-button-styles{
+  padding: 0;
+  
+   background: none;
+  border:none; 
+    cursor: pointer
+}
 ::-webkit-scrollbar {
   width: 6px; /* Set width of the scrollbar */
 }

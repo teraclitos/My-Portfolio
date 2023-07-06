@@ -117,19 +117,25 @@ const NavBar = ({
         </span>
       </h1>
       <div className='  d-flex justify-content-around ms-lg-5  align-items-center '>
-        <a className='link-nav text-center dark-brown'>
+        <button
+          type='button'
+          onClick={() => {
+            indexFunctionBook()
+          }}
+          className='link-nav text-center dark-brown no-button-styles'
+          href='#'
+        >
           <span
             style={{ pointerEvents: pointerEvent }}
             className='hover-nav-link letter-title-book d-none d-lg-inline-block'
-            onClick={() => {
-              indexFunctionBook()
-            }}
+
           >
             {language === 'english' ? 'Index' : 'Índice'}
           </span>
-        </a>
+        </button>
 
         <button
+          type='button'
           className='py-3 d-flex ms-lg-5  justify-content-center wooden-button letter-title-book'
           onClick={() => {
             functionLanguage()
