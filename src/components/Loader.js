@@ -1,6 +1,5 @@
-import React from "react";
-import "../styles/all.css";
-import { useState, useEffect } from "react";
+import React, { useEffect } from 'react'
+import '../styles/all.css'
 
 const Loader = ({
   loader,
@@ -8,32 +7,32 @@ const Loader = ({
   opacityLoader,
   setOpacityLoader,
   displayLoader,
-  setDisplayLoader,
+  setDisplayLoader
 }) => {
   useEffect(() => {
     if (loader === false) {
-      setOpacityLoader("0%");
+      setOpacityLoader('0%')
       setTimeout(() => {
-        setDisplayLoader("none");
-      }, 500);
+        setDisplayLoader('none')
+      }, 500)
     }
-  }, [loader]);
+  }, [loader])
 
   return (
     <div
       style={{ opacity: opacityLoader, display: displayLoader }}
-      className="loader-container "
+      className='loader-container '
     >
-      <div className="logo-loading-container">
+      <div className='logo-loading-container'>
         <img
-          src="https://res.cloudinary.com/duuwqmpmn/image/upload/v1685998235/logo-loading-nuevo_dxsgnj.png"
-          alt="logo-loading"
-          className="logo-loading"
+          src='https://res.cloudinary.com/duuwqmpmn/image/upload/v1685998235/logo-loading-nuevo_dxsgnj.png'
+          alt='logo-loading'
+          className='logo-loading'
         />
-        <div class="lds-dual-ring"></div>
+        <div class='lds-dual-ring' />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Loader;
+export default Loader

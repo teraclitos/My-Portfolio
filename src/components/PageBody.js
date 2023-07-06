@@ -1,5 +1,5 @@
-import React from "react";
-import BookContainer from "./BookContainer";
+import React from 'react'
+import BookContainer from './BookContainer'
 
 const PageBody = ({
   language,
@@ -24,10 +24,10 @@ const PageBody = ({
   setPositionPage,
   index,
   openNav,
-  setOpenNav,
+  setOpenNav
 }) => {
   return (
-    <div className="min-vh-100 d-flex justify-content-center align-items-center">
+    <div className='min-vh-100 d-flex justify-content-center align-items-center'>
       <BookContainer
         language={language}
         setLanguage={setLanguage}
@@ -52,7 +52,7 @@ const PageBody = ({
         setOpenNav={setOpenNav}
       />
     </div>
-  );
-};
+  )
+}
 
-export default PageBody;
+export default PageBody

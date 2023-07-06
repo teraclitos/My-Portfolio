@@ -1,12 +1,12 @@
-import React from "react";
-import { Container } from "react-bootstrap";
-import { Route, Routes } from "react-router-dom";
-import "../styles/all.css";
-import NavBar from "../components/NavBar";
-import PageBody from "../components/PageBody";
-import Footer from "../components/Footer";
-import Error404 from "../components/Error404";
-import Loader from "../components/Loader";
+import React from 'react'
+import { Container } from 'react-bootstrap'
+import { Route, Routes } from 'react-router-dom'
+import '../styles/all.css'
+import NavBar from '../components/NavBar'
+import PageBody from '../components/PageBody'
+import Footer from '../components/Footer'
+import Error404 from '../components/Error404'
+import Loader from '../components/Loader'
 
 const Main = ({
   language,
@@ -44,7 +44,7 @@ const Main = ({
   newLoad,
   setNewLoad,
   setIndexes,
-  indexInitial,
+  indexInitial
 }) => {
   return (
     <>
@@ -59,7 +59,7 @@ const Main = ({
       <Container
         style={{ height: bodyLoader }}
         fluid
-        className="min-vh-100 page-main-container pb-5 px-0"
+        className='min-vh-100 page-main-container pb-5 px-0'
       >
         <NavBar
           language={language}
@@ -91,10 +91,10 @@ const Main = ({
           indexInitial={indexInitial}
         />
 
-        <Container className="py-3">
+        <Container className='py-3'>
           <Routes>
             <Route
-              path="/"
+              path='/'
               exact
               element={
                 <PageBody
@@ -123,14 +123,15 @@ const Main = ({
               }
             />
 
-            <Route   
-        path="*" element={<Error404 language={language} />} />
+            <Route
+              path='*' element={<Error404 language={language} />}
+            />
           </Routes>
         </Container>
-        <Footer  language={language} />
+        <Footer language={language} />
       </Container>
     </>
-  );
-};
+  )
+}
 
-export default Main;
+export default Main
