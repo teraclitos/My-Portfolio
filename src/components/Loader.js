@@ -16,7 +16,7 @@ const Loader = ({
         setDisplayLoader('none')
       }, 500)
     }
-  }, [loader])
+  }, [loader, setDisplayLoader, setOpacityLoader])
 
   return (
     <div

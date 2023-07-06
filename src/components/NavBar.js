@@ -88,7 +88,7 @@ const NavBar = ({
       setTranslateBook('0%')
       setMoveResponsive(false)
     }
-  }, [move])
+  }, [move, moveResponsive, setTranslateBook])
   return (
     <div className=' px-3 px-lg-5   d-flex justify-content-between align-items-center nav-bar  '>
       <div className='open-container d-flex d-lg-none'>
@@ -106,16 +106,18 @@ const NavBar = ({
           icon={!openNav ? faBars : faXmark}
         />
       </div>
+
       <h1 className='text-center  portfolio-name mb-0 '>
-        <span
-          className='old-letter red'
-          onClick={() => {
-            window.location.reload()
-          }}
+        <a
+          href='/'
+          className='old-letter red link-main-title'
         >
+
           {nameTilte()}
-        </span>
+        </a>
+
       </h1>
+
       <div className='  d-flex justify-content-around ms-lg-5  align-items-center '>
         <button
           type='button'
@@ -123,7 +125,7 @@ const NavBar = ({
             indexFunctionBook()
           }}
           className='link-nav text-center dark-brown no-button-styles'
-          href='#'
+
         >
           <span
             style={{ pointerEvents: pointerEvent }}

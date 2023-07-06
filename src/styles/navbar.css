@@ -8,6 +8,12 @@
   font-size: 1.1em;
   cursor: pointer;
 }
+.link-main-title{
+  text-decoration: none;
+}
+.link-main-title:hover{
+  color: #c8293b;
+}
 .hover-nav-link:hover {
   color: #c8293b;
 }
