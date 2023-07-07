@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import '../styles/all.css'
 
 const Loader = ({
@@ -9,6 +9,8 @@ const Loader = ({
   displayLoader,
   setDisplayLoader
 }) => {
+  const [spinnerDisplay, setSpinnerDisplay] = useState('none')
+  const showSpinner = () => { setSpinnerDisplay('flex') }
   useEffect(() => {
     if (loader === false) {
       setOpacityLoader('0%')
@@ -17,6 +19,10 @@ const Loader = ({
       }, 500)
     }
   }, [loader])
+
+  useEffect(() => {
+    showSpinner()
+  }, [])
 
   return (
     <div
@@ -29,7 +35,7 @@ const Loader = ({
           alt='logo-loading'
           className='logo-loading'
         />
-        <div className='lds-dual-ring' />
+        <div style={{ display: `${spinnerDisplay}` }} className='lds-dual-ring' />
       </div>
     </div>
   )
