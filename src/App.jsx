@@ -10,7 +10,7 @@ import {
   navBarLinksSpanish,
   indexSpanish,
   indexEnglish
-} from './Data'
+} from './data/Data'
 
 function App () {
   const [language, setLanguage] = useState('english')
