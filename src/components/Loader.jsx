@@ -21,7 +21,9 @@ const Loader = ({
   }, [loader])
 
   useEffect(() => {
-    showSpinner()
+    setTimeout(() => {
+      showSpinner()
+    }, 200)
   }, [])
 
   return (
