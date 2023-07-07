@@ -29,7 +29,7 @@ const Loader = ({
           alt='logo-loading'
           className='logo-loading'
         />
-        <div class='lds-dual-ring' />
+        <div className='lds-dual-ring' />
       </div>
     </div>
   )

@@ -6,8 +6,6 @@ import {
   dataBookEnglish,
   allProyectsSpanish,
   allProyectsEnglish,
-  navBarLinksEnglish,
-  navBarLinksSpanish,
   indexSpanish,
   indexEnglish
 } from './data/Data'
@@ -32,7 +30,6 @@ function App () {
   const [widthScreen, setWidthScreen] = useState(window.innerWidth)
   const [allProyects, setAllProyects] = useState(allProyectsSpanish)
   const [positionPage, setPositionPage] = useState(0)
-  const [navBarLinks, setNavBarLinks] = useState(navBarLinksSpanish)
   const [index, setIndex] = useState(indexSpanish)
   const [openNav, setOpenNav] = useState(false)
   const [move, setMove] = useState(false)
@@ -186,12 +183,12 @@ function App () {
     if (language === 'spanish') {
       setAllProyects(allProyectsSpanish)
       setDataBook(dataBookSpanish)
-      setNavBarLinks(navBarLinksSpanish)
+
       setIndex(indexSpanish)
     } else {
       setAllProyects(allProyectsEnglish)
       setDataBook(dataBookEnglish)
-      setNavBarLinks(navBarLinksEnglish)
+
       setIndex(indexEnglish)
     }
   }, [language])
@@ -224,7 +221,6 @@ function App () {
         indexPage={indexPage}
         positionPage={positionPage}
         setPositionPage={setPositionPage}
-        navBarLinks={navBarLinks}
         index={index}
         openNav={openNav}
         setOpenNav={setOpenNav}

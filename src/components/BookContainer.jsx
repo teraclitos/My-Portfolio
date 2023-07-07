@@ -132,7 +132,7 @@ const BookContainer = ({
       >
         {dataBook.map((element, i) => (
           <div
-            key={`book${i}`}
+            key={element.id}
             style={{
               zIndex: indexes[i],
               transform: `rotateY( ${translate[i]}deg`
@@ -191,7 +191,7 @@ const BookContainer = ({
                     <ul className='list-style-none p-0 d-flex flex-column align-items-center '>
                       {i === 2 &&
                         index.map((element, index) => (
-                          <li key={`indexlinks${index}`}>
+                          <li key={element.id}>
                             {index === 2
                               ? (
                                 <a
@@ -204,7 +204,7 @@ const BookContainer = ({
                                   className='mb-2 proyects letter-title-book contact-link '
                                   href='mailto:tefans12@gmail.com'
                                 >
-                                  {element}
+                                  {element.index}
                                 </a>
                                 )
                               : (
@@ -225,14 +225,14 @@ const BookContainer = ({
                                     }
                                   }}
                                 >
-                                  {element}
+                                  {element.index}
                                 </button>
                                 )}
                           </li>
                         ))}
                       {i === 4 &&
                         allProyects.map((element, index) => (
-                          <li key={`proyectslinks${i}`}>
+                          <li key={element.id}>
                             <button
                               type='button'
                               onTouchStart={(e) => {
