@@ -20,12 +20,6 @@ const Loader = ({
     }
   }, [loader])
 
-  useEffect(() => {
-    setTimeout(() => {
-      showSpinner()
-    }, 200)
-  }, [])
-
   return (
     <div
       style={{ opacity: opacityLoader, display: displayLoader }}
@@ -33,6 +27,7 @@ const Loader = ({
     >
       <div className='logo-loading-container'>
         <img
+          onLoad={showSpinner}
           src='https://res.cloudinary.com/duuwqmpmn/image/upload/v1685998235/logo-loading-nuevo_dxsgnj.png'
           alt='logo-loading'
           className='logo-loading'
