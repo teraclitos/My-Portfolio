@@ -51,15 +51,56 @@ function App () {
     setTranslate(newTranslate)
   }
 
-  const functionPageIndex = (proyectoId, start) => {
+  const functionPageIndex = async (proyectoId, start) => {
+    // const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
+    // const copyTranslation = [...translate]
+    // const copyIndexes = [...indexes]
     const numberOfTranslations = Math.ceil(proyectoId / 2)
 
-    const arrayTranslation = Array.from(
+    const arrayNumberOfTranslation = Array.from(
       { length: numberOfTranslations },
-      (_, index) => index + 1
+      (_, index) => index
     )
 
-    arrayTranslation.forEach((element, i) => {
+    // const lastIndexTranslated = copyTranslation.lastIndexOf(-180)
+    // const lasIndexWithHigherValue = copyIndexes.lastIndexOf(copyIndexes.length - 1)
+
+    // const arrayEachOneOfTheTranslationsToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
+    //   ac.push(copyTranslation.map((el, j) => {
+    //     if (j <= lastIndexTranslated + i + 1) {
+    //       return -180
+    //     } else {
+    //       return 0
+    //     }
+    //   }))
+    //   return ac
+    // }, [])
+
+    // const arrayEachOneOfThechangesOfIndexesToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
+    //   ac.push(copyIndexes.map((el, j) => {
+    //     if (j === lasIndexWithHigherValue + i + 1) {
+    //       return copyIndexes.length - 1
+    //     } else if (j === lasIndexWithHigherValue + i + 2) { return copyIndexes.length - 2 } else { return copyIndexes.length - 3 }
+    //   }))
+    //   return ac
+    // }, [])
+    // const arrayNumberOfTranslationPromises = arrayNumberOfTranslation.map((el, i) => {
+    //   return new Promise((resolve) => setTimeout(() => resolve(
+    //     setIndex(arrayEachOneOfThechangesOfIndexesToMake[i]),
+    //     setTranslate(arrayEachOneOfTheTranslationsToMake[i])
+
+    //   ), 500))
+    // })
+
+    // for (const trasnsalationNumber of arrayNumberOfTranslation) {
+    //   await new Promise(async () => {
+    //     setIndex(arrayEachOneOfThechangesOfIndexesToMake[trasnsalationNumber])
+    //     await delay(200)
+    //     setTranslate(arrayEachOneOfTheTranslationsToMake[trasnsalationNumber])
+    //   }, 500)
+    // };
+
+    arrayNumberOfTranslation.forEach((element, i) => {
       setPointerEvent('none')
       setTimeout(() => {
         const newTranslate = translate.map((element, index) =>
@@ -86,7 +127,7 @@ function App () {
           setTranslate(newTranslate)
         }, 200)
 
-        if (i === arrayTranslation.length - 1) {
+        if (i === arrayNumberOfTranslation.length - 1) {
           setTimeout(() => {
             setPointerEvent('all')
           }, 700)
@@ -97,23 +138,23 @@ function App () {
   const backToIndex = (proyectoId, start) => {
     const numberOfTranslations = Math.ceil(proyectoId / 2 + start)
 
-    const arrayTranslation = Array.from(
+    const arrayNumberOfTranslation = Array.from(
       { length: numberOfTranslations },
       (_, index) => index + 1
     )
 
-    arrayTranslation.forEach((element, i) => {
+    arrayNumberOfTranslation.forEach((element, i) => {
       setPointerEvent('none')
       setTimeout(() => {
         const newTranslate = translate.map((element, index) =>
-          index + start >= arrayTranslation.length - i ? 0 : element
+          index + start >= arrayNumberOfTranslation.length - i ? 0 : element
         )
 
         const newindex = indexes.map((element, i3) => {
-          if (arrayTranslation.length - i - start === i3) {
+          if (arrayNumberOfTranslation.length - i - start === i3) {
             return dataBook.length - 1
           } else {
-            if (arrayTranslation.length - i - start === i3 - 1) {
+            if (arrayNumberOfTranslation.length - i - start === i3 - 1) {
               return dataBook.length - 2
             } else {
               return dataBook.length - 3
@@ -127,7 +168,7 @@ function App () {
           setTranslate(newTranslate)
         }, 200)
 
-        if (i === arrayTranslation.length - 1) {
+        if (i === arrayNumberOfTranslation.length - 1) {
           setMove(true)
           setTimeout(() => {
             setPointerEvent('all')
@@ -198,7 +239,10 @@ function App () {
       setBodyLoader('auto')
     }, 2000)
   }, [newLoad])
-
+  useEffect(() => {
+    console.log(translate)
+    console.log(indexes)
+  }, [translate, indexes])
   return (
     <BrowserRouter>
       <Main
