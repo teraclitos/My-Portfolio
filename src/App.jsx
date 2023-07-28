@@ -134,6 +134,7 @@ function App () {
         await new Promise((resolve) => setTimeout(resolve, 200))
         if (arrayEachOneOfTheTranslationsToMake[translationNumberPromise][0] === 0) {
           setMove(true)
+          await new Promise((resolve) => setTimeout(resolve, 200))
         }
         setTranslate(arrayEachOneOfTheTranslationsToMake[translationNumberPromise])
       }
@@ -182,6 +183,10 @@ function App () {
       setBodyLoader('auto')
     }, 2000)
   }, [newLoad])
+
+  useEffect(() => {
+    console.log(move)
+  }, [move])
 
   return (
     <BrowserRouter>
