@@ -22,9 +22,8 @@ const Main = ({
   translate,
   functionTranslateFrontPage,
   functionTranslateBackPage,
-  functionPageIndex,
-  backToIndex,
-  indexPage,
+  functionChangePageForward,
+  functionChangePageBackward,
   positionPage,
   setPositionPage,
   navBarLinks,
@@ -44,7 +43,9 @@ const Main = ({
   newLoad,
   setNewLoad,
   setIndexes,
-  indexInitial
+  indexInitial,
+  indexPage
+
 }) => {
   return (
     <>
@@ -69,14 +70,13 @@ const Main = ({
           setPointerEvent={setPointerEvent}
           functionTranslateFrontPage={functionTranslateFrontPage}
           functionTranslateBackPage={functionTranslateBackPage}
-          indexPage={indexPage}
-          backToIndex={backToIndex}
+          functionChangePageBackward={functionChangePageBackward}
           positionPage={positionPage}
           setPositionPage={setPositionPage}
           dataBook={dataBook}
           widthScreen={widthScreen}
           navBarLinks={navBarLinks}
-          functionPageIndex={functionPageIndex}
+          functionChangePageForward={functionChangePageForward}
           openNav={openNav}
           setOpenNav={setOpenNav}
           move={move}
@@ -89,6 +89,7 @@ const Main = ({
           setBodyLoader={setBodyLoader}
           setIndexes={setIndexes}
           indexInitial={indexInitial}
+
         />
 
         <Container className='py-3'>
@@ -111,14 +112,15 @@ const Main = ({
                   translate={translate}
                   functionTranslateFrontPage={functionTranslateFrontPage}
                   functionTranslateBackPage={functionTranslateBackPage}
-                  functionPageIndex={functionPageIndex}
-                  backToIndex={backToIndex}
-                  indexPage={indexPage}
+                  functionChangePageForward={functionChangePageForward}
+                  functionChangePageBackward={functionChangePageBackward}
                   positionPage={positionPage}
                   setPositionPage={setPositionPage}
                   index={index}
                   openNav={openNav}
                   setOpenNav={setOpenNav}
+                  indexPage={indexPage}
+
                 />
               }
             />

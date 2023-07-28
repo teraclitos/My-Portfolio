@@ -14,12 +14,12 @@ const NavBar = ({
   functionTranslateFrontPage,
   functionTranslateBackPage,
   indexPage,
-  backToIndex,
+  functionChangePageBackward,
   positionPage,
   setPositionPage,
   dataBook,
   widthScreen,
-  functionPageIndex,
+  functionChangePageForward,
   navBarLinks,
   openNav,
   setOpenNav,
@@ -45,7 +45,7 @@ const NavBar = ({
   const indexFunctionBook = () => {
     if (widthScreen <= 992) {
       if (!openNav) {
-        functionPageIndex(4, 0)
+        functionChangePageForward(4, 0)
 
         setPositionPage(2)
         if (widthScreen > 575) {
@@ -54,26 +54,23 @@ const NavBar = ({
           setTranslateBook('calc(47vw - 50%)')
         }
       } else {
-        backToIndex(positionPage * 2, 1)
+        functionChangePageBackward(positionPage + 1, positionPage)
 
-        if (dataBook.length !== positionPage) {
-          setMoveResponsive(true)
-        } else {
+        if (dataBook.length === positionPage + 1) {
           setTranslateBook('calc(47vw - 50%)')
-          setMoveResponsive(true)
         }
-
+        setMoveResponsive(true)
         setPositionPage(0)
       }
     } else {
       if (positionPage < 2) {
-        functionPageIndex((2 - positionPage) * 2, positionPage)
+        functionChangePageForward((2 - positionPage) * 2, positionPage)
         if (positionPage === 0) {
           setTranslateBook('50%')
         }
       } else {
-        backToIndex((positionPage - 1) * 2, -1)
-        if (positionPage === dataBook.length) {
+        functionChangePageBackward(positionPage - 1, positionPage)
+        if (positionPage + 1 === dataBook.length) {
           setTranslateBook('50%')
         }
       }

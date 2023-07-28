@@ -14,14 +14,14 @@ function App () {
   const [language, setLanguage] = useState('english')
   const [dataBook, setDataBook] = useState(dataBookSpanish)
   const indexInitial = dataBook
-    .map((element, i) => {
-      if (i >= dataBook.length - 2) {
-        return i
-      } else {
-        return dataBook.length - 3
-      }
+    .map((element, i, arr) => {
+      if (i === 0) {
+        return arr.length
+      } else if (i === 1) {
+        return arr.length - 20
+      } else { return arr.length - 40 }
     })
-    .reverse()
+
   const translateInitial = dataBook.map((element) => 0)
   const [indexes, setIndexes] = useState(indexInitial)
   const [translateBook, setTranslateBook] = useState(0)
@@ -43,179 +43,118 @@ function App () {
     setWidthScreen(window.innerWidth)
   }
 
-  const functionTranslateFrontPage = (d, start) => {
+  const functionTranslateFrontPage = (indexBook) => {
     const newTranslate = translate.map((element, i) =>
-      i === d ? -180 : element
+      i === indexBook ? -180 : element
     )
 
     setTranslate(newTranslate)
   }
 
-  const functionPageIndex = async (proyectoId, start) => {
-    // const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-    // const copyTranslation = [...translate]
-    // const copyIndexes = [...indexes]
-    const numberOfTranslations = Math.ceil(proyectoId / 2)
+  const functionChangePageForward = async (indexBook, start) => {
+    const copyTranslation = [...translate]
+    const copyIndexes = [...indexes]
+    const numberOfTranslations = Math.ceil(indexBook / 2)
 
     const arrayNumberOfTranslation = Array.from(
       { length: numberOfTranslations },
       (_, index) => index
     )
-
-    // const lastIndexTranslated = copyTranslation.lastIndexOf(-180)
-    // const lasIndexWithHigherValue = copyIndexes.lastIndexOf(copyIndexes.length - 1)
-
-    // const arrayEachOneOfTheTranslationsToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
-    //   ac.push(copyTranslation.map((el, j) => {
-    //     if (j <= lastIndexTranslated + i + 1) {
-    //       return -180
-    //     } else {
-    //       return 0
-    //     }
-    //   }))
-    //   return ac
-    // }, [])
-
-    // const arrayEachOneOfThechangesOfIndexesToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
-    //   ac.push(copyIndexes.map((el, j) => {
-    //     if (j === lasIndexWithHigherValue + i + 1) {
-    //       return copyIndexes.length - 1
-    //     } else if (j === lasIndexWithHigherValue + i + 2) { return copyIndexes.length - 2 } else { return copyIndexes.length - 3 }
-    //   }))
-    //   return ac
-    // }, [])
-    // const arrayNumberOfTranslationPromises = arrayNumberOfTranslation.map((el, i) => {
-    //   return new Promise((resolve) => setTimeout(() => resolve(
-    //     setIndex(arrayEachOneOfThechangesOfIndexesToMake[i]),
-    //     setTranslate(arrayEachOneOfTheTranslationsToMake[i])
-
-    //   ), 500))
-    // })
-
-    // for (const trasnsalationNumber of arrayNumberOfTranslation) {
-    //   await new Promise(async () => {
-    //     setIndex(arrayEachOneOfThechangesOfIndexesToMake[trasnsalationNumber])
-    //     await delay(200)
-    //     setTranslate(arrayEachOneOfTheTranslationsToMake[trasnsalationNumber])
-    //   }, 500)
-    // };
-
-    arrayNumberOfTranslation.forEach((element, i) => {
-      setPointerEvent('none')
-      setTimeout(() => {
-        const newTranslate = translate.map((element, index) =>
-          index <= i + start ? -180 : element
-        )
-
-        const newindex = indexes.map((element, i3) => {
-          if (i + start === i3) {
-            return dataBook.length - 1
-          } else {
-            if (i + start === i3 - 1) {
-              return dataBook.length - 2
-            } else if (i + start === dataBook.length - 1) {
-              return dataBook.length - 2
-            } else {
-              return dataBook.length - 3
-            }
-          }
-        })
-
-        setIndexes(newindex)
-
-        setTimeout(() => {
-          setTranslate(newTranslate)
-        }, 200)
-
-        if (i === arrayNumberOfTranslation.length - 1) {
-          setTimeout(() => {
-            setPointerEvent('all')
-          }, 700)
+    const lastIndexTranslated = copyTranslation.lastIndexOf(-180)
+    const arrayEachOneOfTheTranslationsToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
+      ac.push(copyTranslation.map((el, j) => {
+        if (j <= lastIndexTranslated + i + 1) {
+          return -180
+        } else {
+          return 0
         }
-      }, i * 500)
-    })
+      }))
+      return ac
+    }, [])
+
+    const arrayEachOneOfThechangesOfIndexesToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
+      ac.push(copyIndexes.map((el, j, arr) => {
+        if (i + start === j) {
+          return arr.length
+        } else if (i + start + 1 === j || i + start - 1 === j) {
+          return arr.length - 20
+        } else { return arr.length - 40 }
+      }))
+      return ac
+    }, [])
+
+    setPointerEvent('none')
+    for (const translationNumberPromise of arrayNumberOfTranslation) {
+      setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
+      await new Promise((resolve) => setTimeout(resolve, 200))
+      setTranslate(arrayEachOneOfTheTranslationsToMake[translationNumberPromise])
+      await new Promise((resolve) => setTimeout(resolve, 100))
+    };
+    setPointerEvent('all')
   }
-  const backToIndex = (proyectoId, start) => {
-    const numberOfTranslations = Math.ceil(proyectoId / 2 + start)
+  const functionChangePageBackward = async (indexBook, start) => {
+    const copyTranslation = [...translate]
+    const copyIndexes = [...indexes]
+    const numberOfTranslations = Math.ceil(indexBook)
 
     const arrayNumberOfTranslation = Array.from(
       { length: numberOfTranslations },
-      (_, index) => index + 1
+      (_, index) => index
     )
-
-    arrayNumberOfTranslation.forEach((element, i) => {
-      setPointerEvent('none')
-      setTimeout(() => {
-        const newTranslate = translate.map((element, index) =>
-          index + start >= arrayNumberOfTranslation.length - i ? 0 : element
-        )
-
-        const newindex = indexes.map((element, i3) => {
-          if (arrayNumberOfTranslation.length - i - start === i3) {
-            return dataBook.length - 1
-          } else {
-            if (arrayNumberOfTranslation.length - i - start === i3 - 1) {
-              return dataBook.length - 2
-            } else {
-              return dataBook.length - 3
-            }
-          }
-        })
-
-        setIndexes(newindex)
-
-        setTimeout(() => {
-          setTranslate(newTranslate)
-        }, 200)
-
-        if (i === arrayNumberOfTranslation.length - 1) {
-          setMove(true)
-          setTimeout(() => {
-            setPointerEvent('all')
-            setMove(false)
-          }, 700)
+    let lastIndexTranslated = copyTranslation.indexOf(0)
+    if (lastIndexTranslated === -1) { lastIndexTranslated = dataBook.length }
+    const arrayEachOneOfTheTranslationsToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
+      ac.push(copyTranslation.map((el, j) => {
+        if (j >= lastIndexTranslated - i - 1) {
+          return 0
+        } else {
+          return -180
         }
-      }, i * 500)
-    })
+      }))
+      return ac
+    }, [])
+
+    const arrayEachOneOfThechangesOfIndexesToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
+      ac.push(copyIndexes.map((el, j, arr) => {
+        if (start - i === j) {
+          return arr.length
+        } else if (start - i + 1 === j || start - i - 1 === j) {
+          return arr.length - 20
+        } else { return arr.length - 40 }
+      }))
+      return ac
+    }, [])
+
+    setPointerEvent('none')
+    for (const translationNumberPromise of arrayNumberOfTranslation) {
+      setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
+      await new Promise((resolve) => setTimeout(resolve, 200))
+      if (arrayEachOneOfTheTranslationsToMake[translationNumberPromise][0] === 0) {
+        setMove(true)
+      }
+      setTranslate(arrayEachOneOfTheTranslationsToMake[translationNumberPromise])
+      await new Promise((resolve) => setTimeout(resolve, 100))
+    };
+    setPointerEvent('all')
+    setMove(false)
   }
 
-  const functionTranslateBackPage = (d) => {
-    const newTranslate = translate.map((element, i) => (i === d ? 0 : element))
+  const functionTranslateBackPage = (indexBook) => {
+    const newTranslate = translate.map((element, i) => (i === indexBook ? 0 : element))
 
     setTranslate(newTranslate)
   }
 
-  const indexPage = (d) => {
-    const newindex = indexes.map((element, i) => {
-      if (i === d) {
-        return dataBook.length - 1
-      } else {
-        if (i === d + 1) {
-          return dataBook.length - 2
-        } else if (d === dataBook.length - 1 && i === d - 1) {
-          return dataBook.length - 2
-        } else {
-          return dataBook.length - 3
-        }
-      }
+  const indexPage = (indexBook) => {
+    const newindex = indexes.map((index, j, arr) => {
+      if (indexBook === j) {
+        return arr.length
+      } else if (indexBook + 1 === j || indexBook - 1 === j) { return arr.length - 20 } else { return arr.length - 40 }
     })
 
     setIndexes(newindex)
-    if (d === dataBook.length - 1 && positionPage === dataBook.length) {
-      const exceptionIndex = indexes.map((element, i) => {
-        if (i === dataBook.length - 1) {
-          return dataBook.length - 2
-        } else if (i === dataBook.length - 2) {
-          return dataBook.length - 1
-        } else {
-          return dataBook.length - 3
-        }
-      })
-      setTimeout(() => {
-        setIndexes(exceptionIndex)
-      }, 500)
-    }
   }
+
   useEffect(() => {
     window.addEventListener('resize', handleWindowScreen)
   }, [widthScreen])
@@ -239,10 +178,7 @@ function App () {
       setBodyLoader('auto')
     }, 2000)
   }, [newLoad])
-  useEffect(() => {
-    console.log(translate)
-    console.log(indexes)
-  }, [translate, indexes])
+
   return (
     <BrowserRouter>
       <Main
@@ -260,8 +196,8 @@ function App () {
         translate={translate}
         functionTranslateFrontPage={functionTranslateFrontPage}
         functionTranslateBackPage={functionTranslateBackPage}
-        functionPageIndex={functionPageIndex}
-        backToIndex={backToIndex}
+        functionChangePageForward={functionChangePageForward}
+        functionChangePageBackward={functionChangePageBackward}
         indexPage={indexPage}
         positionPage={positionPage}
         setPositionPage={setPositionPage}

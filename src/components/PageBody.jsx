@@ -10,21 +10,20 @@ const PageBody = ({
   widthScreen,
   allProyects,
   indexes,
-
   pointerEvent,
   setPointerEvent,
   translate,
-
   functionTranslateFrontPage,
   functionTranslateBackPage,
-  functionPageIndex,
-  backToIndex,
-  indexPage,
+  functionChangePageForward,
+  functionChangePageBackward,
   positionPage,
   setPositionPage,
   index,
   openNav,
-  setOpenNav
+  setOpenNav,
+  indexPage
+
 }) => {
   return (
     <div className='min-vh-100 d-flex justify-content-center align-items-center'>
@@ -42,14 +41,15 @@ const PageBody = ({
         translate={translate}
         functionTranslateFrontPage={functionTranslateFrontPage}
         functionTranslateBackPage={functionTranslateBackPage}
-        functionPageIndex={functionPageIndex}
-        backToIndex={backToIndex}
-        indexPage={indexPage}
+        functionChangePageForward={functionChangePageForward}
+        functionChangePageBackward={functionChangePageBackward}
         positionPage={positionPage}
         setPositionPage={setPositionPage}
         index={index}
         openNav={openNav}
         setOpenNav={setOpenNav}
+        indexPage={indexPage}
+
       />
     </div>
   )

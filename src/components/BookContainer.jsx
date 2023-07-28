@@ -19,14 +19,15 @@ const BookContainer = ({
   translate,
   functionTranslateFrontPage,
   functionTranslateBackPage,
-  functionPageIndex,
-  backToIndex,
-  indexPage,
+  functionChangePageForward,
+  functionChangePageBackward,
   positionPage,
   setPositionPage,
   index,
   openNav,
-  setOpenNav
+  setOpenNav,
+  indexPage
+
 }) => {
   useEffect(() => {
     document.title = 'Francisco Teran'
@@ -40,7 +41,7 @@ const BookContainer = ({
   const onePageRight = (i) => {
     indexPage(i)
 
-    setPositionPage(i + 1)
+    setPositionPage(i)
 
     if (widthScreen > 575) {
       if (i === 0) {
@@ -217,10 +218,10 @@ const BookContainer = ({
                                   onClick={(e) => {
                                     e.stopPropagation()
                                     if (index === 0) {
-                                      functionPageIndex(4, 2)
+                                      functionChangePageForward(4, 2)
                                       setPositionPage(4)
                                     } else if (index === 1) {
-                                      functionPageIndex(2, 2)
+                                      functionChangePageForward(2, 2)
                                       setPositionPage(3)
                                     }
                                   }}
@@ -240,7 +241,7 @@ const BookContainer = ({
                               }}
                               onClick={(e) => {
                                 e.stopPropagation()
-                                functionPageIndex((index + 1) * 2, 4)
+                                functionChangePageForward((index + 1) * 2, 4)
 
                                 setPositionPage(index + 5)
                               }}
@@ -370,7 +371,7 @@ const BookContainer = ({
                       className='back-to-index letter-title-book no-button-styles'
                       onClick={(e) => {
                         e.stopPropagation()
-                        backToIndex(i * 2, -1)
+                        functionChangePageBackward(i - 1, i)
                         setPositionPage(2)
                       }}
                       onTouchStart={(e) => {
@@ -388,7 +389,7 @@ const BookContainer = ({
                       }}
                       onClick={(e) => {
                         e.stopPropagation()
-                        backToIndex(i * 2, -3)
+                        functionChangePageBackward(i - 3, i)
                         setPositionPage(4)
                       }}
                       className='back-to-proyects  letter-title-book no-button-styles'

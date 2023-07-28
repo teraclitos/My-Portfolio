@@ -21,12 +21,12 @@ const dataBookSpanish = [
   {
     id: 'book4',
     descriptionProyectFrontPage: `Soy un asombrado del razonamiento lógico; de
-cómo a partir de principios simples, sólidos y
-evidentes pueden surgir estructuras bellas y
-complejas. El hecho de poder construir estos edificios lógicos "dialogando" con la computadora en un
-inequívoco y a su vez creativo lenguaje es algo
-fascinante que deseo seguir perfeccionando. En mi tiempo libre me gusta leer todo tipo de libros (literatura, filosofìa, ciencia, etc) y hacer
-deportes, en particular tenis`,
+  cómo a partir de principios simples, sólidos y
+  evidentes pueden surgir estructuras bellas y
+  complejas. El hecho de poder construir estos edificios lógicos "dialogando" con la computadora en un
+  inequívoco y a su vez creativo lenguaje es algo
+  fascinante que deseo seguir perfeccionando. En mi tiempo libre me gusta leer todo tipo de libros (literatura, filosofìa, ciencia, etc) y hacer
+  deportes, en particular tenis`,
     pageFrontNumber: 2,
     pageBackNumber: 3
   },
@@ -106,12 +106,12 @@ const dataBookEnglish = [
   {
     id: 'book4',
     descriptionProyectFrontPage: `I am amazed by logical reasoning; of
-how from simple, solid and
-evident principles, can emerge beautiful and 
-complex structures. Being able to build these logical towers by having a "dialogue" with the computer in a
-straightforward and at the same time creative language is something
-fascinating that I want to improve more and more. In my leisure time I love to read all kinds of books (literature, philosophy, science, etc.) and do
-sports, in particular tennis.`,
+  how from simple, solid and
+  evident principles, can emerge beautiful and
+  complex structures. Being able to build these logical towers by having a "dialogue" with the computer in a
+  straightforward and at the same time creative language is something
+  fascinating that I want to improve more and more. In my leisure time I love to read all kinds of books (literature, philosophy, science, etc.) and do
+  sports, in particular tennis.`,
     pageFrontNumber: 2,
     pageBackNumber: 3
   },
@@ -131,7 +131,7 @@ sports, in particular tennis.`,
   {
     id: 'book6',
     descriptionProyectFrontPage: `Project developed with React.js and Node.js. It is a real estate web-site where the real estate agent showcases the houses he is currently selling. The page implements robust validations on the server-side and client-side. It also includes a back-end search functionality. The color scheme gives the website an elegant black and white appearance. The administrator has full CRUD functionality and he also can highlight properties. The
-Database used was Mongo db.`,
+  Database used was Mongo db.`,
     pageFrontNumber: 6,
     titleBack: 'Portfolio',
     url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/portfolio_diego_foto_gae0mw.png',
@@ -143,10 +143,10 @@ Database used was Mongo db.`,
   {
     id: 'book7',
     descriptionProyectFrontPage: `Architect portfolio developed with pure javascript and css.
-    It was a great challenge for me, since
-    it was the first one I did. It was a sort of a craft project; for example, on the desktop version,
-    the spatial arrangement of the houses on the main page does not follow a rigid and predetermined structure, instead, each house was individually positioned
-   . It is not very scalable but it showcases a unique style. On the desktop version, you can dynamically zoom in on each picture for a detailed view of the houses.`,
+      It was a great challenge for me, since
+      it was the first one I did. It was a sort of a craft project; for example, on the desktop version,
+      the spatial arrangement of the houses on the main page does not follow a rigid and predetermined structure, instead, each house was individually positioned
+     . It is not very scalable but it showcases a unique style. On the desktop version, you can dynamically zoom in on each picture for a detailed view of the houses.`,
     pageFrontNumber: 8,
     titleBack: 'RollingCode',
     url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_rolling_foto_qdnyf5.png',
