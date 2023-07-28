@@ -89,6 +89,7 @@ const Main = ({
           setBodyLoader={setBodyLoader}
           setIndexes={setIndexes}
           indexInitial={indexInitial}
+          translate={translate}
 
         />
 

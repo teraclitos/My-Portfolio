@@ -85,10 +85,12 @@ function App () {
 
     setPointerEvent('none')
     for (const translationNumberPromise of arrayNumberOfTranslation) {
-      setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
-      await new Promise((resolve) => setTimeout(resolve, 200))
-      setTranslate(arrayEachOneOfTheTranslationsToMake[translationNumberPromise])
-      await new Promise((resolve) => setTimeout(resolve, 100))
+      const promiseChangePage = async () => {
+        setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
+        await new Promise((resolve) => setTimeout(resolve, 200))
+        setTranslate(arrayEachOneOfTheTranslationsToMake[translationNumberPromise])
+      }
+      await promiseChangePage()
     };
     setPointerEvent('all')
   }
@@ -127,13 +129,15 @@ function App () {
 
     setPointerEvent('none')
     for (const translationNumberPromise of arrayNumberOfTranslation) {
-      setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
-      await new Promise((resolve) => setTimeout(resolve, 200))
-      if (arrayEachOneOfTheTranslationsToMake[translationNumberPromise][0] === 0) {
-        setMove(true)
+      const promiseChangePage = async () => {
+        setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
+        await new Promise((resolve) => setTimeout(resolve, 200))
+        if (arrayEachOneOfTheTranslationsToMake[translationNumberPromise][0] === 0) {
+          setMove(true)
+        }
+        setTranslate(arrayEachOneOfTheTranslationsToMake[translationNumberPromise])
       }
-      setTranslate(arrayEachOneOfTheTranslationsToMake[translationNumberPromise])
-      await new Promise((resolve) => setTimeout(resolve, 100))
+      await promiseChangePage()
     };
     setPointerEvent('all')
     setMove(false)

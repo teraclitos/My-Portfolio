@@ -23,7 +23,8 @@ const NavBar = ({
   navBarLinks,
   openNav,
   setOpenNav,
-  move
+  move,
+  translate
 }) => {
   const [moveResponsive, setMoveResponsive] = useState(false)
 
@@ -64,17 +65,18 @@ const NavBar = ({
       }
     } else {
       if (positionPage < 2) {
-        functionChangePageForward((2 - positionPage) * 2, positionPage)
-        if (positionPage === 0) {
+        if (positionPage === 1 && translate[1] === -180) return
+        if (positionPage === 0 && translate[0] === 0) {
+          functionChangePageForward(4, 0)
           setTranslateBook('50%')
-        }
+        } else { functionChangePageForward(2, 1) }
       } else {
         functionChangePageBackward(positionPage - 1, positionPage)
         if (positionPage + 1 === dataBook.length) {
           setTranslateBook('50%')
         }
       }
-      setPositionPage(2)
+      setPositionPage(1)
     }
   }
   const functionLanguage = () => {
