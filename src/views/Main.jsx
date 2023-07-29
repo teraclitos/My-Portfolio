@@ -90,6 +90,7 @@ const Main = ({
           setIndexes={setIndexes}
           indexInitial={indexInitial}
           translate={translate}
+          indexes={indexes}
 
         />
 

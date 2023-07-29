@@ -183,10 +183,10 @@ function App () {
       setBodyLoader('auto')
     }, 2000)
   }, [newLoad])
-
   useEffect(() => {
-    console.log(move)
-  }, [move])
+    console.log(indexes)
+    console.log(translate)
+  }, [indexes, translate])
 
   return (
     <BrowserRouter>

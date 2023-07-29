@@ -219,10 +219,10 @@ const BookContainer = ({
                                     e.stopPropagation()
                                     if (index === 0) {
                                       functionChangePageForward(4, 2)
-                                      setPositionPage(4)
+                                      setPositionPage(3)
                                     } else if (index === 1) {
                                       functionChangePageForward(2, 2)
-                                      setPositionPage(3)
+                                      setPositionPage(2)
                                     }
                                   }}
                                 >
@@ -243,7 +243,7 @@ const BookContainer = ({
                                 e.stopPropagation()
                                 functionChangePageForward((index + 1) * 2, 4)
 
-                                setPositionPage(index + 5)
+                                setPositionPage(index + 4)
                               }}
                               className='mb-2 proyects  letter-title-book no-button-styles '
                             >

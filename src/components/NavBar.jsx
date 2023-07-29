@@ -24,7 +24,8 @@ const NavBar = ({
   openNav,
   setOpenNav,
   move,
-  translate
+  translate,
+  indexes
 }) => {
   const [moveResponsive, setMoveResponsive] = useState(false)
 
@@ -71,7 +72,13 @@ const NavBar = ({
           setTranslateBook('50%')
         } else { functionChangePageForward(2, 1) }
       } else {
-        functionChangePageBackward(positionPage - 1, positionPage)
+        console.log(translate.lastIndexOf(-180) === indexes.indexOf(dataBook.length))
+        if (translate.lastIndexOf(-180) === indexes.indexOf(dataBook.length)) {
+          functionChangePageBackward(positionPage - 1, positionPage)
+        } else {
+          functionChangePageBackward(positionPage - 2, positionPage - 1)
+        }
+
         if (positionPage + 1 === dataBook.length) {
           setTranslateBook('50%')
         }
