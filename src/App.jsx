@@ -94,13 +94,15 @@ function App () {
     };
     setPointerEvent('all')
   }
-  const functionChangePageBackward = async (indexBook, start) => {
+  const functionChangePageBackward = async (indexBook, startPosition) => {
     const copyTranslation = [...translate]
-    const isPenultimatePageAndLastIndexBookPosition = copyTranslation[copyTranslation.length - 2] === -180 && copyTranslation[copyTranslation.length - 1] === 0 && indexBook === dataBook.length - 1
-
+    const isPenultimatePageAndLastIndexBookPosition = copyTranslation[copyTranslation.length - 2] === -180 && copyTranslation[copyTranslation.length - 1] === 0 && indexBook === dataBook.length
+    const start = isPenultimatePageAndLastIndexBookPosition ? startPosition - 1 : startPosition
     const copyIndexes = [...indexes]
 
-    const numberOfTranslations = isPenultimatePageAndLastIndexBookPosition ? Math.ceil(indexBook) - 1 : Math.ceil(indexBook)
+    const numberOfTranslations = isPenultimatePageAndLastIndexBookPosition
+      ? Math.ceil(indexBook) - 1
+      : Math.ceil(indexBook)
 
     const arrayNumberOfTranslation = Array.from(
       { length: numberOfTranslations },
