@@ -106,7 +106,7 @@ function App () {
 
     const copyIndexes = isBackCover ? specialIndex : [...indexes]
 
-    const numberOfTranslations = Math.ceil(indexBook)
+    const numberOfTranslations = isBackCover && indexBook === dataBook.length - 1 ? Math.ceil(indexBook) - 1 : Math.ceil(indexBook)
 
     const arrayNumberOfTranslation = Array.from(
       { length: numberOfTranslations },
