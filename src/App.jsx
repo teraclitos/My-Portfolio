@@ -96,17 +96,11 @@ function App () {
   }
   const functionChangePageBackward = async (indexBook, start) => {
     const copyTranslation = [...translate]
-    const isBackCover = copyTranslation[copyTranslation.length - 2] === -180 && copyTranslation[copyTranslation.length - 1] === 0
+    const isPenultimatePageAndLastIndexBookPosition = copyTranslation[copyTranslation.length - 2] === -180 && copyTranslation[copyTranslation.length - 1] === 0 && indexBook === dataBook.length - 1
 
-    const specialIndex = copyTranslation.map((el, i, arr) => {
-      if (arr.length - 2 === i) {
-        return arr.length
-      } else if (arr.length - 1 === i || arr.length - 3 === i) { return arr.length - 20 } else { return arr.length - 40 }
-    })
+    const copyIndexes = [...indexes]
 
-    const copyIndexes = isBackCover ? specialIndex : [...indexes]
-
-    const numberOfTranslations = isBackCover && indexBook === dataBook.length - 1 ? Math.ceil(indexBook) - 1 : Math.ceil(indexBook)
+    const numberOfTranslations = isPenultimatePageAndLastIndexBookPosition ? Math.ceil(indexBook) - 1 : Math.ceil(indexBook)
 
     const arrayNumberOfTranslation = Array.from(
       { length: numberOfTranslations },
