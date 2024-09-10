@@ -15,7 +15,7 @@ const dataBookSpanish = [
     id: 'book3',
     titleFront: 'Índice',
     titleBack: 'Acerca de mí',
-    url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1685544528/porfolio_definitiva_bwojbr.png',
+    url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1725999657/Foto_perfil_1_gt9sw3.jpg',
     pageBackNumber: 1
   },
   {
@@ -65,7 +65,7 @@ const dataBookSpanish = [
     pageFrontNumber: 8,
     titleBack: 'RollingCode',
     url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_rolling_foto_qdnyf5.png',
-    github: 'https://github.com/teraclitos/proyecto-final-rolling-code-blog',
+    github: '',
     link: 'https://proyecto-final-rolling-code-blog.vercel.app/',
 
     pageBackNumber: 9
@@ -79,6 +79,16 @@ const dataBookSpanish = [
     ceder en pos de la armonía del trabajo, etc. El administrador puede: CRUD (noticias y usuarios) y destacar noticias. Los usuarios pueden
     dar me gusta a las noticias, las cuales se almacenan en un carrito.`,
     pageFrontNumber: 10,
+    titleBack: 'Godubi',
+    url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1726001088/GODUBI_mbkti2.jpg',
+    github: '',
+    link: 'https://godubi.com/',
+    pageBackNumber: 11
+  },
+  {
+    id: 'book9',
+    descriptionProyectFrontPage: 'Trabajo actual',
+    pageFrontNumber: 12,
     titleBack: ''
   }
 ]
@@ -99,7 +109,7 @@ const dataBookEnglish = [
     titleFront: 'Index',
     descriptionProyectFrontPage: '',
     titleBack: 'About me',
-    url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1685544528/porfolio_definitiva_bwojbr.png',
+    url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1725999657/Foto_perfil_1_gt9sw3.jpg',
     pageBackNumber: 1
   },
 
@@ -158,9 +168,25 @@ const dataBookEnglish = [
 
   {
     id: 'book8',
-    descriptionProyectFrontPage: `Final project of the course I did in RollingCode, developed with React.js and Node.js. It's a news web-site developed with my work team, which is not insignificant, as it taught me how to work effectively as part of a team, with all that it entails: getting rich from other contributions, giving a hand to a colleague who needs it, compromising personal preferences to maintain team harmony, etc. The administrator can: CRUD (news and users) and highlight news. Users can
-like the news, which are stored in a cart.`,
+    descriptionProyectFrontPage: `Final project of the course I did in RollingCode,
+     developed with React.js and Node.js. It's a news web-site developed with my work team,
+      which is not insignificant, as it taught me how to work effectively as part of a team,
+       with all that it entails: getting rich from other contributions,
+        giving a hand to a colleague who needs it,
+         compromising personal preferences to maintain team harmony, etc.
+          The administrator can: CRUD (news and users) and highlight news. Users can
+     like the news, which are stored in a cart.`,
     pageFrontNumber: 10,
+    titleBack: 'Godubi',
+    url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1726001088/GODUBI_mbkti2.jpg',
+    github: '',
+    link: 'https://godubi.com/',
+    pageBackNumber: 11
+  },
+  {
+    id: 'book9',
+    descriptionProyectFrontPage: 'Actual job',
+    pageFrontNumber: 12,
     titleBack: ''
   }
 ]
@@ -168,22 +194,28 @@ like the news, which are stored in a cart.`,
 const indexEnglish =
  [{ id: 'index1', index: 'Proyects' },
    { id: 'index2', index: 'About me' },
-   { id: 'index3', index: 'Contact' }]
+   { id: 'index3', index: 'Contact' }
+ ]
 
 const indexSpanish =
 [{ id: 'index1', index: 'Proyectos' },
   { id: 'index2', index: 'Acerca de mí' },
-  { id: 'index3', index: 'Contacto' }]
+  { id: 'index3', index: 'Contacto' }
+]
 
 const allProyectsSpanish = [
+
   { id: 'proyect1', proyect: 'Inmobiliaria' },
   { id: 'proyect2', proyect: 'Portfolio de arquitecto' },
-  { id: 'proyect3', proyect: 'Proyecto final de RollingCode' }
+  { id: 'proyect3', proyect: 'Proyecto final de RollingCode' },
+  { id: 'proyect4', proyect: 'Godubi' }
 ]
 const allProyectsEnglish = [
+
   { id: 'proyect1', proyect: 'Real Estate' },
   { id: 'proyect2', proyect: 'Architect portfolio' },
-  { id: 'proyect3', proyect: 'RollingCode final proyect' }
+  { id: 'proyect3', proyect: 'RollingCode final proyect' },
+  { id: 'proyect4', proyect: 'Godubi' }
 ]
 
 export {

@@ -242,7 +242,6 @@ const BookContainer = ({
                               onClick={(e) => {
                                 e.stopPropagation()
                                 functionChangePageForward((index + 1) * 2, 4)
-
                                 setPositionPage(index + 4)
                               }}
                               className='mb-2 proyects  letter-title-book no-button-styles '
@@ -337,18 +336,19 @@ const BookContainer = ({
                       }}
                       className='d-flex  mt-3'
                     >
-                      <div className='wooden-button wooden-button-cv me-2'>
-                        <a
-                          className='links-book'
-                          target='blank'
-                          href={element.github}
-                        >
-                          <FontAwesomeIcon
-                            className='icon-footer icon-git-book  '
-                            icon={faGithub}
-                          />
-                        </a>
-                      </div>
+                      {element.github &&
+                        <div className='wooden-button wooden-button-cv me-2'>
+                          <a
+                            className='links-book'
+                            target='blank'
+                            href={element.github}
+                          >
+                            <FontAwesomeIcon
+                              className='icon-footer icon-git-book  '
+                              icon={faGithub}
+                            />
+                          </a>
+                        </div>}
 
                       <div className='wooden-button wooden-button-link '>
                         <a
