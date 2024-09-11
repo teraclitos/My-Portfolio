@@ -82,12 +82,14 @@ const dataBookSpanish = [
     titleBack: 'Godubi',
     url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1726001088/GODUBI_mbkti2.jpg',
     github: '',
-    link: 'https://godubi.com/',
+    link: 'https://godubi.com/ ',
     pageBackNumber: 11
   },
   {
     id: 'book9',
-    descriptionProyectFrontPage: 'Trabajo actual',
+    descriptionProyectFrontPage: `Llevo un año colaborando en este proyecto. Godubi es una herramienta de conexión y gestión que conecta trabajadores con clientes mediante IA o un buscador. Una vez conectados, pueden gestionar una orden en conjunto: para ello, hay diversas herramientas de gestión como manejo de archivos, sistema de posteo, chat, gestión de reuniones y tablero de trabajo. 
+
+Yo colaboré en el área de frontend: utilicé Vue 2 como framework y estuve a cargo principalmente de la centralización de datos con Vuex.`,
     pageFrontNumber: 12,
     titleBack: ''
   }
@@ -185,7 +187,9 @@ const dataBookEnglish = [
   },
   {
     id: 'book9',
-    descriptionProyectFrontPage: 'Actual job',
+    descriptionProyectFrontPage: `I have been colaborating on this project for a year. Godubi is a connection and management tool that links workers  with clients through AI or a search engine. Once connected, they can jointly manage a work order: for this, the platform provides various management tools such as file handling, posting system, chat, meeting management, and a workboard.
+
+I collaborated in the frontend area: I used Vue 2 as a framework and was mainly in charge of data centralization with Vuex.`,
     pageFrontNumber: 12,
     titleBack: ''
   }
