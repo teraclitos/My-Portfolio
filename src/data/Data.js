@@ -212,14 +212,14 @@ const allProyectsSpanish = [
   { id: 'proyect1', proyect: 'Inmobiliaria' },
   { id: 'proyect2', proyect: 'Portfolio de arquitecto' },
   { id: 'proyect3', proyect: 'Proyecto final de RollingCode' },
-  { id: 'proyect4', proyect: 'Godubi' }
+  { id: 'proyect4', proyect: 'Godubi (colaborador)' }
 ]
 const allProyectsEnglish = [
 
   { id: 'proyect1', proyect: 'Real Estate' },
   { id: 'proyect2', proyect: 'Architect portfolio' },
   { id: 'proyect3', proyect: 'RollingCode final proyect' },
-  { id: 'proyect4', proyect: 'Godubi' }
+  { id: 'proyect4', proyect: 'Godubi (collaborator)' }
 ]
 
 export {
