@@ -30,7 +30,7 @@ function App () {
   const [widthScreen, setWidthScreen] = useState(window.innerWidth)
   const [allProyects, setAllProyects] = useState(allProyectsSpanish)
   const [positionPage, setPositionPage] = useState(0)
-  const [index, setIndex] = useState(indexSpanish)
+  const [indexOfTheBook, setIndexOfTheBook] = useState(indexSpanish)
   const [openNav, setOpenNav] = useState(false)
   const [move, setMove] = useState(false)
   const [loader, setLoader] = useState(true)
@@ -50,6 +50,22 @@ function App () {
 
     setTranslate(newTranslate)
   }
+  const functionTranslateBackPage = (indexBook) => {
+    const newTranslate = translate.map((element, i) => (i === indexBook ? 0 : element))
+    setTranslate(newTranslate)
+  }
+  const indexPage = (indexBook) => {
+    const newindex = indexes.map((index, j, arr) => {
+      if (indexBook === j) {
+        return arr.length
+      } else if (indexBook + 1 === j || indexBook - 1 === j) { return arr.length - 20 } else { return arr.length - 40 }
+    })
+    setIndexes(newindex)
+  }
+  useEffect(() => {
+    console.log(translate)
+    console.log(indexes)
+  }, [translate, indexes])
 
   const functionChangePageForward = async (indexBook, start) => {
     const copyTranslation = [...translate]
@@ -149,22 +165,6 @@ function App () {
     setMove(false)
   }
 
-  const functionTranslateBackPage = (indexBook) => {
-    const newTranslate = translate.map((element, i) => (i === indexBook ? 0 : element))
-
-    setTranslate(newTranslate)
-  }
-
-  const indexPage = (indexBook) => {
-    const newindex = indexes.map((index, j, arr) => {
-      if (indexBook === j) {
-        return arr.length
-      } else if (indexBook + 1 === j || indexBook - 1 === j) { return arr.length - 20 } else { return arr.length - 40 }
-    })
-
-    setIndexes(newindex)
-  }
-
   useEffect(() => {
     window.addEventListener('resize', handleWindowScreen)
   }, [widthScreen])
@@ -174,12 +174,12 @@ function App () {
       setAllProyects(allProyectsSpanish)
       setDataBook(dataBookSpanish)
 
-      setIndex(indexSpanish)
+      setIndexOfTheBook(indexSpanish)
     } else {
       setAllProyects(allProyectsEnglish)
       setDataBook(dataBookEnglish)
 
-      setIndex(indexEnglish)
+      setIndexOfTheBook(indexEnglish)
     }
   }, [language])
   useEffect(() => {
@@ -215,7 +215,7 @@ function App () {
         indexPage={indexPage}
         positionPage={positionPage}
         setPositionPage={setPositionPage}
-        index={index}
+        indexOfTheBook={indexOfTheBook}
         openNav={openNav}
         setOpenNav={setOpenNav}
         move={move}

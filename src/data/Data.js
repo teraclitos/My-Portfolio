@@ -196,15 +196,15 @@ I collaborated in the frontend area: I used Vue 2 as a framework and was mainly 
 ]
 
 const indexEnglish =
- [{ id: 'index1', index: 'Proyects' },
-   { id: 'index2', index: 'About me' },
-   { id: 'index3', index: 'Contact' }
+ [{ id: 'index1', title: 'Proyects' },
+   { id: 'index2', title: 'About me' },
+   { id: 'index3', title: 'Contact' }
  ]
 
 const indexSpanish =
-[{ id: 'index1', index: 'Proyectos' },
-  { id: 'index2', index: 'Acerca de mí' },
-  { id: 'index3', index: 'Contacto' }
+[{ id: 'index1', title: 'Proyectos' },
+  { id: 'index2', title: 'Acerca de mí' },
+  { id: 'index3', title: 'Contacto' }
 ]
 
 const allProyectsSpanish = [

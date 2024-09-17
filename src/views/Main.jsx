@@ -27,7 +27,7 @@ const Main = ({
   positionPage,
   setPositionPage,
   navBarLinks,
-  index,
+  indexOfTheBook,
   openNav,
   setOpenNav,
   move,
@@ -118,7 +118,7 @@ const Main = ({
                   functionChangePageBackward={functionChangePageBackward}
                   positionPage={positionPage}
                   setPositionPage={setPositionPage}
-                  index={index}
+                  indexOfTheBook={indexOfTheBook}
                   openNav={openNav}
                   setOpenNav={setOpenNav}
                   indexPage={indexPage}

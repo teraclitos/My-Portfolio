@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-
 import '../styles/all.css'
 import { isMobile } from 'react-device-detect'
+import LinkToMail from './LinkToMail'
 
 const BookContainer = ({
   language,
@@ -23,12 +23,15 @@ const BookContainer = ({
   functionChangePageBackward,
   positionPage,
   setPositionPage,
-  index,
+  indexOfTheBook,
   openNav,
   setOpenNav,
   indexPage
 
 }) => {
+  const positionOfTheIndexOfTheBook = 2
+  const positionOfTheListOfProyects = 4
+  const positionOfIndexOfTheBookAndListOfProyects = [positionOfTheIndexOfTheBook, positionOfTheListOfProyects]
   useEffect(() => {
     document.title = 'Francisco Teran'
   }, [])
@@ -100,7 +103,6 @@ const BookContainer = ({
     }, 700)
   }
 
-  const arrayInclude = [2, 4]
   const proyectDisplay = (i) => {
     if (i > 3 && i < dataBook.length - 1) {
       return true
@@ -182,7 +184,7 @@ const BookContainer = ({
                   </div>
                 )}
 
-                {arrayInclude.includes(i) && (
+                {positionOfIndexOfTheBookAndListOfProyects.includes(i) && (
                   <div>
                     <b>
                       <h2 className='letter-title-book title-size text-center mb-3'>
@@ -190,48 +192,37 @@ const BookContainer = ({
                       </h2>
                     </b>
                     <ul className='list-style-none p-0 d-flex flex-column align-items-center '>
-                      {i === 2 &&
-                        index.map((element, index) => (
-                          <li key={element.id}>
-                            {index === 2
-                              ? (
-                                <a
-                                  onClick={(e) => {
-                                    e.stopPropagation()
-                                  }}
-                                  onTouchStart={(e) => {
-                                    e.stopPropagation()
-                                  }}
-                                  className='mb-2 proyects letter-title-book contact-link '
-                                  href='mailto:tefans12@gmail.com'
-                                >
-                                  {element.index}
-                                </a>
-                                )
-                              : (
-                                <button
-                                  type='button'
-                                  className='mb-2 proyects letter-title-book no-button-styles'
-                                  onTouchStart={(e) => {
-                                    e.stopPropagation()
-                                  }}
-                                  onClick={(e) => {
-                                    e.stopPropagation()
-                                    if (index === 0) {
-                                      functionChangePageForward(4, 2)
-                                      setPositionPage(3)
-                                    } else if (index === 1) {
-                                      functionChangePageForward(2, 2)
-                                      setPositionPage(2)
-                                    }
-                                  }}
-                                >
-                                  {element.index}
-                                </button>
-                                )}
-                          </li>
-                        ))}
-                      {i === 4 &&
+                      {i === positionOfTheIndexOfTheBook &&
+                       indexOfTheBook.map((element, index) => (
+                         <li key={element.id}>
+                           {index === 2
+                             ? (
+                               <LinkToMail element={element} />
+                               )
+                             : (
+                               <button
+                                 type='button'
+                                 className='mb-2 proyects letter-title-book no-button-styles'
+                                 onTouchStart={(e) => {
+                                   e.stopPropagation()
+                                 }}
+                                 onClick={(e) => {
+                                   e.stopPropagation()
+                                   if (index === 0) {
+                                     functionChangePageForward(4, positionOfTheIndexOfTheBook)
+                                     setPositionPage(3)
+                                   } else if (index === 1) {
+                                     functionChangePageForward(2, positionOfTheIndexOfTheBook)
+                                     setPositionPage(2)
+                                   }
+                                 }}
+                               >
+                                 {element.title}
+                               </button>
+                               )}
+                         </li>
+                       ))}
+                      {i === positionOfTheListOfProyects &&
                         allProyects.map((element, index) => (
                           <li key={element.id}>
                             <button
@@ -241,7 +232,7 @@ const BookContainer = ({
                               }}
                               onClick={(e) => {
                                 e.stopPropagation()
-                                functionChangePageForward((index + 1) * 2, 4)
+                                functionChangePageForward((index + 1) * 2, positionOfTheListOfProyects)
                                 setPositionPage(index + 4)
                               }}
                               className='mb-2 proyects  letter-title-book no-button-styles '

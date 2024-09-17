@@ -19,7 +19,7 @@ const PageBody = ({
   functionChangePageBackward,
   positionPage,
   setPositionPage,
-  index,
+  indexOfTheBook,
   openNav,
   setOpenNav,
   indexPage
@@ -45,7 +45,7 @@ const PageBody = ({
         functionChangePageBackward={functionChangePageBackward}
         positionPage={positionPage}
         setPositionPage={setPositionPage}
-        index={index}
+        indexOfTheBook={indexOfTheBook}
         openNav={openNav}
         setOpenNav={setOpenNav}
         indexPage={indexPage}
