@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
-const BookProyectLinksAndTitle = ({ page }) => {
+const BookProjectLinksAndTitle = ({ page }) => {
   return (
     <div className='d-flex flex-column align-items-center '>
       <h2 className='letter-title-book title-size  text-center'>
@@ -64,4 +64,4 @@ const BookProyectLinksAndTitle = ({ page }) => {
   )
 }
 
-export default BookProyectLinksAndTitle
+export default BookProjectLinksAndTitle

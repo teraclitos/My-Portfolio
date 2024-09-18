@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BookProyect = ({ proyect, positionOfTheListOfProyects, setPositionPage, functionChangePageForward, index }) => {
+const BookProjectsList = ({ proyect, positionOfTheListOfProyects, setPositionPage, functionChangePageForward, index }) => {
   return (
     <li>
       <button
@@ -21,4 +21,4 @@ const BookProyect = ({ proyect, positionOfTheListOfProyects, setPositionPage, fu
   )
 }
 
-export default BookProyect
+export default BookProjectsList

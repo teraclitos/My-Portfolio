@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BookProyectFooter = ({ i, language, functionChangePageBackward, setPositionPage }) => {
+const BookProjectsListRedirection = ({ i, language, functionChangePageBackward, setPositionPage }) => {
   return (
     <button
       type='button'
@@ -19,4 +19,4 @@ const BookProyectFooter = ({ i, language, functionChangePageBackward, setPositio
   )
 }
 
-export default BookProyectFooter
+export default BookProjectsListRedirection

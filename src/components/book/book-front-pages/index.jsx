@@ -1,9 +1,9 @@
 import React from 'react'
-import ProjectDescription from './ProjectDescription'
+import BookProjectDescription from './BookProjectDescription'
 import BookCover from './BookCover'
 import BookInnerCover from './BookInnerCover'
 import BookIndex from './BookIndex'
-import BookProyect from './BookProyect'
+import BookProjectsList from './BookProjectsList'
 
 const BookFrontPages = ({
   onePageRight,
@@ -61,7 +61,7 @@ const BookFrontPages = ({
             ))}
               {i === positionOfTheListOfProyects &&
              allProyects.map((proyect, index) => (
-               <BookProyect
+               <BookProjectsList
                  key={proyect.id}
                  proyect={proyect}
                  index={index}
@@ -73,7 +73,7 @@ const BookFrontPages = ({
             </ul>
           </div>
         )}
-        <ProjectDescription page={page} />
+        <BookProjectDescription page={page} />
       </div>
     </div>
 

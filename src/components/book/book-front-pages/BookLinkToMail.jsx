@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LinkToMail = ({ item }) => {
+const BookLinkToMail = ({ item }) => {
   return (
 
     <a
@@ -18,4 +18,4 @@ const LinkToMail = ({ item }) => {
 
   )
 }
-export default LinkToMail
+export default BookLinkToMail

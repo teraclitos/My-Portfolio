@@ -1,12 +1,12 @@
 import React from 'react'
-import LinkToMail from './LinkToMail'
+import BookLinkToMail from './BookLinkToMail'
 
 const BookIndex = ({ item, functionChangePageForward, positionOfTheIndexOfTheBook, setPositionPage, index }) => {
   return (
     <li>
       {index === 2
         ? (
-          <LinkToMail item={item} />
+          <BookLinkToMail item={item} />
           )
         : (
           <button

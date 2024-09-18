@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BookIndexFooter = ({
+const BookIndexRedirection = ({
   pointerEvent,
   functionChangePageBackward,
   setPositionPage,
@@ -27,4 +27,4 @@ const BookIndexFooter = ({
   )
 }
 
-export default BookIndexFooter
+export default BookIndexRedirection

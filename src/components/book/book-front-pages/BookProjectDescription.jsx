@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ProjectDescription = ({ page }) => {
+const BookProjectDescription = ({ page }) => {
   return (
     <div>
       <div>
@@ -14,4 +14,4 @@ const ProjectDescription = ({ page }) => {
   )
 }
 
-export default ProjectDescription
+export default BookProjectDescription

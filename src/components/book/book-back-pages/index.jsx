@@ -1,8 +1,8 @@
 import React from 'react'
 import BookAboutMe from './BookAboutMe'
-import BookProyectLinksAndTitle from './BookProyectLinksAndTitle'
-import BookIndexFooter from './BookIndexFooter'
-import BookProyectFooter from './BookProyectFooter'
+import BookProjectLinksAndTitle from './BookProjectLinksAndTitle'
+import BookIndexRedirection from './BookIndexRedirection'
+import BookProjectsListRedirection from './BookProjectsListRedirection'
 
 const BookBackPages = ({
   onePageLeft,
@@ -43,12 +43,12 @@ const BookBackPages = ({
           />
         )}
         {projectDisplay(i) && (
-          <BookProyectLinksAndTitle page={page} />
+          <BookProjectLinksAndTitle page={page} />
         )}
         <div className=' d-flex  container-bottom'>
           {indexProyects(i, 1) && (
 
-            <BookIndexFooter
+            <BookIndexRedirection
               pointerEvent={pointerEvent}
               functionChangePageBackward={functionChangePageBackward}
               setPositionPage={setPositionPage}
@@ -58,7 +58,7 @@ const BookBackPages = ({
 
           )}
           {indexProyects(i, 3) && (
-            <BookProyectFooter
+            <BookProjectsListRedirection
               functionChangePageBackward={functionChangePageBackward}
               setPositionPage={setPositionPage}
               language={language}
