@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LinkToMail = ({ element }) => {
+const LinkToMail = ({ item }) => {
   return (
 
     <a
@@ -13,7 +13,7 @@ const LinkToMail = ({ element }) => {
       className='mb-2 proyects letter-title-book contact-link '
       href='mailto:tefans12@gmail.com'
     >
-      {element.title}
+      {item.title}
     </a>
 
   )

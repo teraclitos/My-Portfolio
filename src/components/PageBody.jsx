@@ -1,5 +1,5 @@
 import React from 'react'
-import BookContainer from './BookContainer'
+import BookContainer from './book'
 
 const PageBody = ({
   language,
