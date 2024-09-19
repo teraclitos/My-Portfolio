@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BookProjectsList = ({ proyect, positionOfTheListOfProyects, setPositionPage, functionChangePageForward, index }) => {
+const BookProjectsList = ({ project, positionOfTheListOfProyects, setPositionPage, functionChangePageForward }) => {
   return (
     <li>
       <button
@@ -10,12 +10,12 @@ const BookProjectsList = ({ proyect, positionOfTheListOfProyects, setPositionPag
         }}
         onClick={(e) => {
           e.stopPropagation()
-          functionChangePageForward((index + 1) * 2, positionOfTheListOfProyects)
-          setPositionPage(index + 4)
+          functionChangePageForward((project.numberOfTranslationsToMake), positionOfTheListOfProyects)
+          setPositionPage(project.positionFrontPage)
         }}
         className='mb-2 proyects  letter-title-book no-button-styles '
       >
-        {proyect.proyect}
+        {project.projectName}
       </button>
     </li>
   )

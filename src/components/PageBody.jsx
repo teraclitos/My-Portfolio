@@ -8,7 +8,7 @@ const PageBody = ({
   translateBook,
   setTranslateBook,
   widthScreen,
-  allProyects,
+  allProjects,
   indexes,
   pointerEvent,
   setPointerEvent,
@@ -34,7 +34,7 @@ const PageBody = ({
         translateBook={translateBook}
         setTranslateBook={setTranslateBook}
         widthScreen={widthScreen}
-        allProyects={allProyects}
+        allProjects={allProjects}
         indexes={indexes}
         pointerEvent={pointerEvent}
         setPointerEvent={setPointerEvent}

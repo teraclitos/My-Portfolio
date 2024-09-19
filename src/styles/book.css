@@ -3,8 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 15.625em;
-  height: 18.75em;
+  min-width: calc(15.625em*1);
+  height: calc(18.75em*1);
   position: relative;
   perspective: 1000px;
   transition: 1s;

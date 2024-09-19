@@ -17,13 +17,8 @@ const BookIndex = ({ item, functionChangePageForward, positionOfTheIndexOfTheBoo
             }}
             onClick={(e) => {
               e.stopPropagation()
-              if (index === 0) {
-                functionChangePageForward(4, positionOfTheIndexOfTheBook)
-                setPositionPage(3)
-              } else if (index === 1) {
-                functionChangePageForward(2, positionOfTheIndexOfTheBook)
-                setPositionPage(2)
-              }
+              functionChangePageForward(item.numberOfTranslationsToMake, positionOfTheIndexOfTheBook)
+              setPositionPage(item.positionOfTheFrontPage)
             }}
           >
             {item.title}

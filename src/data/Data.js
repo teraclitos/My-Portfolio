@@ -232,7 +232,7 @@ sports, in particular tennis.`,
   {
     id: 'page5',
     frontPage: {
-      title: 'My proyects',
+      title: 'My projects',
       number: 4
 
     },
@@ -347,36 +347,36 @@ sports, in particular tennis.`,
 ]
 
 const indexEnglish =
- [{ id: 'index1', title: 'Proyects' },
-   { id: 'index2', title: 'About me' },
+ [{ id: 'index1', title: 'Proyects', numberOfTranslationsToMake: 2, positionOfTheFrontPage: 3 },
+   { id: 'index2', title: 'About me', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 2 },
    { id: 'index3', title: 'Contact' }
  ]
 
 const indexSpanish =
-[{ id: 'index1', title: 'Proyectos' },
-  { id: 'index2', title: 'Acerca de mí' },
+[{ id: 'index1', title: 'Proyectos', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 4 },
+  { id: 'index2', title: 'Acerca de mí', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 4 },
   { id: 'index3', title: 'Contacto' }
 ]
 
-const allProyectsSpanish = [
+const allProjectsSpanish = [
 
-  { id: 'proyect1', proyect: 'Inmobiliaria' },
-  { id: 'proyect2', proyect: 'Portfolio de arquitecto' },
-  { id: 'proyect3', proyect: 'Proyecto final de RollingCode' },
-  { id: 'proyect4', proyect: 'Godubi (colaborador)' }
+  { id: 'project1', projectName: 'Inmobiliaria', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 4 },
+  { id: 'project2', projectName: 'Portfolio de arquitecto', numberOfTranslationsToMake: 2, positionOfTheFrontPage: 5 },
+  { id: 'project3', projectName: 'Proyecto final de RollingCode', numberOfTranslationsToMake: 3, positionOfTheFrontPage: 6 },
+  { id: 'project4', projectName: 'Godubi (colaborador)', numberOfTranslationsToMake: 4, positionOfTheFrontPage: 7 }
 ]
-const allProyectsEnglish = [
+const allProjectsEnglish = [
 
-  { id: 'proyect1', proyect: 'Real Estate' },
-  { id: 'proyect2', proyect: 'Architect portfolio' },
-  { id: 'proyect3', proyect: 'RollingCode final proyect' },
-  { id: 'proyect4', proyect: 'Godubi (collaborator)' }
+  { id: 'project1', projectName: 'Real Estate', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 4 },
+  { id: 'project2', projectName: 'Architect portfolio', numberOfTranslationsToMake: 2, positionOfTheFrontPage: 5 },
+  { id: 'project3', projectName: 'RollingCode final proyect', numberOfTranslationsToMake: 3, positionOfTheFrontPage: 6 },
+  { id: 'project4', projectName: 'Godubi (collaborator)', numberOfTranslationsToMake: 4, positionOfTheFrontPage: 7 }
 ]
 
 export {
   dataBookSpanish,
-  allProyectsSpanish,
-  allProyectsEnglish,
+  allProjectsSpanish,
+  allProjectsEnglish,
   dataBookEnglish,
   indexEnglish,
   indexSpanish

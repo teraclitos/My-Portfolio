@@ -17,7 +17,7 @@ const BookFrontPages = ({
   positionOfTheIndexOfTheBook,
   positionOfTheListOfProyects,
   indexOfTheBook,
-  allProyects,
+  allProjects,
   setPositionPage
 }) => {
   return (
@@ -60,11 +60,10 @@ const BookFrontPages = ({
               />
             ))}
               {i === positionOfTheListOfProyects &&
-             allProyects.map((proyect, index) => (
+             allProjects.map(project => (
                <BookProjectsList
-                 key={proyect.id}
-                 proyect={proyect}
-                 index={index}
+                 key={project.id}
+                 project={project}
                  setPositionPage={setPositionPage}
                  functionChangePageForward={functionChangePageForward}
                  positionOfTheListOfProyects={positionOfTheListOfProyects}

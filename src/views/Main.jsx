@@ -15,7 +15,7 @@ const Main = ({
   translateBook,
   setTranslateBook,
   widthScreen,
-  allProyects,
+  allProjects,
   indexes,
   pointerEvent,
   setPointerEvent,
@@ -107,7 +107,7 @@ const Main = ({
                   translateBook={translateBook}
                   setTranslateBook={setTranslateBook}
                   widthScreen={widthScreen}
-                  allProyects={allProyects}
+                  allProjects={allProjects}
                   indexes={indexes}
                   pointerEvent={pointerEvent}
                   setPointerEvent={setPointerEvent}

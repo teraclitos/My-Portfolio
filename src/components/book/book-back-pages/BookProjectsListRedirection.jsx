@@ -14,7 +14,7 @@ const BookProjectsListRedirection = ({ i, language, functionChangePageBackward, 
       }}
       className='back-to-proyects  letter-title-book no-button-styles'
     >
-      {language === 'spanish' ? 'Proyectos' : 'Proyects'}
+      {language === 'spanish' ? 'Proyectos' : 'Projects'}
     </button>
   )
 }

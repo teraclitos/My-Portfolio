@@ -9,7 +9,7 @@ const BookContainer = ({
   translateBook,
   setTranslateBook,
   widthScreen,
-  allProyects,
+  allProjects,
   indexes,
   pointerEvent,
   setPointerEvent,
@@ -152,7 +152,7 @@ const BookContainer = ({
               positionOfTheIndexOfTheBook={positionOfTheIndexOfTheBook}
               positionOfTheListOfProyects={positionOfTheListOfProyects}
               indexOfTheBook={indexOfTheBook}
-              allProyects={allProyects}
+              allProjects={allProjects}
               setPositionPage={setPositionPage}
             />
             <BookBackPages

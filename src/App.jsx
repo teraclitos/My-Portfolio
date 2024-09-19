@@ -4,8 +4,8 @@ import { BrowserRouter } from 'react-router-dom'
 import {
   dataBookSpanish,
   dataBookEnglish,
-  allProyectsSpanish,
-  allProyectsEnglish,
+  allProjectsSpanish,
+  allProjectsEnglish,
   indexSpanish,
   indexEnglish
 } from './data/Data'
@@ -28,7 +28,7 @@ function App () {
   const [pointerEvent, setPointerEvent] = useState('all')
   const [translate, setTranslate] = useState(translateInitial)
   const [widthScreen, setWidthScreen] = useState(window.innerWidth)
-  const [allProyects, setAllProyects] = useState(allProyectsSpanish)
+  const [allProjects, setAllProjects] = useState(allProjectsSpanish)
   const [positionPage, setPositionPage] = useState(0)
   const [indexOfTheBook, setIndexOfTheBook] = useState(indexSpanish)
   const [openNav, setOpenNav] = useState(false)
@@ -67,19 +67,20 @@ function App () {
     console.log(indexes)
   }, [translate, indexes])
 
-  const functionChangePageForward = async (indexBook, start) => {
+  const functionChangePageForward = async (numberOfTranslationsToMake, start) => {
     const copyTranslation = [...translate]
     const copyIndexes = [...indexes]
-    const numberOfTranslations = Math.ceil(indexBook / 2)
 
-    const arrayNumberOfTranslation = Array.from(
-      { length: numberOfTranslations },
+    const numberOfTranslationsArray = Array.from(
+      { length: numberOfTranslationsToMake },
       (_, index) => index
     )
-    const lastIndexTranslated = copyTranslation.lastIndexOf(-180)
-    const arrayEachOneOfTheTranslationsToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
-      ac.push(copyTranslation.map((el, j) => {
-        if (j <= lastIndexTranslated + i + 1) {
+    const lastPageTranslated = copyTranslation.lastIndexOf(-180)
+    const eachOneOfTheTranslationsToMake = numberOfTranslationsArray.reduce((ac, cu, i) => {
+      ac.push(copyTranslation.map((el, pageNumber) => {
+        const translationToMake = i + 1
+        const pagesToBeTranslated = lastPageTranslated + translationToMake
+        if (pageNumber <= pagesToBeTranslated) {
           return -180
         } else {
           return 0
@@ -88,7 +89,7 @@ function App () {
       return ac
     }, [])
 
-    const arrayEachOneOfThechangesOfIndexesToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
+    const arrayEachOneOfThechangesOfIndexesToMake = numberOfTranslationsArray.reduce((ac, cu, i) => {
       ac.push(copyIndexes.map((el, j, arr) => {
         if (i + start === j) {
           return arr.length
@@ -100,11 +101,11 @@ function App () {
     }, [])
 
     setPointerEvent('none')
-    for (const translationNumberPromise of arrayNumberOfTranslation) {
+    for (const translationNumberPromise of numberOfTranslationsArray) {
       const promiseChangePage = async () => {
         setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
         await new Promise((resolve) => setTimeout(resolve, 200))
-        setTranslate(arrayEachOneOfTheTranslationsToMake[translationNumberPromise])
+        setTranslate(eachOneOfTheTranslationsToMake[translationNumberPromise])
       }
       await promiseChangePage()
     };
@@ -126,7 +127,7 @@ function App () {
     )
     let lastIndexTranslated = copyTranslation.indexOf(0)
     if (lastIndexTranslated === -1) { lastIndexTranslated = dataBook.length }
-    const arrayEachOneOfTheTranslationsToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
+    const eachOneOfTheTranslationsToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
       ac.push(copyTranslation.map((el, j) => {
         if (j >= lastIndexTranslated - i - 1) {
           return 0
@@ -153,11 +154,11 @@ function App () {
       const promiseChangePage = async () => {
         setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
         await new Promise((resolve) => setTimeout(resolve, 200))
-        if (arrayEachOneOfTheTranslationsToMake[translationNumberPromise][0] === 0) {
+        if (eachOneOfTheTranslationsToMake[translationNumberPromise][0] === 0) {
           setMove(true)
           await new Promise((resolve) => setTimeout(resolve, 200))
         }
-        setTranslate(arrayEachOneOfTheTranslationsToMake[translationNumberPromise])
+        setTranslate(eachOneOfTheTranslationsToMake[translationNumberPromise])
       }
       await promiseChangePage()
     };
@@ -171,12 +172,12 @@ function App () {
 
   useEffect(() => {
     if (language === 'spanish') {
-      setAllProyects(allProyectsSpanish)
+      setAllProjects(allProjectsSpanish)
       setDataBook(dataBookSpanish)
 
       setIndexOfTheBook(indexSpanish)
     } else {
-      setAllProyects(allProyectsEnglish)
+      setAllProjects(allProjectsEnglish)
       setDataBook(dataBookEnglish)
 
       setIndexOfTheBook(indexEnglish)
@@ -202,7 +203,7 @@ function App () {
         translateBook={translateBook}
         setTranslateBook={setTranslateBook}
         widthScreen={widthScreen}
-        allProyects={allProyects}
+        allProjects={allProjects}
         indexes={indexes}
         setIndexes={setIndexes}
         pointerEvent={pointerEvent}
