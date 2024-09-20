@@ -66,104 +66,81 @@ function App () {
     console.log(translate)
     console.log(indexes)
   }, [translate, indexes])
-
-  const functionChangePageForward = async (numberOfTranslationsToMake, start) => {
-    const copyTranslation = [...translate]
-    const copyIndexes = [...indexes]
-
-    const numberOfTranslationsArray = Array.from(
-      { length: numberOfTranslationsToMake },
-      (_, index) => index
-    )
-    const lastPageTranslated = copyTranslation.lastIndexOf(-180)
-    const eachOneOfTheTranslationsToMake = numberOfTranslationsArray.reduce((ac, cu, i) => {
-      ac.push(copyTranslation.map((el, pageNumber) => {
+  const translationsToMake = ({ numberOfTranslationsArray, isForward }) => {
+    return numberOfTranslationsArray.reduce((ac, cu, i) => {
+      let lastPageTranslated = isForward ? translate.lastIndexOf(-180) : translate.indexOf(0)
+      if (lastPageTranslated === -1 && !isForward) lastPageTranslated = dataBook.length
+      ac.push(translate.map((el, pageNumber) => {
         const translationToMake = i + 1
-        const pagesToBeTranslated = lastPageTranslated + translationToMake
-        if (pageNumber <= pagesToBeTranslated) {
-          return -180
+        const pagesToBeTranslated = isForward ? lastPageTranslated + translationToMake : lastPageTranslated - translationToMake
+        const condition = isForward ? pageNumber <= pagesToBeTranslated : pageNumber >= pagesToBeTranslated
+        if (condition) {
+          return isForward ? -180 : 0
         } else {
-          return 0
+          return isForward ? 0 : -180
         }
       }))
       return ac
     }, [])
-
-    const arrayEachOneOfThechangesOfIndexesToMake = numberOfTranslationsArray.reduce((ac, cu, i) => {
-      ac.push(copyIndexes.map((el, j, arr) => {
-        if (i + start === j) {
+  }
+  const changesOfIndexesToMake = ({ numberOfTranslationsArray, startPosition, isForward }) => {
+    return numberOfTranslationsArray.reduce((ac, cu, i) => {
+      const condition = isForward ? startPosition + i : startPosition - i
+      ac.push(indexes.map((el, j, arr) => {
+        if (condition === j) {
           return arr.length
-        } else if (i + start + 1 === j || i + start - 1 === j) {
+        } else if (condition + 1 === j || condition - 1 === j) {
           return arr.length - 20
         } else { return arr.length - 40 }
       }))
       return ac
     }, [])
-
+  }
+  const triggerTurnOfPages = async ({ arrayEachOneOfThechangesOfIndexesToMake, eachOneOfTheTranslationsToMake, numberOfTranslationsArray, isForward }) => {
     setPointerEvent('none')
     for (const translationNumberPromise of numberOfTranslationsArray) {
       const promiseChangePage = async () => {
         setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
         await new Promise((resolve) => setTimeout(resolve, 200))
+
+        if (!isForward) {
+          if (eachOneOfTheTranslationsToMake[translationNumberPromise][0] === 0) {
+            setMove(true)
+            await new Promise((resolve) => setTimeout(resolve, 200))
+          }
+        }
         setTranslate(eachOneOfTheTranslationsToMake[translationNumberPromise])
       }
       await promiseChangePage()
     };
     setPointerEvent('all')
+    if (!isForward) setMove(false)
+  }
+  const functionChangePageForward = async (numberOfTranslationsToMake, startPosition) => {
+    const numberOfTranslationsArray = Array.from(
+      { length: numberOfTranslationsToMake },
+      (_, index) => index
+    )
+    const eachOneOfTheTranslationsToMake = translationsToMake({ numberOfTranslationsArray, isForward: true })
+    const arrayEachOneOfThechangesOfIndexesToMake = changesOfIndexesToMake({ numberOfTranslationsArray, startPosition, isForward: true })
+
+    triggerTurnOfPages({ arrayEachOneOfThechangesOfIndexesToMake, eachOneOfTheTranslationsToMake, numberOfTranslationsArray, isForward: true })
   }
   const functionChangePageBackward = async (indexBook, startPosition) => {
-    const copyTranslation = [...translate]
-    const isPenultimatePageAndLastIndexBookPosition = copyTranslation[copyTranslation.length - 2] === -180 && copyTranslation[copyTranslation.length - 1] === 0 && indexBook === dataBook.length
-    const start = isPenultimatePageAndLastIndexBookPosition ? startPosition - 1 : startPosition
-    const copyIndexes = [...indexes]
+    const isPenultimatePageAndLastIndexBookPosition = translate[translate.length - 2] === -180 && translate[translate.length - 1] === 0 && indexBook === dataBook.length
+    const startPositionBackward = isPenultimatePageAndLastIndexBookPosition ? startPosition - 1 : startPosition
 
     const numberOfTranslations = isPenultimatePageAndLastIndexBookPosition
       ? Math.ceil(indexBook) - 1
       : Math.ceil(indexBook)
 
-    const arrayNumberOfTranslation = Array.from(
+    const numberOfTranslationsArray = Array.from(
       { length: numberOfTranslations },
       (_, index) => index
     )
-    let lastIndexTranslated = copyTranslation.indexOf(0)
-    if (lastIndexTranslated === -1) { lastIndexTranslated = dataBook.length }
-    const eachOneOfTheTranslationsToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
-      ac.push(copyTranslation.map((el, j) => {
-        if (j >= lastIndexTranslated - i - 1) {
-          return 0
-        } else {
-          return -180
-        }
-      }))
-      return ac
-    }, [])
-
-    const arrayEachOneOfThechangesOfIndexesToMake = arrayNumberOfTranslation.reduce((ac, cu, i) => {
-      ac.push(copyIndexes.map((el, j, arr) => {
-        if (start - i === j) {
-          return arr.length
-        } else if (start - i + 1 === j || start - i - 1 === j) {
-          return arr.length - 20
-        } else { return arr.length - 40 }
-      }))
-      return ac
-    }, [])
-
-    setPointerEvent('none')
-    for (const translationNumberPromise of arrayNumberOfTranslation) {
-      const promiseChangePage = async () => {
-        setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
-        await new Promise((resolve) => setTimeout(resolve, 200))
-        if (eachOneOfTheTranslationsToMake[translationNumberPromise][0] === 0) {
-          setMove(true)
-          await new Promise((resolve) => setTimeout(resolve, 200))
-        }
-        setTranslate(eachOneOfTheTranslationsToMake[translationNumberPromise])
-      }
-      await promiseChangePage()
-    };
-    setPointerEvent('all')
-    setMove(false)
+    const eachOneOfTheTranslationsToMake = translationsToMake({ numberOfTranslationsArray, isForward: false })
+    const arrayEachOneOfThechangesOfIndexesToMake = changesOfIndexesToMake({ numberOfTranslationsArray, startPosition: startPositionBackward, isForward: false })
+    triggerTurnOfPages({ arrayEachOneOfThechangesOfIndexesToMake, eachOneOfTheTranslationsToMake, numberOfTranslationsArray, isForward: false })
   }
 
   useEffect(() => {

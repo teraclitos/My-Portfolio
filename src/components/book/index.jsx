@@ -86,6 +86,7 @@ const BookContainer = ({
     } else {
       if (i === 0) {
         setTranslateBook('0px')
+        console.log(i)
         setOpenNav(false)
       }
       if (i === dataBook.length - 1) {

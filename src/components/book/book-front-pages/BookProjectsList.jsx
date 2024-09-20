@@ -11,7 +11,7 @@ const BookProjectsList = ({ project, positionOfTheListOfProyects, setPositionPag
         onClick={(e) => {
           e.stopPropagation()
           functionChangePageForward((project.numberOfTranslationsToMake), positionOfTheListOfProyects)
-          setPositionPage(project.positionFrontPage)
+          setPositionPage(project.positionOfTheFrontPage)
         }}
         className='mb-2 proyects  letter-title-book no-button-styles '
       >

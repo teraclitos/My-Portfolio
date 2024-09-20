@@ -47,7 +47,7 @@ const NavBar = ({
   const indexFunctionBook = () => {
     if (widthScreen <= 992) {
       if (!openNav) {
-        functionChangePageForward(4, 0)
+        functionChangePageForward(2, 0)
 
         setPositionPage(2)
         if (widthScreen > 575) {
@@ -68,9 +68,9 @@ const NavBar = ({
       if (positionPage < 2) {
         if (positionPage === 1 && translate[1] === -180) return
         if (positionPage === 0 && translate[0] === 0) {
-          functionChangePageForward(4, 0)
+          functionChangePageForward(2, 0)
           setTranslateBook('50%')
-        } else { functionChangePageForward(2, 1) }
+        } else { functionChangePageForward(1, 1) }
       } else {
         console.log(translate.lastIndexOf(-180) === indexes.indexOf(dataBook.length))
         if (translate.lastIndexOf(-180) === indexes.indexOf(dataBook.length)) {
