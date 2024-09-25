@@ -64,13 +64,12 @@ const BookContainer = ({
     }
 
     setPointerEvent('none')
-    setTimeout(() => {
-      functionTranslateFrontPage(i)
-    }, 200)
+
+    functionTranslateFrontPage(i)
 
     setTimeout(() => {
       setPointerEvent('all')
-    }, 700)
+    }, 500)
   }
   const onePageLeft = (i) => {
     indexPage(i)
@@ -94,12 +93,12 @@ const BookContainer = ({
       }
     }
     setPointerEvent('none')
-    setTimeout(() => {
-      functionTranslateBackPage(i)
-    }, 200)
+
+    functionTranslateBackPage(i)
+
     setTimeout(() => {
       setPointerEvent('all')
-    }, 700)
+    }, 500)
   }
 
   const projectDisplay = (pagePosition) => {

@@ -91,28 +91,35 @@ function App () {
           return arr.length
         } else if (condition + 1 === j || condition - 1 === j) {
           return arr.length - 20
-        } else { return arr.length - 40 }
+        } else {
+          if (j > condition) return arr.length - (40 + j)
+          return arr.length - (40 - j)
+        }
       }))
       return ac
     }, [])
   }
   const triggerTurnOfPages = async ({ arrayEachOneOfThechangesOfIndexesToMake, eachOneOfTheTranslationsToMake, numberOfTranslationsArray, isForward }) => {
+    const pageTurnDelay = 200
     setPointerEvent('none')
-    for (const translationNumberPromise of numberOfTranslationsArray) {
-      const promiseChangePage = async () => {
-        setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
-        await new Promise((resolve) => setTimeout(resolve, 200))
 
+    for (const translationNumberPromise of numberOfTranslationsArray) {
+      await new Promise(resolve => {
+        setIndexes(arrayEachOneOfThechangesOfIndexesToMake[translationNumberPromise])
         if (!isForward) {
           if (eachOneOfTheTranslationsToMake[translationNumberPromise][0] === 0) {
             setMove(true)
-            await new Promise((resolve) => setTimeout(resolve, 200))
           }
         }
-        setTranslate(eachOneOfTheTranslationsToMake[translationNumberPromise])
+        setTimeout(() => {
+          setTranslate(eachOneOfTheTranslationsToMake[translationNumberPromise])
+
+          resolve()
+        }, translationNumberPromise === 0 ? 0 : pageTurnDelay)
       }
-      await promiseChangePage()
-    };
+      )
+    }
+
     setPointerEvent('all')
     if (!isForward) setMove(false)
   }
