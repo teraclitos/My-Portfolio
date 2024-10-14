@@ -27,9 +27,9 @@ const PageBody = ({
 
 }) => {
   return (
-    <div>
+    <div className='min-vh-100'>
       <Technologies language={language} />
-      <div className='min-vh-100 d-flex justify-content-center align-items-center'>
+      <div className='d-flex justify-content-center align-items-center'>
         <BookContainer
           language={language}
           setLanguage={setLanguage}

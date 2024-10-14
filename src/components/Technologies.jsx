@@ -45,7 +45,7 @@ const Technologies = ({ language }) => {
   // Selección del contenido basado en el idioma
   const currentTooltips = tooltips[language]
   return (
-    <div className='d-flex flex-column flex-lg-row justify-content-center align-items-center gap-2 '>
+    <div className='d-flex flex-column flex-lg-row justify-content-center align-items-center gap-2 mb-5 '>
       <h2 className='text-center red '>{language === 'spanish' ? 'Mis tecnologías' : 'My technologies'}:</h2>
       <div className='d-flex gap-3 justify-content-center flex-wrap'>
         <IconContext.Provider value={{ color: '#c8293b', className: 'icon-footer fs-1' }}>
