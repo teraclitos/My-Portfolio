@@ -1,5 +1,6 @@
 import React from 'react'
 import BookContainer from './book'
+import Technologies from './Technologies'
 
 const PageBody = ({
   language,
@@ -26,31 +27,33 @@ const PageBody = ({
 
 }) => {
   return (
-    <div className='min-vh-100 d-flex justify-content-center align-items-center'>
-      <BookContainer
-        language={language}
-        setLanguage={setLanguage}
-        dataBook={dataBook}
-        translateBook={translateBook}
-        setTranslateBook={setTranslateBook}
-        widthScreen={widthScreen}
-        allProjects={allProjects}
-        indexes={indexes}
-        pointerEvent={pointerEvent}
-        setPointerEvent={setPointerEvent}
-        translate={translate}
-        functionTranslateFrontPage={functionTranslateFrontPage}
-        functionTranslateBackPage={functionTranslateBackPage}
-        functionChangePageForward={functionChangePageForward}
-        functionChangePageBackward={functionChangePageBackward}
-        positionPage={positionPage}
-        setPositionPage={setPositionPage}
-        indexOfTheBook={indexOfTheBook}
-        openNav={openNav}
-        setOpenNav={setOpenNav}
-        indexPage={indexPage}
-
-      />
+    <div>
+      <Technologies language={language} />
+      <div className='min-vh-100 d-flex justify-content-center align-items-center'>
+        <BookContainer
+          language={language}
+          setLanguage={setLanguage}
+          dataBook={dataBook}
+          translateBook={translateBook}
+          setTranslateBook={setTranslateBook}
+          widthScreen={widthScreen}
+          allProjects={allProjects}
+          indexes={indexes}
+          pointerEvent={pointerEvent}
+          setPointerEvent={setPointerEvent}
+          translate={translate}
+          functionTranslateFrontPage={functionTranslateFrontPage}
+          functionTranslateBackPage={functionTranslateBackPage}
+          functionChangePageForward={functionChangePageForward}
+          functionChangePageBackward={functionChangePageBackward}
+          positionPage={positionPage}
+          setPositionPage={setPositionPage}
+          indexOfTheBook={indexOfTheBook}
+          openNav={openNav}
+          setOpenNav={setOpenNav}
+          indexPage={indexPage}
+        />
+      </div>
     </div>
   )
 }
