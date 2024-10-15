@@ -97,7 +97,7 @@ base de datos usada fue Mongo db.`,
     id: 'page7',
     frontPage: {
       descriptionProject: `Portfolio de arquitecto desarrollado
-  con javascript y css puros. Fue todo un desafío,
+  con vanilla javascript y css puro. Fue todo un desafío,
  ya que fue el primero que realicé. Fue un proyecto
   bastante artesanal por así decirlo; por ejemplo, en desktop,
  la disposicion espacial de las casas en la página
@@ -275,7 +275,7 @@ sports, in particular tennis.`,
   {
     id: 'page7',
     frontPage: {
-      descriptionProject: `Architect portfolio developed with pure javascript and css.
+      descriptionProject: `Architect portfolio developed with vanilla javascript and pure css.
    It was a great challenge for me, since
    it was the first one I did. It was a sort of a craft
     project; for example, on the desktop version,
@@ -347,7 +347,7 @@ sports, in particular tennis.`,
 ]
 
 const indexEnglish =
- [{ id: 'index1', title: 'Proyects', numberOfTranslationsToMake: 2, positionOfTheFrontPage: 3 },
+ [{ id: 'index1', title: 'Projects', numberOfTranslationsToMake: 2, positionOfTheFrontPage: 3 },
    { id: 'index2', title: 'About me', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 2 },
    { id: 'index3', title: 'Contact' }
  ]

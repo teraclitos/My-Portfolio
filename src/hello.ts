@@ -7,4 +7,4 @@ const arr = [0, 1, 2]
 
 arr.push(4)
 arr.unshift(-1)
-console.log(arr)
+
