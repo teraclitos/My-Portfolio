@@ -16,15 +16,15 @@ const Technologies = ({ language }) => {
       vue: 'Vue.js<br>Level: Intermediate <br>Years: 1 year',
       vuex: 'Vuex<br>Level: Intermediate <br>Years: 1 year',
       js: 'JavaScript<br>Level: Intermediate <br>Years: 2.5 years',
-      react: 'React<br>Level: Intermediate <br>Years: 1 years',
+      react: 'React<br>Level: Intermediate <br>Years: 1 year',
       html: 'HTML5<br>Level: Intermediate <br>Years: 2.5 years',
       css: 'CSS3<br>Level: Intermediate <br>Years: 2.5 years',
       redux: 'Redux<br>Level: Learning <br>Years: 0 years',
-      typescript: 'TypeScript<br>Level: Learning <br>Years: 0 year',
-      node: 'Node.js<br>Level: Intermediate <br>Years: 1.5 years',
+      typescript: 'TypeScript<br>Level: Learning <br>Years: 0 years',
+      node: 'Node.js<br>Level: Intermediate <br>Years: 1 year',
       mongodb: 'MongoDB<br>Level: Intermediate <br>Years: 1 year',
-      postman: 'Postman<br>Level: Intermediate <br>Years: 1.5 years',
-      socket: 'Socket.io<br>Level: Basic <br>Years: 0.5 year',
+      postman: 'Postman<br>Level: Intermediate <br>Years: 1 year',
+      socket: 'Socket.io<br>Level: Basic <br>Years: 0.5 years',
       bootstrap: 'Bootstrap<br>Level: Advanced <br>Years: 2.5 year'
     },
     spanish: {
@@ -36,9 +36,9 @@ const Technologies = ({ language }) => {
       css: 'CSS3<br>Nivel: Intermedio <br>Años: 2.5 años',
       redux: 'Redux<br>Nivel: Aprendiendo <br>Años: 0 años',
       typescript: 'TypeScript<br>Nivel: Aprendiendo<br>Años: 0 años',
-      node: 'Node.js<br>Nivel: Intermedio <br>Años: 1.5 años',
+      node: 'Node.js<br>Nivel: Intermedio <br>Años: 1 año',
       mongodb: 'MongoDB<br>Nivel: Intermedio <br>Años: 1 año',
-      postman: 'Postman<br>Nivel: Intermedio <br>Años: 1.5 años',
+      postman: 'Postman<br>Nivel: Intermedio <br>Años: 1 año',
       socket: 'Socket.io<br>Nivel: Básico <br>Años: 0.5 años',
       bootstrap: 'Bootstrap<br>Level: Avanzado <br>Years: 2.5 años'
     }
