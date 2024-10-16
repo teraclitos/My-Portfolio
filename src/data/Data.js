@@ -192,6 +192,30 @@ Yo colaboré en el área de frontend: utilicé Vue 2 como framework y
 
     },
     backPage: {
+      title: 'Mi portfolio',
+      url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1729102707/my-portfolio_cicraz.png',
+      github: 'https://github.com/teraclitos/My-Portfolio',
+      link: 'https://franciscoteran.vercel.app/ ',
+      number: 17
+
+    }
+
+  },
+  {
+    id: 'page12',
+    frontPage: {
+      descriptionProject: `Portfolio personal desarrolado con React.js.
+       Su estílo clásico refleja mi amor por los libros.
+        Consiste en un libro donde se muestran mis proyectos.
+         Se puede acceder a las páginas haciendo clic en ellas.
+             El índice, o el botón hamburguesa en el formato móvil, te permite navegar por todo el libro.
+              Razonar la lógica detrás de las funciones que realizan la navegación fue todo un desafío.
+               Está disponible tanto en inglés como en español,
+                se cambia de idioma presionando el botón de madera ubicado en el margen superior derecho.`,
+      number: 18
+
+    },
+    backPage: {
       title: ''
 
     }
@@ -406,6 +430,31 @@ The three winning squares are painted.`,
 
     },
     backPage: {
+
+      title: 'My portfolio',
+      url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1729102707/my-portfolio_cicraz.png',
+      github: 'https://github.com/teraclitos/My-Portfolio',
+      link: 'https://franciscoteran.vercel.app/ ',
+      number: 17
+
+    }
+
+  },
+  {
+    id: 'page12',
+    frontPage: {
+      descriptionProject: `Personal portfolio developed with React.js.
+Its classic style reflects my love for books.
+It consists of a book where my projects are showcased.
+You can access the pages by clicking on them.
+The index, or the hamburger button in mobile format, allows you to navigate through the entire book.
+Reasoning the logic behind the functions that handle navigation was quite a challenge.
+It is available in both English and Spanish,
+ and you can switch languages by pressing the wooden button located in the upper right corner.`,
+      number: 18
+
+    },
+    backPage: {
       title: ''
 
     }
@@ -432,7 +481,8 @@ const allProjectsSpanish = [
   { id: 'project3', projectName: '3- Inmobiliaria', numberOfTranslationsToMake: 3, positionOfTheFrontPage: 6 },
   { id: 'project4', projectName: '4- Portfolio de arquitecto', numberOfTranslationsToMake: 4, positionOfTheFrontPage: 7 },
   { id: 'project5', projectName: '5- Proyecto final de RollingCode', numberOfTranslationsToMake: 5, positionOfTheFrontPage: 8 },
-  { id: 'project6', projectName: '6- Godubi (colaborador)', numberOfTranslationsToMake: 6, positionOfTheFrontPage: 9 }
+  { id: 'project6', projectName: '6- Godubi (colaborador)', numberOfTranslationsToMake: 6, positionOfTheFrontPage: 9 },
+  { id: 'project7', projectName: '7- Mi portfolio (colaborador)', numberOfTranslationsToMake: 7, positionOfTheFrontPage: 10 }
 ]
 const allProjectsEnglish = [
   { id: 'project1', projectName: '1- TIC-TAC-TOE', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 4 },
@@ -440,7 +490,8 @@ const allProjectsEnglish = [
   { id: 'project3', projectName: '3- Real Estate', numberOfTranslationsToMake: 3, positionOfTheFrontPage: 6 },
   { id: 'project4', projectName: '4- Architect portfolio', numberOfTranslationsToMake: 4, positionOfTheFrontPage: 7 },
   { id: 'project5', projectName: '5- RollingCode final proyect', numberOfTranslationsToMake: 5, positionOfTheFrontPage: 8 },
-  { id: 'project6', projectName: '6- Godubi (collaborator)', numberOfTranslationsToMake: 6, positionOfTheFrontPage: 9 }
+  { id: 'project6', projectName: '6- Godubi (collaborator)', numberOfTranslationsToMake: 6, positionOfTheFrontPage: 9 },
+  { id: 'project7', projectName: '7- Mi portfolio (colaborador)', numberOfTranslationsToMake: 7, positionOfTheFrontPage: 10 }
 ]
 
 export {
