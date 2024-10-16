@@ -52,12 +52,46 @@ deportes, en particular tenis`,
     }
 
   },
-
   {
     id: 'page5',
     frontPage: {
       title: 'Mis proyectos',
       number: 4
+    },
+    backPage: {
+      title: 'TA-TE-TI',
+      url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1729088249/ta-te-ti_s3qdel.png',
+      github: 'https://github.com/teraclitos/TA-TE-TI',
+      link: 'https://ta-te-tifranciscoteran.netlify.app/',
+      number: 5
+    }
+  },
+  {
+    id: 'page6',
+    frontPage: {
+      descriptionProject: `Este proyecto TA-TE-TI fue desarrollado con vanilla JavaScript y CSS puro. Cada casilla está inicialmente vacía, y cuando un jugador hace click en una casilla, muestra una 'X' o una 'O', dependiendo del jugador. Una vez que una casilla esté seleccionada es irreversible.
+
+Hay un botón de reinicio que vacía el tablero.
+Cuando se detecta al ganador, el nombre del ganador aparece en la parte superior del tablero.
+Las tres casillas ganadoras se pintan.`,
+      number: 6
+    },
+    backPage: {
+      title: 'Caja Registradora',
+      url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1729088411/CAJA_REGISTRADORA_mpglga.png',
+      github: 'https://github.com/teraclitos/Cash-Register',
+      link: 'https://cashregisterfranciscoteran.netlify.app/',
+      number: 7
+    }
+  },
+
+  {
+    id: 'page7',
+    frontPage: {
+      descriptionProject: `Creé una caja registradora utilizando vanilla JavaScript y CSS. Fue todo un desafío para mí, ya que intenté hacerlo por mi cuenta con mínima asistencia. Aunque creo que el código podría haberse optimizado más, la experiencia de desarrollarlo de forma independiente resultó invaluable en términos de aprendizaje.
+
+La caja registradora realiza operaciones matemáticas básicas como suma, resta, multiplicación y división.`,
+      number: 8
 
     },
     backPage: {
@@ -65,12 +99,12 @@ deportes, en particular tenis`,
       url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_inmobiliaria_aqt7fa.png',
       github: 'https://github.com/teraclitos/gori-inmobiliaria-front',
       link: 'https://gonzalodelavega-ases-com.vercel.app/',
-      number: 5
+      number: 9
     }
 
   },
   {
-    id: 'page6',
+    id: 'page8',
     frontPage: {
       descriptionProject: `Proyecto desarrollado con React.js
  y Node.js. Es una página inmobiliaria donde el
@@ -81,7 +115,7 @@ back como en el front. Presenta, a su vez,
 negro rememoran un elegante traje.
  EL administrador puede realizar todas las funciones CRUD y además destacar propiedades. La
 base de datos usada fue Mongo db.`,
-      number: 6
+      number: 10
 
     },
     backPage: {
@@ -89,22 +123,22 @@ base de datos usada fue Mongo db.`,
       url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/portfolio_diego_foto_gae0mw.png',
       github: 'https://github.com/teraclitos/Portafolio-Diego-Helguera',
       link: 'https://diegohelguera.com/',
-      number: 7
+      number: 11
 
     }
   },
   {
-    id: 'page7',
+    id: 'page9',
     frontPage: {
       descriptionProject: `Portfolio de arquitecto desarrollado
-  con vanilla javascript y css puro. Fue todo un desafío,
+  con vanilla JavaScript y CSS puro. Fue todo un desafío,
  ya que fue el primero que realicé. Fue un proyecto
   bastante artesanal por así decirlo; por ejemplo, en desktop,
  la disposicion espacial de las casas en la página
   principal no sigue una estructura predeterminada, sino que fueron colocadas
  una por una mediante positions. Es poco escalable pero le da un toque personalizado. En desktop,
  en el detalle de las casas, se puede hacer un zoom dinámico a las mismas.`,
-      number: 8
+      number: 12
 
     },
     backPage: {
@@ -112,14 +146,14 @@ base de datos usada fue Mongo db.`,
       url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_rolling_foto_qdnyf5.png',
       github: 'https://github.com/teraclitos/proyecto-final-rolling-code-blog',
       link: 'https://proyecto-final-rolling-code-blog.vercel.app/',
-      number: 9
+      number: 13
 
     }
 
   },
 
   {
-    id: 'page8',
+    id: 'page10',
     frontPage: {
       descriptionProject: `Proyecto final del curso
   que hice en RollingCode, desarrollado con React.js y Node.js. Es una página de noticias,
@@ -129,7 +163,7 @@ base de datos usada fue Mongo db.`,
  ceder en pos de la armonía del trabajo, etc.
   El administrador puede: CRUD (noticias y usuarios) y destacar noticias. Los usuarios pueden
  dar me gusta a las noticias, las cuales se almacenan en un carrito.`,
-      number: 10
+      number: 14
 
     },
     backPage: {
@@ -137,12 +171,12 @@ base de datos usada fue Mongo db.`,
       url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1726001088/GODUBI_mbkti2.jpg',
       github: '',
       link: 'https://godubi.com/ ',
-      number: 11
+      number: 15
 
     }
   },
   {
-    id: 'page9',
+    id: 'page11',
     frontPage: {
       descriptionProject: `Llevo un año colaborando
      en este proyecto. Godubi es una herramienta
@@ -154,7 +188,7 @@ base de datos usada fue Mongo db.`,
 
 Yo colaboré en el área de frontend: utilicé Vue 2 como framework y
  estuve a cargo principalmente de la centralización de datos con Vuex.`,
-      number: 12
+      number: 16
 
     },
     backPage: {
@@ -228,13 +262,46 @@ sports, in particular tennis.`,
     }
 
   },
-
   {
     id: 'page5',
     frontPage: {
-      title: 'My projects',
+      title: 'Mis proyectos',
       number: 4
+    },
+    backPage: {
+      title: 'TIC-TAC-TOE',
+      url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1729088249/ta-te-ti_s3qdel.png',
+      github: 'https://github.com/teraclitos/TA-TE-TI',
+      link: 'https://ta-te-tifranciscoteran.netlify.app/',
+      number: 5
+    }
+  },
+  {
+    id: 'page6',
+    frontPage: {
+      descriptionProject: `This Tic-Tac-Toe project was developed with vanilla JavaScript and pure CSS. Each square is initially empty, and when a player clicks on a square, it shows either an 'X' or an 'O,' depending on the player. Once a square is selected, it is irreversible.
 
+There is a reset button that clears the board.
+When a winner is detected, the winner's name appears at the top of the board.
+The three winning squares are painted.`,
+      number: 6
+    },
+    backPage: {
+      title: 'Cash register',
+      url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1729088411/CAJA_REGISTRADORA_mpglga.png',
+      github: 'https://github.com/teraclitos/Cash-Register',
+      link: 'https://cashregisterfranciscoteran.netlify.app/',
+      number: 7
+    }
+  },
+
+  {
+    id: 'page7',
+    frontPage: {
+      descriptionProject: `I created a cash register using pure JavaScript and CSS. It was quite a challenge for me since I attempted to do it on my own with minimal assistance. Although I believe the code could have been optimized further, the experience of developing it independently proved to be invaluable in terms of learning.
+
+      The cash register performs basic mathematical operations such as addition, subtraction, multiplication, and division.`,
+      number: 8
     },
     backPage: {
       title: 'Real Estate',
@@ -242,13 +309,13 @@ sports, in particular tennis.`,
       github: 'https://github.com/teraclitos/gori-inmobiliaria-front',
       link: 'https://gonzalodelavega-ases-com.vercel.app/',
 
-      number: 5
+      number: 9
     }
 
   },
 
   {
-    id: 'page6',
+    id: 'page8',
     frontPage: {
       descriptionProject: `Project developed with React.js and Node.js.
     It is a real estate web-site where the real estate agent showcases the
@@ -258,7 +325,7 @@ sports, in particular tennis.`,
         and white appearance. The administrator has full CRUD functionality
          and he also can highlight properties. The
  Database used was Mongo db.`,
-      number: 6
+      number: 10
 
     },
     backPage: {
@@ -267,15 +334,15 @@ sports, in particular tennis.`,
       url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/portfolio_diego_foto_gae0mw.png',
       github: 'https://github.com/teraclitos/Portafolio-Diego-Helguera',
       link: 'https://diegohelguera.com/',
-      number: 7
+      number: 11
 
     }
 
   },
   {
-    id: 'page7',
+    id: 'page9',
     frontPage: {
-      descriptionProject: `Architect portfolio developed with vanilla javascript and pure css.
+      descriptionProject: `Architect portfolio developed with vanilla JavaScript and pure CSS.
    It was a great challenge for me, since
    it was the first one I did. It was a sort of a craft
     project; for example, on the desktop version,
@@ -285,7 +352,7 @@ sports, in particular tennis.`,
   . It is not very scalable but it showcases a unique style.
    On the desktop version, you can dynamically zoom in on
     each picture for a detailed view of the houses.`,
-      number: 8
+      number: 12
 
     },
     backPage: {
@@ -293,14 +360,14 @@ sports, in particular tennis.`,
       url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1685548879/proyecto_rolling_foto_qdnyf5.png',
       github: 'https://github.com/teraclitos/proyecto-final-rolling-code-blog',
       link: 'https://proyecto-final-rolling-code-blog.vercel.app/',
-      number: 9
+      number: 13
 
     }
 
   },
 
   {
-    id: 'page8',
+    id: 'page10',
     frontPage: {
       descriptionProject: `Final project of the course I did in RollingCode,
   developed with React.js and Node.js. It's a news web-site developed with my work team,
@@ -310,7 +377,7 @@ sports, in particular tennis.`,
       compromising personal preferences to maintain team harmony, etc.
        The administrator can: CRUD (news and users) and highlight news. Users can
   like the news, which are stored in a cart.`,
-      number: 10
+      number: 14
 
     },
     backPage: {
@@ -319,13 +386,13 @@ sports, in particular tennis.`,
       url: 'https://res.cloudinary.com/duuwqmpmn/image/upload/v1726001088/GODUBI_mbkti2.jpg',
       github: '',
       link: 'https://godubi.com/',
-      number: 11
+      number: 15
 
     }
 
   },
   {
-    id: 'page9',
+    id: 'page11',
     frontPage: {
       descriptionProject: `I have been colaborating on this project for a
     year. Godubi is a connection and management tool that links workers
@@ -335,7 +402,7 @@ sports, in particular tennis.`,
          as file handling, posting system, chat, meeting management, and a workboard.
  I collaborated in the frontend area: I used Vue 2 as a framework
   and was mainly in charge of data centralization with Vuex.`,
-      number: 12
+      number: 16
 
     },
     backPage: {
@@ -360,17 +427,20 @@ const indexSpanish =
 
 const allProjectsSpanish = [
 
-  { id: 'project1', projectName: 'Inmobiliaria', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 4 },
-  { id: 'project2', projectName: 'Portfolio de arquitecto', numberOfTranslationsToMake: 2, positionOfTheFrontPage: 5 },
-  { id: 'project3', projectName: 'Proyecto final de RollingCode', numberOfTranslationsToMake: 3, positionOfTheFrontPage: 6 },
-  { id: 'project4', projectName: 'Godubi (colaborador)', numberOfTranslationsToMake: 4, positionOfTheFrontPage: 7 }
+  { id: 'project1', projectName: '1- TA-TE-TI', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 4 },
+  { id: 'project2', projectName: '2- Caja registradora', numberOfTranslationsToMake: 2, positionOfTheFrontPage: 5 },
+  { id: 'project3', projectName: '3- Inmobiliaria', numberOfTranslationsToMake: 3, positionOfTheFrontPage: 6 },
+  { id: 'project4', projectName: '4- Portfolio de arquitecto', numberOfTranslationsToMake: 4, positionOfTheFrontPage: 7 },
+  { id: 'project5', projectName: '5- Proyecto final de RollingCode', numberOfTranslationsToMake: 5, positionOfTheFrontPage: 8 },
+  { id: 'project6', projectName: '6- Godubi (colaborador)', numberOfTranslationsToMake: 6, positionOfTheFrontPage: 9 }
 ]
 const allProjectsEnglish = [
-
-  { id: 'project1', projectName: 'Real Estate', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 4 },
-  { id: 'project2', projectName: 'Architect portfolio', numberOfTranslationsToMake: 2, positionOfTheFrontPage: 5 },
-  { id: 'project3', projectName: 'RollingCode final proyect', numberOfTranslationsToMake: 3, positionOfTheFrontPage: 6 },
-  { id: 'project4', projectName: 'Godubi (collaborator)', numberOfTranslationsToMake: 4, positionOfTheFrontPage: 7 }
+  { id: 'project1', projectName: '1- TIC-TAC-TOE', numberOfTranslationsToMake: 1, positionOfTheFrontPage: 4 },
+  { id: 'project2', projectName: '2- Cash register', numberOfTranslationsToMake: 2, positionOfTheFrontPage: 5 },
+  { id: 'project3', projectName: '3- Real Estate', numberOfTranslationsToMake: 3, positionOfTheFrontPage: 6 },
+  { id: 'project4', projectName: '4- Architect portfolio', numberOfTranslationsToMake: 4, positionOfTheFrontPage: 7 },
+  { id: 'project5', projectName: '5- RollingCode final proyect', numberOfTranslationsToMake: 5, positionOfTheFrontPage: 8 },
+  { id: 'project6', projectName: '6- Godubi (collaborator)', numberOfTranslationsToMake: 6, positionOfTheFrontPage: 9 }
 ]
 
 export {

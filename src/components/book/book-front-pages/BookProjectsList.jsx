@@ -13,7 +13,7 @@ const BookProjectsList = ({ project, positionOfTheListOfProyects, setPositionPag
           functionChangePageForward((project.numberOfTranslationsToMake), positionOfTheListOfProyects)
           setPositionPage(project.positionOfTheFrontPage)
         }}
-        className='mb-2 proyects  letter-title-book no-button-styles '
+        className=' projects  letter-title-book no-button-styles  '
       >
         {project.projectName}
       </button>

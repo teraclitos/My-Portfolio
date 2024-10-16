@@ -47,7 +47,7 @@ const BookFrontPages = ({
                 {page.title}
               </h2>
             </b>
-            <ul className='list-style-none p-0 d-flex flex-column align-items-center '>
+            <ul className='list-style-none p-0 d-flex flex-column align-items-start ps-5 m-0 '>
               {i === positionOfTheIndexOfTheBook &&
             indexOfTheBook.map((item, index) => (
               <BookIndex
