@@ -1,7 +1,7 @@
 import React from 'react'
 import { IconContext } from 'react-icons'
 
-import { FaReact, FaHtml5, FaCss3Alt, FaVuejs, FaNode } from 'react-icons/fa'
+import { FaReact, FaHtml5, FaCss3Alt, FaVuejs, FaNode, FaBootstrap } from 'react-icons/fa'
 
 import { IoLogoJavascript } from 'react-icons/io'
 
@@ -22,23 +22,25 @@ const Technologies = ({ language }) => {
       redux: 'Redux<br>Level: Learning <br>Years: 0 years',
       typescript: 'TypeScript<br>Level: Learning <br>Years: 0 year',
       node: 'Node.js<br>Level: Intermediate <br>Years: 1.5 years',
-      mongodb: 'MongoDB<br>Level: Intermediate <br>Years: 1.5 year',
+      mongodb: 'MongoDB<br>Level: Intermediate <br>Years: 1 year',
       postman: 'Postman<br>Level: Intermediate <br>Years: 1.5 years',
-      socket: 'Socket.io<br>Level: Basic <br>Years: 0.5 year'
+      socket: 'Socket.io<br>Level: Basic <br>Years: 0.5 year',
+      bootstrap: 'Bootstrap<br>Level: Advanced <br>Years: 2.5 year'
     },
     spanish: {
       vue: 'Vue.js<br>Nivel: Intermedio <br>Años: 1 año',
       vuex: 'Vuex<br>Nivel: Intermedio <br>Años: 1 año',
       js: 'JavaScript<br>Nivel: Intermedio <br>Años: 2.5 años',
-      react: 'React<br>Nivel: Intermedio <br>Años: 1 años',
+      react: 'React<br>Nivel: Intermedio <br>Años: 1 año',
       html: 'HTML5<br>Nivel: Intermedio <br>Años: 2.5 años',
       css: 'CSS3<br>Nivel: Intermedio <br>Años: 2.5 años',
       redux: 'Redux<br>Nivel: Aprendiendo <br>Años: 0 años',
-      typescript: 'TypeScript<br>Nivel: Aprendiendo<br>Años: 0 año',
+      typescript: 'TypeScript<br>Nivel: Aprendiendo<br>Años: 0 años',
       node: 'Node.js<br>Nivel: Intermedio <br>Años: 1.5 años',
-      mongodb: 'MongoDB<br>Nivel: Intermedio <br>Años: 1.5 año',
+      mongodb: 'MongoDB<br>Nivel: Intermedio <br>Años: 1 año',
       postman: 'Postman<br>Nivel: Intermedio <br>Años: 1.5 años',
-      socket: 'Socket.io<br>Nivel: Básico <br>Años: 0.5 año'
+      socket: 'Socket.io<br>Nivel: Básico <br>Años: 0.5 años',
+      bootstrap: 'Bootstrap<br>Level: Avanzado <br>Years: 2.5 años'
     }
   }
 
@@ -84,6 +86,8 @@ const Technologies = ({ language }) => {
 
           <SiSocketdotio className='icon' data-tooltip-id='socket-tooltip' data-tooltip-html={currentTooltips.socket} />
           <Tooltip id='socket-tooltip' />
+          <FaBootstrap className='icon' data-tooltip-id='bootstrap-tooltip' data-tooltip-html={currentTooltips.bootstrap} />
+          <Tooltip id='bootstrap-tooltip' />
         </IconContext.Provider>
 
       </div>
