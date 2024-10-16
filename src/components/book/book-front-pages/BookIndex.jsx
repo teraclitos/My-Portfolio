@@ -11,7 +11,7 @@ const BookIndex = ({ item, functionChangePageForward, positionOfTheIndexOfTheBoo
         : (
           <button
             type='button'
-            className='mb-2 ps-5 projects letter-title-book no-button-styles'
+            className='mb-2  projects letter-title-book no-button-styles'
             onTouchStart={(e) => {
               e.stopPropagation()
             }}

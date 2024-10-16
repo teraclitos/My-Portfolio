@@ -10,7 +10,7 @@ const BookLinkToMail = ({ item }) => {
       onTouchStart={(e) => {
         e.stopPropagation()
       }}
-      className='mb-2 ps-5 projects letter-title-book contact-link '
+      className='mb-2  projects letter-title-book contact-link '
       href='mailto:tefans12@gmail.com'
     >
       {item.title}
