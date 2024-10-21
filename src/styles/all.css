@@ -51,9 +51,9 @@
 }
 
 .list-style-none {
-  list-style-type: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
+  list-style-type: none ;
+ 
+
 }
 
 .title-size {
@@ -67,6 +67,7 @@
 }
 .no-button-styles{
   padding: 4px;
+  color: #212529;
   
    background: none;
   border:none; 
