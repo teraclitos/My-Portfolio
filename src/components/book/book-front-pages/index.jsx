@@ -22,13 +22,8 @@ const BookFrontPages = ({
 }) => {
   return (
     <div
-      onTouchStart={(e) => {
-        onePageRight(i)
-      }}
       onClick={(e) => {
-        if (!isMobile) {
-          onePageRight(i)
-        }
+        onePageRight(i)
       }}
       className={i === 0 ? 'face-front portada' : 'face-front'}
       style={{ pointerEvents: pointerEvent }}

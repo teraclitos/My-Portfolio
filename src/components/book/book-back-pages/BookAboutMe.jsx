@@ -15,9 +15,7 @@ const BookAboutMe = ({ page, downloadCV }) => {
           e.stopPropagation()
           downloadCV()
         }}
-        onTouchStart={(e) => {
-          e.stopPropagation()
-        }}
+
       >
         CV
       </button>

@@ -4,9 +4,6 @@ const BookProjectsListRedirection = ({ i, language, functionChangePageBackward, 
   return (
     <button
       type='button'
-      onTouchStart={(e) => {
-        e.stopPropagation()
-      }}
       onClick={(e) => {
         e.stopPropagation()
         functionChangePageBackward(i - 3, i)

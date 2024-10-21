@@ -20,13 +20,8 @@ const BookBackPages = ({
 }) => {
   return (
     <div
-      onTouchStart={(e) => {
-        onePageLeft(i)
-      }}
       onClick={(e) => {
-        if (!isMobile) {
-          onePageLeft(i)
-        }
+        onePageLeft(i)
       }}
       className={
      i === dataBook.length - 1
