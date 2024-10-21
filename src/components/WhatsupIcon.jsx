@@ -6,12 +6,12 @@ const WhatsupIcon = ({ language }) => {
   return (
     <a
       className='icon-footer-link'
-      target='blank'
+      target='_blank'
       href={
         language === 'english'
           ? 'https://wa.link/otcpwg'
           : 'https://wa.link/ibnibl'
-      }
+      } rel='noreferrer'
     >
       <FontAwesomeIcon className='icon-footer' icon={faWhatsapp} />
     </a>

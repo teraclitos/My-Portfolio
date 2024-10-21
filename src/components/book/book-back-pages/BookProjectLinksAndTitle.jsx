@@ -11,8 +11,8 @@ const BookProjectLinksAndTitle = ({ page }) => {
       <div onClick={(e) => {}} className='img-proyects-container'>
         <a
           className='links-book letter-title-book'
-          target='blank'
-          href={page.link}
+          target='_blank'
+          href={page.link} rel='noreferrer'
         >
           <img
             onClick={(e) => {
@@ -40,8 +40,8 @@ const BookProjectLinksAndTitle = ({ page }) => {
           <div className='wooden-button wooden-button-cv me-2'>
             <a
               className='links-book'
-              target='blank'
-              href={page.github}
+              target='_blank'
+              href={page.github} rel='noreferrer'
             >
               <FontAwesomeIcon
                 className='icon-footer icon-git-book  '
@@ -52,8 +52,8 @@ const BookProjectLinksAndTitle = ({ page }) => {
         <div className='wooden-button wooden-button-link '>
           <a
             className='links-book letter-title-book'
-            target='blank'
-            href={page.link}
+            target='_blank'
+            href={page.link} rel='noreferrer'
           >
             Link
           </a>

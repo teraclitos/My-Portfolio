@@ -6,8 +6,8 @@ const LinkedinIcon = () => {
   return (
     <a
       className='icon-footer-link'
-      target='blank'
-      href='https://www.linkedin.com/in/francisco-teran/'
+      target='_blank'
+      href='https://www.linkedin.com/in/francisco-teran/' rel='noreferrer'
     >
       <FontAwesomeIcon className='icon-footer' icon={faLinkedin} />
     </a>

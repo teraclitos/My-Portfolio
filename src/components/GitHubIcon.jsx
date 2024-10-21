@@ -6,8 +6,8 @@ const GitHubIcon = () => {
   return (
     <a
       className='icon-footer-link'
-      target='blank'
-      href='https://github.com/teraclitos'
+      target='_blank'
+      href='https://github.com/teraclitos' rel='noreferrer'
     >
       <FontAwesomeIcon className='icon-footer' icon={faGithub} />
     </a>
