@@ -5,9 +5,6 @@ const BookProjectsList = ({ project, positionOfTheListOfProyects, setPositionPag
     <li>
       <button
         type='button'
-        onTouchStart={(e) => {
-          e.stopPropagation()
-        }}
         onClick={(e) => {
           e.stopPropagation()
           functionChangePageForward((project.numberOfTranslationsToMake), positionOfTheListOfProyects)

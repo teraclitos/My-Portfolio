@@ -12,9 +12,6 @@ const BookIndex = ({ item, functionChangePageForward, positionOfTheIndexOfTheBoo
           <button
             type='button'
             className='mb-2  projects letter-title-book no-button-styles'
-            onTouchStart={(e) => {
-              e.stopPropagation()
-            }}
             onClick={(e) => {
               e.stopPropagation()
               functionChangePageForward(item.numberOfTranslationsToMake, positionOfTheIndexOfTheBook)

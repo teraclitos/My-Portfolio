@@ -7,6 +7,7 @@ import PageBody from '../components/PageBody'
 import Footer from '../components/Footer'
 import Error404 from '../components/Error404'
 import Loader from '../components/Loader'
+import { Helmet } from 'react-helmet'
 
 const Main = ({
   language,
@@ -49,6 +50,43 @@ const Main = ({
 }) => {
   return (
     <>
+      <Helmet>
+        <title>Francisco Teran's Portfolio</title>
+
+        <script type='application/ld+json'>
+          {`
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Francisco Teran's Portfolio",
+    "url": "https://franciscoteran.vercel.app/",
+    "author": {
+      "@type": "Person",
+      "name": "Francisco Teran"
+    },
+    "description": "A web portfolio showcasing projects and skills in fullstack development.",
+    "inLanguage": "en"
+  }
+  `}
+        </script>
+
+        <script type='application/ld+json'>
+          {`
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Portafolio de Francisco Teran",
+    "url": "https://franciscoteran.vercel.app/",
+    "author": {
+      "@type": "Person",
+      "name": "Francisco Teran"
+    },
+    "description": "Un portafolio web que muestra proyectos y habilidades en desarrollo fullstack.",
+    "inLanguage": "es"
+  }
+  `}
+        </script>
+      </Helmet>
       <Loader
         loader={loader}
         setLoader={setLoader}

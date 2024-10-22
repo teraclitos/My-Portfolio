@@ -18,9 +18,6 @@ const BookProjectLinksAndTitle = ({ page }) => {
             onClick={(e) => {
               e.stopPropagation()
             }}
-            onTouchStart={(e) => {
-              e.stopPropagation()
-            }}
             className=' img-proyects'
             src={page.url}
             alt={page.title}
@@ -29,9 +26,6 @@ const BookProjectLinksAndTitle = ({ page }) => {
       </div>
       <div
         onClick={(e) => {
-          e.stopPropagation()
-        }}
-        onTouchStart={(e) => {
           e.stopPropagation()
         }}
         className='d-flex  mt-3'

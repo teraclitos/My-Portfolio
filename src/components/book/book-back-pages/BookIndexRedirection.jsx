@@ -17,9 +17,7 @@ const BookIndexRedirection = ({
         functionChangePageBackward(i - 1, i)
         setPositionPage(2)
       }}
-      onTouchStart={(e) => {
-        e.stopPropagation()
-      }}
+
     >
       {language === 'spanish' ? 'Índice' : 'Index'}
     </button>

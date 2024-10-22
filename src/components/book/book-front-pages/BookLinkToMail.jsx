@@ -7,9 +7,6 @@ const BookLinkToMail = ({ item }) => {
       onClick={(e) => {
         e.stopPropagation()
       }}
-      onTouchStart={(e) => {
-        e.stopPropagation()
-      }}
       className='mb-2  projects letter-title-book contact-link '
       href='mailto:tefans12@gmail.com'
     >

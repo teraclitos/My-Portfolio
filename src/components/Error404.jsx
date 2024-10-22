@@ -4,7 +4,7 @@ import '../styles/all.css'
 
 const Error404 = ({ language }) => {
   useEffect(() => {
-    document.title = 'Francisco Teran | Error 404'
+    document.title = 'Francisco Teran | Fullstack Developer Portfolio | Error 404'
   }, [])
   const [linkErrorDisplay, setLinkErrorDisplay] = useState('none')
   const showLinkError = () => { setLinkErrorDisplay('inline-block') }
