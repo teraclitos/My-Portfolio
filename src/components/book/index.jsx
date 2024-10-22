@@ -31,7 +31,7 @@ const BookContainer = ({
   const lastPositionWithoutProyects = 3
   const positionOfIndexOfTheBookAndListOfProyects = [positionOfTheIndexOfTheBook, positionOfTheListOfProyects]
   useEffect(() => {
-    document.title = 'Francisco Teran'
+    document.title = 'Francisco Teran '
   }, [])
   const downloadCV = () => {
     const cvFile = '/FranciscoTerán CV.pdf'
