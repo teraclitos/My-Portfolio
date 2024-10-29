@@ -34,7 +34,7 @@ const BookContainer = ({
     document.title = 'Francisco Teran '
   }, [])
   const downloadCV = () => {
-    const cvFile = '/FranciscoTerán CV.pdf'
+    const cvFile = '/FranciscoTeran CV.pdf'
     const urlcvFile = process.env.PUBLIC_URL + cvFile
     window.open(urlcvFile)
   }
