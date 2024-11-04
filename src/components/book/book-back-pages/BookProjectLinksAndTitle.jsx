@@ -34,7 +34,7 @@ const BookProjectLinksAndTitle = ({ page }) => {
           <div className='wooden-button wooden-button-cv me-2'>
             <a
               className='links-book'
-              target={page.url !== 'https://franciscoteran.vercel.app/' ? '_blank' : '_self'}
+              target={page.url.includes('franciscoteran') ? '_blank' : '_self'}
               href={page.github} rel='noreferrer'
             >
               <FontAwesomeIcon
