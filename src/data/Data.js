@@ -491,7 +491,7 @@ const allProjectsEnglish = [
   { id: 'project4', projectName: '4- Architect portfolio', numberOfTranslationsToMake: 4, positionOfTheFrontPage: 7 },
   { id: 'project5', projectName: '5- RollingCode final proyect', numberOfTranslationsToMake: 5, positionOfTheFrontPage: 8 },
   { id: 'project6', projectName: '6- Godubi (collaborator)', numberOfTranslationsToMake: 6, positionOfTheFrontPage: 9 },
-  { id: 'project7', projectName: '7- Mi portfolio', numberOfTranslationsToMake: 7, positionOfTheFrontPage: 10 }
+  { id: 'project7', projectName: '7- My portfolio', numberOfTranslationsToMake: 7, positionOfTheFrontPage: 10 }
 ]
 
 export {
