@@ -34,7 +34,7 @@ const BookProjectLinksAndTitle = ({ page }) => {
           <div className='wooden-button wooden-button-cv me-2'>
             <a
               className='links-book'
-              target={page.url.includes('franciscoteran') ? '_blank' : '_self'}
+              target='_blank'
               href={page.github} rel='noreferrer'
             >
               <FontAwesomeIcon
@@ -46,7 +46,7 @@ const BookProjectLinksAndTitle = ({ page }) => {
         <div className='wooden-button wooden-button-link '>
           <a
             className='links-book letter-title-book'
-            target='_blank'
+            target={!page.link.includes('franciscoteran') ? '_blank' : '_self'}
             href={page.link} rel='noreferrer'
           >
             Link

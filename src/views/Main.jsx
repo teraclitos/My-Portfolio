@@ -51,7 +51,7 @@ const Main = ({
   return (
     <>
       <Helmet>
-        <title>Francisco Teran's Portfolio</title>
+        <title>Francisco Teran</title>
 
         <script type='application/ld+json'>
           {`
